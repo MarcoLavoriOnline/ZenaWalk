@@ -1,0 +1,2759 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1714">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ZenaWalk">
+<meta name="description" content="Audioguide pedonali premium su Genova. Dal confine medievale al mare.">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="icon" href="/icon-192.png" type="image/png">
+<title>ZenaWalk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --gold:#C49A3C;--gold-lt:#D4A84B;--gold-dim:#8A6B28;
+  --ink:#1A1714;--paper:#F4EFE4;--white:#FFFFFF;
+  --grey:#F0EBE2;--stone:#8A7A68;--mist:#E0D9CE;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+html,body{height:100%;-webkit-font-smoothing:antialiased;font-family:'DM Sans',sans-serif;font-weight:300;background:var(--paper);color:var(--ink)}
+.screen{position:fixed;inset:0;display:none;flex-direction:column;overflow:hidden}
+.screen.active{display:flex}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--ink);padding:calc(var(--safe-top) + .85rem) 1rem .85rem;display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.tb-back{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tb-back svg{width:17px;height:17px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:2.5}
+.tb-title{font-size:.95rem;font-weight:500;color:rgba(255,255,255,.9);flex:1;letter-spacing:.01em}
+.tb-right{font-size:.7rem;color:var(--gold);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+
+/* ════════════════════════ HOME ════════════════════════ */
+#home{background:var(--ink)}
+.home-inner{flex:1;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch}
+
+/* Hero video */
+.home-hero{position:relative;overflow:hidden;height:100svh;min-height:520px;max-height:760px;flex-shrink:0;display:flex;flex-direction:column}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none;background:#1A1714}
+.hero-overlay{position:absolute;inset:0;background:rgba(18,15,12,.5);pointer-events:none}
+.hero-overlay::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(18,15,12,.75) 0%,rgba(18,15,12,0) 22%,rgba(18,15,12,0) 60%,rgba(18,15,12,.85) 100%)}
+.hero-nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:calc(var(--safe-top) + 1rem) 1.25rem .75rem;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:.5rem}
+.logo-mark{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.logo-type{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:300;color:rgba(244,239,228,.92);letter-spacing:.02em}
+.logo-type b{color:var(--gold);font-weight:300}
+.home-lang{font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.5);border:.5px solid rgba(255,255,255,.4);border-radius:20px;padding:.3rem .75rem;background:rgba(0,0,0,.25);cursor:pointer;font-family:'DM Sans',sans-serif}
+.home-lang .lang-on{color:#fff;font-weight:600}
+.home-lang .lang-off{color:rgba(255,255,255,.45)}
+.hero-content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 1.5rem}
+.hero-eyebrow{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,75,.95);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:.55rem}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:18px;height:1px;background:var(--gold);opacity:.6}
+.hero-h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.8rem,12vw,4.5rem);line-height:.97;letter-spacing:-.025em;color:rgba(244,239,228,.97);margin-bottom:1rem}
+.hero-h1 em{color:var(--gold);font-style:italic}
+.hero-desc{font-size:.82rem;line-height:1.75;color:rgba(255,255,255,.92);max-width:280px;margin:0 auto 2rem;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.hero-desc strong{color:#fff;font-weight:600}
+.btn-cta{background:var(--gold);color:var(--ink);border:none;border-radius:3px;padding:1rem 1.75rem;font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.65rem;transition:opacity .2s}
+.btn-cta:active{opacity:.85}
+.btn-cta svg{width:12px;height:12px;fill:var(--ink);flex-shrink:0}
+.hero-cta-note{font-size:.6rem;color:rgba(255,255,255,.6);text-align:center;margin-top:.6rem;letter-spacing:.05em;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.hero-scroll-cue{position:absolute;left:50%;bottom:calc(var(--safe-bottom) + 28px);transform:translateX(-50%);z-index:2;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;animation:heroScrollBounce 2.2s ease-in-out infinite}
+.hero-scroll-cue svg{width:34px;height:34px;stroke:rgba(244,239,228,.8);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@keyframes heroScrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* Sezione come funziona — percorso verticale */
+.home-cose{background:var(--ink);padding:2.25rem 1.25rem 2.5rem;border-top:.5px solid rgba(196,154,60,.1)}
+.cose-title{font-family:'Fraunces',serif;font-weight:300;font-size:1.5rem;line-height:1.15;color:rgba(244,239,228,.92);margin-bottom:.4rem;text-align:center}
+.cose-title em{color:var(--gold);font-style:italic}
+.cose-intro{font-size:.78rem;color:rgba(244,239,228,.6);margin-bottom:1.75rem;text-align:center}
+.cose-steps{display:flex;flex-direction:column;gap:.85rem}
+.cose-card{
+  background:rgba(244,239,228,.08);
+  border:.5px solid rgba(196,154,60,.22);
+  border-radius:16px;
+  padding:1.75rem 1.5rem;
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;
+}
+.cose-card-icon{
+  width:84px;height:84px;border-radius:50%;
+  border:1px solid rgba(196,154,60,.35);
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.1rem;
+}
+.cose-card-icon img{width:100%;height:100%;object-fit:cover}
+.cose-card-titolo{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:300;color:rgba(244,239,228,.92);line-height:1.2;margin-bottom:.6rem}
+.cose-card-testo{font-size:.8rem;line-height:1.75;color:rgba(244,239,228,.72);max-width:260px}
+.cose-card-step{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,168,75,.8);margin-bottom:.85rem}
+
+/* Itinerari — card scroll orizzontale */
+.home-itinerari{background:var(--ink);padding:1.75rem 0 calc(2rem + var(--safe-bottom));border-top:.5px solid rgba(244,239,228,.06)}
+.hi-label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,239,228,.65);margin-bottom:1rem;padding:0 1.25rem}
+.hi-scroll{display:flex;gap:.85rem;overflow-x:auto;padding:0 1.25rem calc(.25rem);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.hi-scroll::-webkit-scrollbar{display:none}
+.hi-card{
+  flex-shrink:0;width:200px;
+  background:rgba(244,239,228,.04);
+  border:.5px solid rgba(244,239,228,.08);
+  border-radius:14px;overflow:hidden;cursor:pointer;
+  transition:border-color .2s;
+}
+.hi-card:active{border-color:rgba(196,154,60,.3)}
+.hi-card-thumb{
+  width:100%;height:120px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  background-size:cover;background-position:center;
+}
+.hi-card-thumb-img::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(26,23,20,.1),rgba(26,23,20,.45))}
+.hi-card-thumb-emoji{font-size:3rem;position:relative;z-index:1}
+.hi-card-thumb-free{background:linear-gradient(135deg,#2A2010 0%,#3D2E10 50%,#1A1714 100%)}
+.hi-card-thumb-lock{
+  position:absolute;top:8px;right:8px;z-index:2;
+  width:24px;height:24px;border-radius:50%;
+  background:rgba(26,23,20,.7);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;
+}
+.hi-card-badge-free{
+  position:absolute;top:8px;left:8px;z-index:2;
+  font-size:.55rem;font-weight:500;letter-spacing:.07em;
+  background:var(--gold);color:var(--ink);
+  padding:3px 8px;border-radius:2px;
+}
+.hi-card-badge-soon{
+  position:absolute;top:8px;right:8px;z-index:2;
+  font-size:.5rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(26,23,20,.75);color:rgba(244,239,228,.65);
+  padding:3px 7px;border-radius:2px;
+  backdrop-filter:blur(4px);
+}
+.hi-card-body{padding:.85rem .9rem .9rem}
+.hi-card-name{
+  font-family:'Fraunces',serif;font-size:.92rem;font-weight:300;
+  color:rgba(244,239,228,.88);line-height:1.25;margin-bottom:.35rem;
+}
+.hi-card-meta{font-size:.62rem;color:rgba(244,239,228,.62)}
+
+/* Colori thumb per itinerari locked */
+.thumb-storia{background:linear-gradient(135deg,#1A1020,#2D1A35)}
+.thumb-food{background:linear-gradient(135deg,#1A1410,#352510)}
+.thumb-deandre{background:linear-gradient(135deg,#0D1A1A,#102828)}
+.thumb-arte{background:linear-gradient(135deg,#1A1520,#251835)}
+.thumb-porto{background:linear-gradient(135deg,#0D1520,#102035)}
+.thumb-misteri{background:linear-gradient(135deg,#141420,#1A1A30)}
+
+/* ════════════════════════ DETAIL ════════════════════════ */
+#detail{background:var(--paper)}
+.detail-scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.detail-hero{width:100%;height:250px;flex-shrink:0;background:none;overflow:hidden}
+.detail-card{background:var(--white);border-radius:20px 20px 0 0;margin-top:-22px;padding:1.75rem 1.25rem 1.25rem;position:relative;z-index:1}
+.detail-title{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:300;color:var(--ink);margin-bottom:.5rem;line-height:1.15}
+.detail-info-row{display:flex;flex-direction:column;gap:.28rem;margin-bottom:.9rem}
+.detail-bullet{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--stone)}
+.detail-bullet-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.lang-label{font-size:.72rem;color:var(--stone);margin-bottom:.45rem}
+.lang-row{display:flex;gap:.45rem;margin-bottom:1.1rem}
+.lang-btn{border-radius:50px;padding:.38rem .95rem;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;border:1.5px solid var(--mist);background:none;color:var(--stone);transition:all .2s}
+.lang-btn.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-start{width:100%;background:var(--ink);color:var(--paper);border:none;border-radius:50px;padding:1rem;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:opacity .2s;margin-bottom:.25rem}
+.btn-start:active{opacity:.85}
+.btn-start svg{width:15px;height:15px;fill:var(--gold)}
+.desc-wrap{background:var(--white);border-radius:14px;margin:.75rem 1.25rem;padding:1.1rem}
+.desc-title{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.55rem}
+.desc-text{font-size:.84rem;color:#555;line-height:1.8}
+
+/* Intro Cristoforo nel detail */
+.detail-intro{background:var(--ink);border-radius:14px;margin:.75rem 1.25rem 0;padding:1rem}
+.detail-intro-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.detail-intro-face{overflow:hidden;width:38px;height:38px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#3D2E1E,#7A5A35);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.detail-intro-name{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1px}
+.detail-intro-role{font-size:.65rem;color:rgba(244,239,228,.6)}
+.detail-intro-text{font-size:.84rem;color:rgba(244,239,228,.75);line-height:1.82}
+.detail-intro-text p+p{margin-top:.6rem}
+.detail-intro-play{display:flex;align-items:center;gap:.6rem;background:rgba(196,154,60,.12);border:.5px solid rgba(196,154,60,.25);border-radius:50px;padding:.5rem 1rem;margin-top:.85rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.72rem;color:var(--gold);transition:background .2s;width:100%;justify-content:center;min-height:44px}
+.detail-intro-play:active{background:rgba(196,154,60,.2)}
+.detail-intro-play svg{width:14px;height:14px;fill:var(--gold);flex-shrink:0}
+.detail-intro-play.playing svg{display:none}
+.detail-intro-play.playing::before{content:'❚❚';font-size:.8rem;color:var(--gold);letter-spacing:.1em}
+
+/* Tracce */
+.tracce-wrap{padding:0 1.25rem calc(6rem + var(--safe-bottom));margin-top:.75rem}
+.tracce-h{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.8rem}
+.tracce-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.traccia-card{background:var(--white);border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:0 1px 5px rgba(0,0,0,.06);border:.5px solid rgba(0,0,0,.04);transition:transform .15s}
+.traccia-card:active{transform:scale(.97)}
+.traccia-img{width:100%;height:76px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;position:relative;overflow:hidden}
+.traccia-num-badge{position:absolute;top:6px;left:6px;width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--ink);font-size:.62rem;font-weight:600;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center}
+.traccia-body{padding:.5rem .6rem .65rem}
+.traccia-name{font-size:.76rem;font-weight:500;color:var(--ink);line-height:1.3;margin-bottom:.18rem}
+.traccia-dur{font-size:.62rem;color:var(--stone)}
+
+/* ════════════════════════ PRE-NAV SCREEN ════════════════════════ */
+#prenav{background:var(--paper)}
+.prenav-scroll{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.prenav-cristoforo{background:var(--ink);padding:calc(var(--safe-top) + .0rem) 1.25rem .9rem;flex-shrink:0}
+.prenav-cristoforo-row{display:flex;align-items:flex-start;gap:.75rem}
+.prenav-face{overflow:hidden;width:34px;height:34px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#3D2E1E,#7A5A35);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-top:.15rem}
+.prenav-msg{font-size:.82rem;color:rgba(244,239,228,.75);line-height:1.75;flex:1}
+.prenav-msg strong{color:rgba(244,239,228,.95);font-weight:500}
+.prenav-teaser{margin:.9rem 0 0;background:rgba(196,154,60,.1);border:.5px solid rgba(196,154,60,.28);border-radius:10px;padding:.85rem 1rem;display:flex;align-items:flex-start;gap:.7rem}
+.prenav-teaser-label{font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,168,75,.85);margin-bottom:.35rem}
+.prenav-teaser-text{font-family:'Fraunces',serif;font-size:.92rem;font-weight:300;font-style:italic;color:rgba(244,239,228,.9);line-height:1.4}
+.prenav-teaser-star{color:var(--gold);font-size:.9rem;flex-shrink:0;margin-top:.15rem}
+.prenav-map{flex:1;position:relative;min-height:280px}
+#prenavMap{width:100%;height:100%;min-height:280px}
+#navScreenMap{width:100%;height:100%;min-height:280px}
+.prenav-info{position:absolute;top:12px;left:12px;right:12px;background:rgba(26,23,20,.82);backdrop-filter:blur(6px);border:.5px solid rgba(196,154,60,.25);border-radius:10px;padding:.65rem .9rem;display:flex;align-items:center;gap:.75rem;pointer-events:none;z-index:400}
+.prenav-dest-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;box-shadow:0 0 0 3px rgba(196,154,60,.25)}
+.prenav-dist-text{font-size:.75rem;color:rgba(244,239,228,.85);flex:1}
+.prenav-dist-sub{font-size:.62rem;color:rgba(244,239,228,.65);margin-top:1px}
+.prenav-gps-dot{width:8px;height:8px;border-radius:50%;background:#4A9EFF;flex-shrink:0;box-shadow:0 0 0 3px rgba(74,158,255,.25);animation:gps-pulse 2s ease-in-out infinite}
+@keyframes gps-pulse{0%,100%{box-shadow:0 0 0 3px rgba(74,158,255,.25)}50%{box-shadow:0 0 0 6px rgba(74,158,255,.1)}}
+.prenav-bottom{background:var(--white);border-top:.5px solid var(--mist);padding:.9rem 1.25rem calc(.9rem + var(--safe-bottom));flex-shrink:0;display:flex;flex-direction:column;gap:.5rem}
+.btn-prenav-start{width:100%;background:var(--ink);color:var(--paper);border:none;border-radius:50px;padding:1rem;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:opacity .2s,background .3s,color .3s}
+.btn-prenav-start:active{opacity:.85}
+.btn-prenav-start svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2.5}
+.btn-prenav-start.arrived{background:var(--gold);color:var(--ink);animation:arrived-pulse 1.6s ease-in-out infinite}
+.btn-prenav-start.arrived svg{stroke:var(--ink)}
+@keyframes arrived-pulse{0%,100%{box-shadow:0 0 0 0 rgba(196,154,60,.5)}50%{box-shadow:0 0 0 10px rgba(196,154,60,0)}}
+.prenav-info.arrived{background:rgba(196,154,60,.92);border-color:var(--gold)}
+.prenav-info.arrived .prenav-dist-text{color:var(--ink);font-weight:600}
+.prenav-info.arrived .prenav-dist-sub{color:rgba(26,23,20,.7)}
+.prenav-info.arrived .prenav-gps-dot{background:var(--ink);box-shadow:0 0 0 3px rgba(26,23,20,.2)}
+.btn-prenav-gmaps{width:100%;background:none;color:var(--stone);border:none;border-radius:50px;padding:.55rem;font-family:'DM Sans',sans-serif;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.4rem;letter-spacing:.02em}
+.btn-prenav-gmaps svg{width:12px;height:12px;stroke:var(--stone);fill:none;stroke-width:2}
+
+/* ════════════════════════ PLAYER ════════════════════════ */
+#player{background:var(--paper)}
+.player-scroll{flex:1;overflow-y:auto;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch}
+.player-hero{width:100%;height:230px;flex-shrink:0;background:linear-gradient(160deg,#1A1210 0%,#3D2A10 50%,#1A1714 100%);display:flex;align-items:center;justify-content:center;font-size:5.5rem;position:relative;overflow:hidden}
+.player-hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(196,154,60,.2) 0%,transparent 70%);pointer-events:none}
+.player-hero-grad{position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(to top,rgba(26,18,10,.7),transparent)}
+.player-card{background:var(--white);border-radius:20px 20px 0 0;margin-top:-22px;padding:1.1rem 1.25rem .25rem;position:relative;z-index:1;flex-shrink:0}
+.player-tappa-tag{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-bottom:.25rem}
+.player-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:300;color:var(--ink);margin-bottom:.2rem}
+.chicca{display:inline-flex;align-items:center;gap:.4rem;background:rgba(196,154,60,.1);border:.5px solid rgba(196,154,60,.3);border-radius:20px;padding:.3rem .85rem;font-size:.65rem;color:var(--gold-dim);margin:.6rem 0 .85rem;letter-spacing:.03em;max-width:100%}
+.chicca-star{color:var(--gold)}
+.prog-wrap{margin-bottom:.4rem}
+.prog-track{height:4px;background:var(--mist);border-radius:2px;position:relative;cursor:pointer;margin-bottom:.32rem;touch-action:none}
+.prog-track::before{content:'';position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:44px;z-index:1}
+.prog-track.dragging .prog-fill{transition:none}
+.prog-track.dragging .prog-handle{transition:none;transform:translate(-50%,-50%) scale(1.4)}
+.prog-fill{height:100%;background:var(--gold);border-radius:2px;width:0%;transition:width .3s linear;position:relative;z-index:2}
+.prog-handle{position:absolute;top:50%;width:15px;height:15px;border-radius:50%;background:var(--gold);border:2px solid #fff;transform:translate(-50%,-50%);box-shadow:0 1px 5px rgba(0,0,0,.3);pointer-events:none;z-index:3;transition:transform .15s}
+.prog-times{display:flex;justify-content:space-between;font-size:.62rem;color:var(--stone)}
+.controls{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0 .5rem}
+.ctrl{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.2rem;color:var(--stone);font-family:'DM Sans',sans-serif;transition:color .15s;position:relative}
+.ctrl::before{content:'';position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
+.ctrl:active{color:var(--ink)}
+.ctrl svg{width:27px;height:27px;stroke:currentColor;fill:none;stroke-width:1.8}
+.ctrl-label{font-size:.52rem;letter-spacing:.06em;color:var(--stone)}
+.ctrl-speed{width:36px;height:36px;border-radius:50%;background:var(--grey);border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;color:var(--stone);transition:background .2s;position:relative}
+.ctrl-speed::before{content:'';position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
+.ctrl-speed:active{background:var(--mist)}
+.ctrl-play{width:62px;height:62px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(196,154,60,.45);transition:transform .15s,box-shadow .15s}
+.ctrl-play:active{transform:scale(.93);box-shadow:0 2px 8px rgba(196,154,60,.3)}
+.ctrl-play svg{width:26px;height:26px;fill:#fff;margin-left:3px}
+.ctrl-play.playing svg{display:none}
+.ctrl-play.playing::after{content:'❚❚';font-size:.95rem;color:#fff;letter-spacing:.1em}
+.av-wrap{background:var(--ink);border-radius:14px;margin:.75rem 1.25rem .5rem;padding:1rem}
+.av-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.8rem}
+.av-face{overflow:hidden;width:38px;height:38px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#3D2E1E,#7A5A35);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.av-name{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1px}
+.av-role{font-size:.65rem;color:rgba(244,239,228,.6)}
+.av-text{font-size:.84rem;color:rgba(244,239,228,.78);line-height:1.82}
+.av-text p+p{margin-top:.7rem}
+.player-nav{background:var(--white);border-top:.5px solid var(--mist);padding:.7rem 1.1rem calc(.7rem + var(--safe-bottom));display:flex;gap:.6rem;flex-shrink:0}
+.btn-prev-p{flex:1;background:var(--grey);color:var(--stone);border:none;border-radius:50px;padding:.85rem;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.btn-prev-p svg{width:14px;height:14px;stroke:var(--stone);fill:none;stroke-width:2}
+.btn-prev-p:disabled{opacity:.3;cursor:default}
+.btn-next-p{flex:2;background:var(--ink);color:var(--paper);border:none;border-radius:50px;padding:.85rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.btn-next-p svg{width:14px;height:14px;stroke:var(--paper);fill:none;stroke-width:2}
+.note-indicator{width:7px;height:7px;border-radius:50%;background:var(--gold);position:absolute;top:2px;right:2px;display:none}
+
+/* ════════════════════════ MAP SCREEN ════════════════════════ */
+#mapscreen{background:var(--paper)}
+#fullMap{flex:1}
+.leaflet-control-zoom{border:.5px solid rgba(196,154,60,.3)!important;background:var(--ink)!important;border-radius:8px!important;overflow:hidden}
+.leaflet-control-zoom a{background:transparent!important;color:var(--gold)!important;border-color:rgba(196,154,60,.2)!important}
+.leaflet-control-zoom a:hover{background:rgba(196,154,60,.1)!important}
+.leaflet-popup-content-wrapper{background:var(--ink);border:.5px solid rgba(196,154,60,.3);border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.leaflet-popup-content{color:rgba(244,239,228,.9);font-family:'DM Sans',sans-serif;font-size:.82rem;margin:.6rem .9rem}
+.leaflet-popup-tip{background:var(--ink)}
+.zw-popup .leaflet-popup-content-wrapper{background:var(--ink);border:.5px solid rgba(196,154,60,.3);border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.6);padding:0;overflow:hidden}
+.zw-popup .leaflet-popup-content{margin:9px 13px 14px;color:rgba(244,239,228,.9)}
+.zw-popup .leaflet-popup-tip-container{display:none}
+.zw-popup .leaflet-popup-close-button{color:rgba(244,239,228,.65)!important;font-size:20px!important;padding:8px 10px!important;z-index:10}
+.leaflet-control-attribution{background:rgba(244,239,228,.7)!important;font-size:9px!important;padding:1px 5px!important;color:#8A7A68!important}
+.leaflet-control-attribution a{color:#8A6B28!important}
+
+/* ════════════════════════ APPROFONDIMENTO ════════════════════════ */
+#appro{background:var(--paper)}
+.appro-scroll{flex:1;overflow-y:auto;padding-bottom:calc(2rem + var(--safe-bottom));-webkit-overflow-scrolling:touch}
+.appro-hero{width:100%;height:200px;flex-shrink:0;background:linear-gradient(160deg,#1A1210 0%,#3D2A10 100%);display:flex;align-items:center;justify-content:center;font-size:4.5rem;position:relative;overflow:hidden}
+.appro-hero-img{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.7}
+.appro-hero-grad{position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,rgba(26,18,10,.9),transparent)}
+.appro-card{background:var(--white);border-radius:20px 20px 0 0;margin-top:-20px;padding:1.25rem;position:relative;z-index:1}
+.appro-tag{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.appro-title{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:300;color:var(--ink);margin-bottom:1rem;line-height:1.2}
+.appro-section{margin-bottom:1.25rem}
+.appro-section-title{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.appro-section-title::after{content:'';flex:1;height:.5px;background:var(--mist)}
+.appro-text{font-size:.875rem;color:#444;line-height:1.8}
+.appro-curiosita{display:flex;flex-direction:column;gap:.6rem}
+.appro-cur-item{display:flex;align-items:flex-start;gap:.75rem;background:var(--grey);border-radius:10px;padding:.8rem}
+.appro-cur-dot{width:24px;height:24px;border-radius:50%;background:rgba(196,154,60,.15);border:.5px solid rgba(196,154,60,.3);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--gold);flex-shrink:0;font-weight:600}
+.appro-cur-text{font-size:.82rem;color:var(--ink);line-height:1.65}
+.appro-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.appro-info-item{background:var(--grey);border-radius:10px;padding:.75rem}
+.appro-info-label{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.25rem}
+.appro-info-val{font-size:.8rem;color:var(--ink);line-height:1.5}
+.appro-consiglio{display:flex;gap:.65rem;background:rgba(196,154,60,.08);border-left:2.5px solid var(--gold);border-radius:0 10px 10px 0;padding:.8rem 1rem;font-size:.85rem;color:var(--ink);line-height:1.7}
+.appro-foto-strip{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;padding-bottom:.25rem;-webkit-overflow-scrolling:touch}
+.appro-foto-strip::-webkit-scrollbar{display:none}
+.appro-foto-item{flex-shrink:0;border-radius:10px;overflow:hidden;position:relative}
+.appro-foto-main{width:195px;height:125px;object-fit:cover;display:block;background:var(--mist)}
+.appro-foto-sm{width:125px;height:125px;object-fit:cover;display:block;background:var(--mist)}
+.appro-foto-cap{position:absolute;bottom:0;left:0;right:0;padding:.3rem .5rem;background:rgba(26,23,20,.6);font-size:.6rem;color:rgba(244,239,228,.85)}
+.appro-luogo-card{background:white;border:.5px solid var(--mist);border-radius:12px;margin-bottom:.55rem;overflow:hidden}
+.appro-luogo-hd{display:flex;align-items:center;gap:.6rem;padding:.65rem .85rem;cursor:pointer}
+.appro-luogo-img{width:38px;height:38px;border-radius:7px;object-fit:cover;flex-shrink:0;background:var(--mist)}
+.appro-luogo-img-placeholder{width:38px;height:38px;border-radius:7px;background:rgba(196,154,60,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.appro-luogo-info{flex:1;min-width:0}
+.appro-luogo-nome{font-size:.8rem;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.appro-luogo-meta{display:flex;align-items:center;gap:.35rem;margin-top:.1rem}
+.appro-luogo-tipo{font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(196,154,60,.12);color:#8A6B28;padding:1px 5px;border-radius:2px}
+.appro-luogo-dist{font-size:.6rem;color:var(--stone)}
+.appro-luogo-body{padding:.6rem .85rem;border-top:.5px solid #F0EBE2}
+.appro-luogo-desc{font-size:.77rem;color:#555;line-height:1.65;margin-bottom:.5rem}
+.appro-luogo-pratiche{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+.appro-luogo-prat-item{background:var(--grey);border-radius:6px;padding:.45rem .55rem}
+.appro-luogo-prat-lbl{font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:.15rem}
+.appro-luogo-prat-val{font-size:.7rem;color:var(--ink);line-height:1.35}
+.appro-luogo-chevron{font-size:.6rem;color:var(--stone);flex-shrink:0;transition:transform .2s}
+.appro-luogo-chevron.open{transform:rotate(180deg)}
+.appro-link-item{display:flex;align-items:center;justify-content:space-between;background:var(--grey);border-radius:8px;padding:.65rem .85rem;margin-bottom:.5rem;text-decoration:none}
+.appro-link-label{font-size:.78rem;color:var(--ink);font-weight:500}
+.appro-link-icon{font-size:.7rem;color:var(--gold)}
+.foto-lightbox{position:fixed;inset:0;z-index:800;background:rgba(18,16,13,.97);display:none;flex-direction:column;align-items:center;justify-content:center;padding:1rem}
+.foto-lightbox.open{display:flex}
+.foto-lightbox img{max-width:100%;max-height:calc(100vh - 80px);object-fit:contain;border-radius:6px}
+.foto-lightbox-cap{font-size:.72rem;color:rgba(244,239,228,.6);margin-top:.85rem;text-align:center;letter-spacing:.04em}
+.foto-lightbox-close{position:absolute;top:calc(var(--safe-top,0px) + 14px);right:18px;width:44px;height:44px;border-radius:50%;background:rgba(244,239,228,.1);border:none;color:rgba(244,239,228,.7);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+/* ════════════════════════ COMPLETION ════════════════════════ */
+#completion{background:var(--ink);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.comp-inner{display:flex;flex-direction:column;align-items:center;text-align:center;padding:calc(var(--safe-top) + 1.5rem) 1.5rem calc(4rem + var(--safe-bottom));position:relative}
+.comp-glow-1{position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(196,154,60,.2) 0%,transparent 70%);pointer-events:none}
+.comp-glow-2{position:absolute;bottom:-40px;left:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(196,154,60,.1) 0%,transparent 70%);pointer-events:none}
+.comp-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(196,154,60,.15);border:.5px solid rgba(196,154,60,.3);border-radius:20px;padding:.35rem .9rem;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.comp-check{width:64px;height:64px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+.comp-check svg{width:32px;height:32px}
+.comp-title{font-family:'Fraunces',serif;font-weight:300;font-size:2.4rem;line-height:1.05;color:rgba(244,239,228,.95);margin-bottom:.75rem}
+.comp-title em{color:var(--gold);font-style:italic}
+.comp-sub{font-size:.9rem;color:rgba(244,239,228,.7);line-height:1.8;margin-bottom:2rem;max-width:300px}
+.comp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:2rem}
+.comp-stat{background:rgba(244,239,228,.05);border:.5px solid rgba(196,154,60,.15);border-radius:10px;padding:.85rem .5rem;text-align:center}
+.comp-stat-n{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:.25rem}
+.comp-stat-l{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,228,.6)}
+.comp-divider{height:.5px;background:rgba(244,239,228,.08);margin:1.5rem 0}
+.comp-next-label{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(244,239,228,.6);margin-bottom:.85rem;text-align:left;width:100%}
+
+/* ── CTA feedback strutturato + incentivo premium ── */
+.comp-price{width:100%;background:rgba(196,154,60,.06);border:1px solid rgba(196,154,60,.35);border-radius:12px;padding:1.2rem 1.15rem;margin-bottom:2rem;text-align:center;box-shadow:0 0 0 1px rgba(196,154,60,.08), 0 4px 20px rgba(0,0,0,.2)}
+.comp-fb-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-weight:600}
+.comp-fb-q{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;color:rgba(244,239,228,.92);line-height:1.4;margin-bottom:.6rem}
+.comp-fb-q em{color:var(--gold);font-style:italic}
+.comp-fb-text{font-size:.78rem;color:rgba(244,239,228,.6);line-height:1.6;margin-bottom:1.1rem}
+.btn-fb-cta{width:100%;background:var(--gold);color:var(--ink);border:none;border-radius:50px;padding:.85rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:opacity .2s;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.btn-fb-cta:active{opacity:.85}
+.btn-fb-cta svg{width:14px;height:14px;flex-shrink:0}
+
+/* ── interest-sheet: bottom sheet per card "Prossimamente" in home ── */
+.interest-overlay{position:fixed;inset:0;background:rgba(10,8,6,.6);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.interest-overlay.show{opacity:1;pointer-events:auto}
+.interest-sheet{position:fixed;left:0;right:0;bottom:0;z-index:201;background:var(--ink);border-radius:20px 20px 0 0;padding:1.5rem 1.25rem calc(1.5rem + var(--safe-bottom));transform:translateY(100%);transition:transform .3s cubic-bezier(.32,.72,0,1);box-shadow:0 -8px 30px rgba(0,0,0,.3)}
+.interest-sheet.show{transform:translateY(0)}
+.interest-sheet-handle{width:36px;height:4px;background:rgba(244,239,228,.2);border-radius:2px;margin:0 auto 1.1rem}
+.interest-sheet-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:300;color:rgba(244,239,228,.95);margin-bottom:.3rem}
+.interest-sheet-q{font-size:.82rem;color:rgba(244,239,228,.6);line-height:1.5;margin-bottom:1.1rem}
+.interest-sheet-q em{color:var(--gold);font-style:italic}
+.comp-price-btns{display:flex;gap:.6rem}
+.btn-price-yes{flex:1;background:var(--gold);color:var(--ink);border:none;border-radius:50px;padding:.8rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:opacity .2s}
+.btn-price-yes:active{opacity:.85}
+.btn-price-no{flex:1;background:none;color:rgba(244,239,228,.6);border:.5px solid rgba(244,239,228,.18);border-radius:50px;padding:.8rem;font-family:'DM Sans',sans-serif;font-size:.8rem;cursor:pointer}
+.comp-price-email{display:none}
+.comp-price-email.show{display:block;margin-top:.9rem;padding-top:.9rem;border-top:.5px solid rgba(244,239,228,.08)}
+.comp-price-email-label{font-size:.72rem;color:rgba(244,239,228,.6);line-height:1.6;margin-bottom:.7rem}
+.comp-price-email-row{display:flex;gap:.5rem}
+.comp-price-input{flex:1;min-width:0;background:rgba(244,239,228,.06);border:.5px solid rgba(244,239,228,.18);border-radius:10px;padding:.75rem .85rem;font-family:'DM Sans',sans-serif;font-size:.85rem;color:rgba(244,239,228,.95);outline:none;transition:border-color .2s}
+.comp-price-input:focus{border-color:var(--gold)}
+.comp-price-input::placeholder{color:rgba(244,239,228,.35)}
+.btn-price-send{background:var(--gold);color:var(--ink);border:none;border-radius:10px;padding:0 1.1rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;white-space:nowrap}
+.btn-price-send:active{opacity:.85}
+.btn-price-skip{display:block;margin-top:.6rem;background:none;border:none;color:rgba(244,239,228,.65);font-family:'DM Sans',sans-serif;font-size:.7rem;text-decoration:underline;cursor:pointer;padding:.3rem 0}
+.comp-price-done{font-size:.85rem;color:rgba(244,239,228,.7);line-height:1.6}
+.comp-price-done em{color:var(--gold);font-style:italic}
+.comp-itinerari{width:100%}
+.comp-itin-card{text-align:left}
+.comp-itinerari{display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.comp-itin-card{display:flex;align-items:center;gap:.85rem;background:rgba(244,239,228,.04);border:.5px solid rgba(196,154,60,.15);border-radius:10px;padding:.85rem 1rem;cursor:pointer;transition:border-color .2s,background .2s}
+.comp-itin-card:active{background:rgba(196,154,60,.08)}
+.comp-itin-emoji{font-size:1.4rem;flex-shrink:0}
+.comp-itin-thumb{width:46px;height:46px;border-radius:8px;flex-shrink:0;background-size:cover;background-position:center;border:.5px solid rgba(196,154,60,.2)}
+.comp-itin-info{flex:1}
+.comp-itin-name{font-family:'Fraunces',serif;font-size:.95rem;font-weight:300;color:rgba(244,239,228,.85);margin-bottom:.15rem}
+.comp-itin-meta{font-size:.65rem;color:rgba(244,239,228,.6)}
+.comp-itin-soon{font-size:.65rem;font-weight:500;color:rgba(244,239,228,.65);background:rgba(244,239,228,.05);border:.5px solid rgba(244,239,228,.1);border-radius:20px;padding:.25rem .65rem;flex-shrink:0;letter-spacing:.04em}
+.btn-comp-share{width:100%;background:var(--gold);color:var(--ink);border:none;border-radius:50px;padding:1rem;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:.65rem;transition:opacity .2s}
+.btn-comp-share:active{opacity:.85}
+.btn-comp-share svg{width:15px;height:15px;stroke:var(--ink);fill:none;stroke-width:2}
+.btn-comp-home{width:100%;background:none;color:rgba(244,239,228,.6);border:.5px solid rgba(244,239,228,.15);border-radius:50px;padding:.9rem;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;margin-top:.75rem}
+.btn-comp-notes{width:100%;background:none;color:rgba(244,239,228,.6);border:.5px solid rgba(244,239,228,.15);border-radius:50px;padding:.9rem;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.75rem;letter-spacing:.06em}
+.btn-comp-notes:active{border-color:rgba(196,154,60,.3);color:var(--gold)}
+.btn-comp-notes svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ════════════════════════ ALL NOTES ════════════════════════ */
+#allnotes{background:var(--paper)}
+.allnotes-scroll{flex:1;overflow-y:auto;padding:1.25rem 1.25rem calc(2rem + var(--safe-bottom))}
+.allnotes-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:60vh;gap:1rem;text-align:center}
+.allnotes-empty-icon{font-size:2.5rem;opacity:.4}
+.allnotes-empty-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:300;color:var(--stone)}
+.allnotes-empty-sub{font-size:.8rem;color:var(--stone);opacity:.6;max-width:220px;line-height:1.7}
+.allnotes-item{background:var(--white);border-radius:14px;padding:1rem 1.1rem;margin-bottom:.75rem;border:.5px solid var(--mist)}
+.allnotes-item-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.65rem}
+.allnotes-item-num{width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--ink);font-size:.62rem;font-weight:600;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.allnotes-item-name{font-size:.78rem;font-weight:500;color:var(--stone);flex:1}
+.allnotes-item-edit{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.65rem;color:var(--gold);letter-spacing:.04em;padding:0}
+.allnotes-item-text{font-size:.88rem;color:var(--ink);line-height:1.75;white-space:pre-wrap}
+
+/* ════════════════════════ NOTE MODAL ════════════════════════ */
+.note-modal{position:fixed;inset:0;z-index:600;background:rgba(15,14,12,.75);backdrop-filter:blur(4px);display:none;align-items:flex-end}
+.note-modal.show{display:flex}
+.note-sheet{background:var(--paper);border-radius:20px 20px 0 0;width:100%;padding:1.1rem 1.25rem calc(1.25rem + var(--safe-bottom))}
+.note-sheet-handle{width:36px;height:4px;border-radius:2px;background:var(--mist);margin:0 auto .9rem}
+.note-sheet-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.note-sheet-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;color:var(--ink)}
+.note-sheet-tappa{font-size:.65rem;color:var(--stone);letter-spacing:.04em}
+.note-close{width:30px;height:30px;border-radius:50%;background:var(--grey);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.note-close svg{width:14px;height:14px;stroke:var(--stone);fill:none;stroke-width:2}
+.note-textarea{width:100%;min-height:140px;max-height:240px;background:var(--white);border:.5px solid var(--mist);border-radius:12px;padding:.85rem;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--ink);line-height:1.7;resize:none;outline:none;transition:border-color .2s}
+.note-textarea:focus{border-color:var(--gold)}
+.note-textarea::placeholder{color:var(--stone);opacity:.6}
+.note-actions{display:flex;gap:.6rem;margin-top:.75rem}
+.btn-note-save{flex:2;background:var(--ink);color:var(--paper);border:none;border-radius:50px;padding:.85rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:opacity .2s}
+.btn-note-save:active{opacity:.8}
+.btn-note-delete{flex:1;background:none;color:var(--stone);border:.5px solid var(--mist);border-radius:50px;padding:.85rem;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer}
+
+/* Cristoforo home block */
+.home-cristoforo{background:rgba(244,239,228,.05);border:.5px solid rgba(196,154,60,.15);border-radius:14px;margin:0 1.5rem 1.5rem;padding:1rem}
+.home-crist-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.home-crist-face{overflow:hidden;width:40px;height:40px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#3D2E1E,#7A5A35);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.15rem}
+.home-crist-name{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1px}
+.home-crist-role{font-size:.65rem;color:rgba(244,239,228,.6)}
+.home-crist-text{font-size:.84rem;color:rgba(244,239,228,.72);line-height:1.82;min-height:2rem}
+.home-crist-text p+p{margin-top:.6rem}
+.crist-word{opacity:0;display:inline;transition:opacity .25s ease}
+.crist-word.visible{opacity:1}
+.crist-cursor{display:inline-block;width:2px;height:.9em;background:var(--gold);margin-left:2px;vertical-align:middle;animation:cursor-blink .7s ease-in-out infinite;border-radius:1px}
+@keyframes cursor-blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* Toast */
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(8px);background:var(--ink);color:rgba(244,239,228,.9);border:.5px solid rgba(196,154,60,.3);border-radius:50px;padding:.55rem 1.25rem;font-size:.74rem;opacity:0;transition:all .25s;z-index:999;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.su{animation:slideUp .3s cubic-bezier(.4,0,.2,1) both}
+</style>
+
+<!-- PostHog Analytics -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init me unregister getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_property getSessionId createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug capture".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_yYCghZtZVx8jcqNJcHmepMdennWPhtGRZojzQnjKFeTz', {
+  api_host: 'https://eu.i.posthog.com',
+  person_profiles: 'always',
+  capture_pageview: true,
+  capture_pageleave: true,
+  session_recording: { maskAllInputs: false }
+});
+</script>
+</head>
+<body>
+
+<!-- ════════════ HOME ════════════ -->
+<div class="screen active" id="home">
+  <div class="home-inner">
+
+    <!-- HERO VIDEO -->
+    <div class="home-hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto"
+        poster="https://res.cloudinary.com/dunzmrf6y/video/upload/w_1080,q_auto,so_0/v1781512610/14239923_3840_2160_60fps_1_gkeedd.jpg">
+        <source src="https://res.cloudinary.com/dunzmrf6y/video/upload/w_1080,q_auto:low,vc_auto/v1781512610/14239923_3840_2160_60fps_1_gkeedd.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-nav">
+        <div class="logo">
+          <div class="logo-mark"><svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+          <div class="logo-type">Zena<b>Walk</b></div>
+        </div>
+        <button class="home-lang" onclick="toast('La versione in inglese sarà presto disponibile')"><span class="lang-on">IT</span> · <span class="lang-off">EN</span></button>
+      </div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Walking tour · Genova</div>
+        <h1 class="hero-h1">Cammina.<br>Ascolta.<br><em>Scopri.</em></h1>
+        <p class="hero-desc">Tour a piedi a Genova — la voce di Cristoforo che ti porta dove le guide non arrivano.</p>
+        <button class="btn-cta" onclick="showDetail('hero_cta')">
+          <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
+          <span id="heroCtaText">Inizia gratis · Genova Essenziale</span>
+        </button>
+      </div>
+      <button class="hero-scroll-cue" aria-label="Scopri di più" onclick="document.querySelector('.home-cose').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <!-- COME FUNZIONA -->
+    <div class="home-cose">
+      <div class="cose-title">Come funziona<br><em>ZenaWalk</em>?</div>
+      <p class="cose-intro">Nessun account. Nessun download.</p>
+      <div class="cose-steps">
+
+        <div class="cose-card">
+          <div class="cose-card-icon">
+            <img src="https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533751/Gemini_Generated_Image_3pdvp03pdvp03pdv_g8vys8.png" alt="">
+          </div>
+          <div class="cose-card-step">Primo</div>
+          <div class="cose-card-titolo">Scegli l'itinerario</div>
+          <div class="cose-card-testo">Scegli tra gli itinerari disponibili, in base ai tuoi gusti.</div>
+        </div>
+
+        <div class="cose-card">
+          <div class="cose-card-icon">
+            <img src="https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533732/Gemini_Generated_Image_8wdesn8wdesn8wde_yykgma.png" alt="">
+          </div>
+          <div class="cose-card-step">Poi</div>
+          <div class="cose-card-titolo">Cammina e ascolta</div>
+          <div class="cose-card-testo">Lasciati trasportare dalla voce di Cristoforo mentre cammini. Meglio con le cuffie.</div>
+        </div>
+
+        <div class="cose-card">
+          <div class="cose-card-icon">
+            <img src="https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533713/Gemini_Generated_Image_tj89dotj89dotj89_v7lhtw.png" alt="">
+          </div>
+          <div class="cose-card-step">Infine</div>
+          <div class="cose-card-titolo">Scopri Genova</div>
+          <div class="cose-card-testo">Storie, luoghi, dettagli che non trovi sui depliant. La città vera.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ITINERARI -->
+    <div class="home-itinerari">
+      <div class="hi-label">Tutti gli itinerari</div>
+      <div class="hi-scroll">
+
+        <div class="hi-card" onclick="showDetail('home_card')">
+          <div class="hi-card-thumb hi-card-thumb-img" id="hiCardThumb" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1780301227/wp9520306_bluc0r.jpg')">
+            <div class="hi-card-badge-free">Gratuito</div>
+          </div>
+          <div class="hi-card-body">
+            <div class="hi-card-name" id="hiCardName">Genova Essenziale</div>
+            <div class="hi-card-meta" id="hiCardMeta">7 tappe · 1.5 km · 50 min</div>
+          </div>
+        </div>
+
+        <div class="hi-card" onclick="openInterestSheet('Mangia come un genovese')">
+          <div class="hi-card-thumb hi-card-thumb-img" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg')">
+            <div class="hi-card-badge-soon">In lavorazione</div>
+          </div>
+          <div class="hi-card-body">
+            <div class="hi-card-name">Mangia come un genovese</div>
+            <div class="hi-card-meta">Gastronomia · 10 tappe</div>
+          </div>
+        </div>
+
+        <div class="hi-card" onclick="openInterestSheet('Genoa e Samp: una rivalità calcistica')">
+          <div class="hi-card-thumb hi-card-thumb-img" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532956/Coliseum-Summit-News-Genova-Stadio-Luigi-Ferraris_bkfnjh.jpg')">
+            <div class="hi-card-badge-soon">In lavorazione</div>
+          </div>
+          <div class="hi-card-body">
+            <div class="hi-card-name">Genoa e Samp: una rivalità calcistica</div>
+            <div class="hi-card-meta">Sport · 10 tappe</div>
+          </div>
+        </div>
+
+        <div class="hi-card" onclick="openInterestSheet('I forti di Genova')">
+          <div class="hi-card-thumb hi-card-thumb-img" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533110/escursioni-guidate-liguria-forti-di-genova-1678546256_xcr7uj.jpg')">
+            <div class="hi-card-badge-soon">In lavorazione</div>
+          </div>
+          <div class="hi-card-body">
+            <div class="hi-card-name">I forti di Genova</div>
+            <div class="hi-card-meta">Natura · 10 tappe</div>
+          </div>
+        </div>
+
+        <div class="hi-card" onclick="openInterestSheet('La storia di De André')">
+          <div class="hi-card-thumb hi-card-thumb-img" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533221/Fabrizio-De-Andre-1_oxljsa.jpg')">
+            <div class="hi-card-badge-soon">In lavorazione</div>
+          </div>
+          <div class="hi-card-body">
+            <div class="hi-card-name">La storia di De André</div>
+            <div class="hi-card-meta">De André · 10 tappe</div>
+          </div>
+        </div>
+
+        <div class="hi-card" onclick="openInterestSheet('Genova misteriosa')">
+          <div class="hi-card-thumb hi-card-thumb-img" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533304/20210513-171932-largejpg_xdeaz9.jpg')">
+            <div class="hi-card-badge-soon">In lavorazione</div>
+          </div>
+          <div class="hi-card-body">
+            <div class="hi-card-name">Genova misteriosa</div>
+            <div class="hi-card-meta">Misteri · 10 tappe</div>
+          </div>
+        </div>
+
+        <div class="hi-card" onclick="openInterestSheet('La città che ha visto il mondo')">
+          <div class="hi-card-thumb hi-card-thumb-img" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533368/R_pyh1et.jpg')">
+            <div class="hi-card-badge-soon">In lavorazione</div>
+          </div>
+          <div class="hi-card-body">
+            <div class="hi-card-name">La città che ha visto il mondo</div>
+            <div class="hi-card-meta">Porto · 10 tappe</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════ DETAIL ════════════ -->
+<div class="screen" id="detail">
+  <div class="topbar">
+    <button class="tb-back" onclick="goHome()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+    <div class="tb-title" id="detailTbTitle">Genova Essenziale</div>
+    <div class="tb-right">Gratuito</div>
+  </div>
+  <div class="detail-scroll">
+    <div class="detail-hero"><div id="detailHeroMap" style="width:100%;height:250px"></div></div>
+    <div class="detail-card su">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;margin-bottom:.5rem">
+        <div class="detail-title" style="margin-bottom:0" id="detailTitle">La città che ha<br>finanziato il mondo</div>
+        <div class="lang-row" style="margin-bottom:0;flex-shrink:0;margin-top:.25rem">
+          <button class="lang-btn on">IT</button>
+          <button class="lang-btn" onclick="toast('EN — prossimamente')">EN</button>
+        </div>
+      </div>
+      <div class="detail-info-row">
+        <div class="detail-bullet"><div class="detail-bullet-dot"></div><span id="detailRoute">Porta Soprana → Porto Antico · 1,51 km</span></div>
+        <div class="detail-bullet"><div class="detail-bullet-dot"></div><span id="detailMeta">7 Tappe · 50–55 minuti · Facile</span></div>
+      </div>
+      <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:.45rem">Di cosa parla</p>
+      <p style="font-size:.84rem;color:#666;line-height:1.8;margin-bottom:1rem" id="detailTema"></p>
+    </div>
+
+    <!-- Bottone partenza -->
+    <div style="padding:.75rem 1.25rem 0">
+      <button class="btn-start" onclick="startFromDetail()">
+        <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
+        Raggiungi la partenza
+      </button>
+    </div>
+
+    <!-- Note del percorso — visibile solo se esistono note salvate -->
+    <div id="detailNotesBox" style="display:none;padding:.75rem 1.25rem 0">
+      <button onclick="openAllNotes('detail')" style="width:100%;background:none;color:var(--stone);border:.5px solid var(--mist);border-radius:50px;padding:.85rem;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;letter-spacing:.04em">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Le tue note del percorso
+      </button>
+    </div>
+
+    <div class="tracce-wrap">
+      <div class="tracce-h">Le tappe</div>
+      <div class="tracce-grid" id="tracceGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PRE-NAV ════════════ -->
+<div class="screen" id="prenav">
+  <div class="topbar">
+    <button class="tb-back" onclick="closePrenav()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+    <div class="tb-title">Raggiungi la partenza</div>
+  </div>
+  <div class="prenav-scroll">
+    <div class="prenav-cristoforo">
+      <div class="prenav-cristoforo-row">
+        <div class="prenav-face"><img src="https://res.cloudinary.com/dunzmrf6y/image/upload/v1781165769/Immagine_2026-06-11_101557_qeghvc.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+        <div class="prenav-msg" id="prenavMsg">Prima di iniziare devi raggiungere <strong>il punto di partenza</strong>. È lì che cominciamo.</div>
+      </div>
+    </div>
+    <div class="prenav-map">
+      <div id="prenavMap"></div>
+      <div class="prenav-info" id="prenavInfo">
+        <div class="prenav-gps-dot"></div>
+        <div style="flex:1">
+          <div class="prenav-dist-text" id="prenavDistText">Calcolo percorso…</div>
+          <div class="prenav-dist-sub" id="prenavDistSub">a piedi fino al punto di partenza</div>
+        </div>
+        <div class="prenav-dest-dot"></div>
+      </div>
+    </div>
+    <div class="prenav-bottom">
+      <button class="btn-prenav-start" onclick="confirmArrival()">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span>Sono arrivato — inizia il percorso</span>
+      </button>
+      <button class="btn-prenav-gmaps" onclick="openGoogleMaps()">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        Apri in Google Maps
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PLAYER ════════════ -->
+<div class="screen" id="player">
+  <div class="topbar">
+    <button class="tb-back" onclick="goDetail()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+    <div class="tb-title" id="playerTopTitle">Tappa 1</div>
+    <div class="tb-right" id="playerProgress">1 / 7</div>
+  </div>
+  <div class="player-scroll">
+    <div class="player-hero" id="playerHero">
+      <div class="player-hero-glow"></div>
+      <div id="playerEmoji" style="position:relative;z-index:1;font-size:5.5rem"></div>
+      <div class="player-hero-grad"></div>
+    </div>
+    <div class="player-card su">
+      <div class="player-tappa-tag" id="playerTag">Tappa 1 di 7 · Punto di partenza</div>
+      <div class="player-title" id="playerTitle"></div>
+      <div class="chicca" id="playerChicca"><span class="chicca-star">✦</span></div>
+      <div class="prog-wrap">
+        <div class="prog-track" id="progTrack">
+          <div class="prog-fill" id="progFill"></div>
+          <div class="prog-handle" id="progHandle" style="left:0%"></div>
+        </div>
+        <div class="prog-times"><span id="timeEl">0:00</span><span id="timeTot">3:00</span></div>
+      </div>
+      <div class="controls">
+        <button class="ctrl-speed" id="speedBtn" onclick="cycleSpeed()">1X</button>
+        <button class="ctrl" onclick="skip(-10)">
+          <svg viewBox="0 0 24 24"><path d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4z"/><path d="M4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z"/></svg>
+          <span class="ctrl-label">10 sec</span>
+        </button>
+        <button class="ctrl-play" id="playBtn" onclick="togglePlay()">
+          <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </button>
+        <button class="ctrl" onclick="skip(10)">
+          <svg viewBox="0 0 24 24"><path d="M11.934 11.2a1 1 0 010 1.6l-5.334 4A1 1 0 015 16V8a1 1 0 011.6-.8l5.334 4z"/><path d="M19.934 11.2a1 1 0 010 1.6l-5.334 4A1 1 0 0113 16V8a1 1 0 011.6-.8l5.334 4z"/></svg>
+          <span class="ctrl-label">10 sec</span>
+        </button>
+        <button class="ctrl" onclick="openNote()">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <span class="ctrl-label">Note</span>
+          <div class="note-indicator" id="noteIndicator"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Avatar Cristoforo -->
+    <div class="av-wrap su">
+      <div class="av-top">
+        <div class="av-face"><img src="https://res.cloudinary.com/dunzmrf6y/image/upload/v1781165769/Immagine_2026-06-11_101557_qeghvc.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+        <div>
+          <div class="av-name">Cristoforo</div>
+          <div class="av-role">Storico · Genova</div>
+        </div>
+      </div>
+      <div class="av-text" id="avText"></div>
+    </div>
+
+  </div>
+
+  <!-- Approfondisci — sempre visibile sopra la nav -->
+  <div style="padding:.65rem 1.25rem;background:var(--paper);border-top:.5px solid var(--mist)">
+    <button onclick="openAppro()" id="approBtn" style="width:100%;background:rgba(196,154,60,.10);border:1px solid rgba(196,154,60,.35);border-radius:12px;padding:.95rem 1rem;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:500;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:all .2s;min-height:52px">
+      <div style="display:flex;align-items:center;gap:.7rem">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>Approfondisci questa tappa</span>
+      </div>
+      <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <div class="player-nav">
+    <button class="btn-prev-p" id="btnPrev" onclick="prevT()">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Precedente
+    </button>
+    <button class="btn-next-p" id="btnNext" onclick="nextT()">
+      Prossima tappa
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ════════════ MAP ════════════ -->
+<div class="screen" id="mapscreen">
+  <div class="topbar">
+    <button class="tb-back" onclick="goHome()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+    <div class="tb-title" id="mapTbTitle">Mappa — Genova Essenziale</div>
+  </div>
+  <div id="fullMap" style="flex:1"></div>
+</div>
+
+<!-- ════════════ NAV INTER-TAPPA ════════════ -->
+<div class="screen" id="navscreen">
+  <div class="topbar">
+    <button class="tb-back" onclick="closeNavScreen()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+    <div class="tb-title" id="navScreenTitle">Prossima tappa</div>
+  </div>
+  <div class="prenav-scroll">
+    <div class="prenav-cristoforo">
+      <div class="prenav-cristoforo-row">
+        <div class="prenav-face"><img src="https://res.cloudinary.com/dunzmrf6y/image/upload/v1781165769/Immagine_2026-06-11_101557_qeghvc.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+        <div class="prenav-msg" id="navScreenMsg"></div>
+      </div>
+
+    </div>
+    <div class="prenav-map">
+      <div id="navScreenMap" style="width:100%;height:100%;min-height:280px"></div>
+      <div class="prenav-info" id="navScreenInfo">
+        <div class="prenav-gps-dot"></div>
+        <div style="flex:1">
+          <div class="prenav-dist-text" id="navScreenDistText">Calcolo percorso…</div>
+          <div class="prenav-dist-sub" id="navScreenDistSub"></div>
+        </div>
+        <div class="prenav-dest-dot"></div>
+      </div>
+    </div>
+    <div class="prenav-bottom">
+      <button class="btn-prenav-start" onclick="confirmNavNext()">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span>Sono arrivato — inizia questa tappa</span>
+      </button>
+      <button class="btn-prenav-gmaps" onclick="openGoogleMapsTo(navDestCoords)">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        Apri in Google Maps
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ COMPLETION ════════════ -->
+<div class="screen" id="completion">
+  <div class="comp-inner">
+    <div class="comp-glow-1"></div><div class="comp-glow-2"></div>
+    <div class="comp-badge">✦ Percorso completato</div>
+    <div class="comp-check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2 class="comp-title" id="compTitle"></h2>
+    <p class="comp-sub" id="compSub"></p>
+    <div class="comp-stats">
+      <div class="comp-stat"><div class="comp-stat-n" id="compStatTappe">7</div><div class="comp-stat-l">Tappe</div></div>
+      <div class="comp-stat"><div class="comp-stat-n" id="compStatKm">1,5</div><div class="comp-stat-l">km a piedi</div></div>
+      <div class="comp-stat"><div class="comp-stat-n" id="compStatMin">~50</div><div class="comp-stat-l">min audio</div></div>
+    </div>
+    <button class="btn-comp-notes" id="btnCompNotes" onclick="openAllNotes('completion')" style="display:none">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Le tue note del percorso
+    </button>
+
+    <div class="comp-price" id="compPrice">
+      <div id="compPriceBody">
+        <div class="comp-fb-label">Aiutaci a migliorare</div>
+        <div class="comp-fb-q">5 minuti di feedback, in cambio <em>un anno di itinerari premium gratis</em> quando escono.</div>
+        <div class="comp-fb-text">Le tue impressioni su questo giro ci dicono cosa tenere e cosa cambiare prima di aprire i prossimi itinerari.</div>
+        <button class="btn-fb-cta" onclick="openFeedbackForm()">
+          Lascia il tuo feedback
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="comp-divider"></div>
+    <div class="comp-next-label">Continua a esplorare</div>
+    <div class="comp-itinerari">
+      <div class="comp-itin-card" onclick="openInterestSheet('Mangia come un genovese')"><div class="comp-itin-thumb" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg')"></div><div class="comp-itin-info"><div class="comp-itin-name">Mangia come un genovese</div><div class="comp-itin-meta">Gastronomia · 10 tappe</div></div><div class="comp-itin-soon">In lavorazione</div></div>
+      <div class="comp-itin-card" onclick="openInterestSheet('Genoa e Samp: una rivalità calcistica')"><div class="comp-itin-thumb" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532956/Coliseum-Summit-News-Genova-Stadio-Luigi-Ferraris_bkfnjh.jpg')"></div><div class="comp-itin-info"><div class="comp-itin-name">Genoa e Samp: una rivalità calcistica</div><div class="comp-itin-meta">Sport · 10 tappe</div></div><div class="comp-itin-soon">In lavorazione</div></div>
+      <div class="comp-itin-card" onclick="openInterestSheet('I forti di Genova')"><div class="comp-itin-thumb" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533110/escursioni-guidate-liguria-forti-di-genova-1678546256_xcr7uj.jpg')"></div><div class="comp-itin-info"><div class="comp-itin-name">I forti di Genova</div><div class="comp-itin-meta">Natura · 10 tappe</div></div><div class="comp-itin-soon">In lavorazione</div></div>
+      <div class="comp-itin-card" onclick="openInterestSheet('La storia di De André')"><div class="comp-itin-thumb" style="background-image:url('https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533221/Fabrizio-De-Andre-1_oxljsa.jpg')"></div><div class="comp-itin-info"><div class="comp-itin-name">La storia di De André</div><div class="comp-itin-meta">De André · 10 tappe</div></div><div class="comp-itin-soon">In lavorazione</div></div>
+    </div>
+    <button class="btn-comp-share" onclick="shareApp()">
+      <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+      Condividi ZenaWalk
+    </button>
+    <button class="btn-comp-home" onclick="goHome()">Torna alla home</button>
+  </div>
+</div>
+
+<!-- ════════════ ALL NOTES ════════════ -->
+<div class="screen" id="allnotes">
+  <div class="topbar">
+    <button class="tb-back" onclick="closeAllNotes()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+    <div class="tb-title">Le tue note</div>
+  </div>
+  <div class="allnotes-scroll" id="allnotesScroll"></div>
+</div>
+
+<!-- ════════════ APPROFONDIMENTO ════════════ -->
+<div class="screen" id="appro">
+  <div class="topbar">
+    <button class="tb-back" onclick="closeAppro()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+    <div class="tb-title" id="approTopTitle">Approfondimento</div>
+  </div>
+  <div class="appro-scroll">
+    <div class="appro-hero">
+      <div class="appro-hero-img" id="approHeroImg"></div>
+      <div id="approEmoji" style="position:relative;z-index:1;font-size:4.5rem"></div>
+      <div class="appro-hero-grad"></div>
+    </div>
+    <div class="appro-card">
+      <div class="appro-tag" id="approTag"></div>
+      <div class="appro-title" id="approTitle"></div>
+      <div class="appro-section"><div class="appro-section-title">Storia</div><div class="appro-text" id="approStoria"></div></div>
+      <div class="appro-section"><div class="appro-section-title">Lo sapevi?</div><div class="appro-curiosita" id="approCuriosa"></div></div>
+      <div class="appro-section" id="approFotoSection" style="display:none"><div class="appro-foto-strip" id="approFotoStrip"></div></div>
+      <div class="appro-section" id="approLuoghiSection" style="display:none"><div class="appro-section-title">Nelle vicinanze</div><div id="approLuoghi"></div></div>
+      <div class="appro-section" id="approUrlSection" style="display:none"><div class="appro-section-title">Link utili</div><div id="approUrl"></div></div>
+      <div class="appro-section"><div class="appro-section-title">Info pratiche</div><div class="appro-info-grid" id="approInfoGrid"></div></div>
+      <div class="appro-section"><div class="appro-section-title">Consiglio di Cristoforo</div><div class="appro-consiglio" id="approConsiglio"></div></div>
+    </div>
+
+  <div class="player-nav" id="approPlayerNav">
+    <button class="btn-prev-p" id="approBtnPrev" onclick="closeAppro();prevT()">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Precedente
+    </button>
+    <button class="btn-next-p" id="approBtnNext" onclick="closeAppro();showNavModal()">
+      Prossima tappa
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  </div>
+</div>
+
+<!-- ════════════ NOTE MODAL ════════════ -->
+<div class="note-modal" id="noteModal" onclick="closeNoteModal(event)">
+  <div class="note-sheet">
+    <div class="note-sheet-handle"></div>
+    <div class="note-sheet-header">
+      <div><div class="note-sheet-title">Le tue note</div><div class="note-sheet-tappa" id="noteTappaLabel"></div></div>
+      <button class="note-close" onclick="closeNoteModal()"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <textarea class="note-textarea" id="noteTextarea" placeholder="Scrivi quello che noti, senti o vuoi ricordare di questo posto…"></textarea>
+    <div class="note-actions">
+      <button class="btn-note-delete" onclick="deleteNote()">Elimina</button>
+      <button class="btn-note-save" onclick="saveNote()">Salva nota</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toastEl"></div>
+
+<!-- Bottom sheet condiviso — cattura interesse su card "Prossimamente" (home) -->
+<div class="interest-overlay" id="interestOverlay" onclick="closeInterestSheet()"></div>
+<div class="interest-sheet" id="interestSheet">
+  <div class="interest-sheet-handle"></div>
+  <div id="interestSheetBody"></div>
+</div>
+
+<script>
+// ══════════════════════════════════════
+// DATI — Genova Essenziale
+// Fonte: zenawalk_genova_essenziale_contenuti.json
+// ══════════════════════════════════════
+
+
+// ════════════════════════════════════════
+// ZENAWALK ANALYTICS — posthog wrapper
+// ════════════════════════════════════════
+const ZW = {
+  _screen: 'home',
+  _tappa: null,
+  _audioStarted: false,
+  _sessionStart: Date.now(),
+  _audioPct: 0,
+
+  // On-site vs couch: contatori arrivi via geofence reale vs tap manuale
+  _geofenceArrivals: 0,
+  _manualArrivals: 0,
+  _geoDenied: false,
+
+  recordArrival(viaGeofence) {
+    if (viaGeofence) this._geofenceArrivals++; else this._manualArrivals++;
+    return this.onSiteRatio();
+  },
+  onSiteRatio() {
+    const total = this._geofenceArrivals + this._manualArrivals;
+    return total ? +(this._geofenceArrivals / total).toFixed(2) : null;
+  },
+  markGeoDenied() {
+    if (this._geoDenied) return;
+    this._geoDenied = true;
+    this.track('geo_permission_denied');
+  },
+
+  track(event, props = {}) {
+    if (typeof posthog === 'undefined') return;
+    posthog.capture(event, {
+      ...props,
+      screen: this._screen,
+      tappa_n: this._tappa,
+      session_min: Math.round((Date.now() - this._sessionStart) / 60000)
+    });
+  },
+
+  setScreen(name) { this._screen = name; },
+  setTappa(n) { this._tappa = n; this._audioStarted = false; this._audioPct = 0; },
+
+  // GPS ping durante percorso attivo
+  _pingInterval: null,
+  startGpsPing() {
+    if (this._pingInterval) return;
+    this._pingInterval = setInterval(() => {
+      if (!navigator.geolocation) return;
+      navigator.geolocation.getCurrentPosition(pos => {
+        this.track('position_ping', {
+          lat: +pos.coords.latitude.toFixed(5),
+          lng: +pos.coords.longitude.toFixed(5),
+          accuracy_m: Math.round(pos.coords.accuracy)
+        });
+      }, () => {}, { enableHighAccuracy: true, maximumAge: 10000 });
+    }, 30000);
+  },
+  stopGpsPing() {
+    if (this._pingInterval) { clearInterval(this._pingInterval); this._pingInterval = null; }
+  }
+};
+
+const DB = {
+  catalog: [{
+    id: 'genova-essenziale',
+    titolo: 'Genova Essenziale',
+    tema: 'La città che ha finanziato il mondo',
+    accesso: 'free',
+    prezzo: null,
+    stato: 'available',
+    durata: '50-55 min',
+    distanza: '1.5 km',
+    difficolta: 'facile',
+    img_card: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1780301227/wp9520306_bluc0r.jpg'
+  }],
+
+  itinerari: {
+    'genova-essenziale': {
+      id: 'genova-essenziale',
+      titolo: 'Genova Essenziale',
+      tema: 'La città che ha finanziato il mondo',
+      descrizione: "Hai solo un giorno a disposizione e vuoi catturare la vera anima di Genova? Questo è l'itinerario perfetto per darti un'infarinatura di base della città, toccando tutte le sue principali attrazioni in un unico percorso fluido, sicuro e divertente. Dalla brezza del Porto Antico fino allo sfarzo monumentale di Via Garibaldi, sarai guidato passo dopo passo dai racconti di Cristoforo, che trasformerà una normale passeggiata express in un viaggio memorabile. Ottimizza il tuo tempo, guarda la mappa e premi play.",
+      accesso: 'free',
+      prezzo: null,
+      stato: 'available',
+      durata: '50-55 min',
+      distanza: '1.5 km',
+      difficolta: 'facile',
+      img_hero: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1780301227/wp9520306_bluc0r.jpg',
+      partenza: {
+        nome: 'Porto Antico',
+        coords: [44.409023, 8.927546],
+        come_arrivare: 'In Metro: scendete alla fermata "San Giorgio". Usciti dalla stazione, vi troverete subito nell\'area pedonale del Porto Antico; camminate dritti verso il mare per 100 metri fino a raggiungere la struttura del Bigo. In Autobus: linee 1, 9, 32 con fermata "Piazza Caricamento"'
+      },
+      arrivo: {
+        nome: 'Via Garibaldi',
+        coords: [44.411244, 8.932470]
+      },
+      intro: {
+        avText: ['']
+      },
+      completion: {
+        titolo: 'Ora conosci i segreti di',
+        titolo_highlight: 'Genova',
+        sottotitolo: 'Hai camminato dove nascevano le banche, i palazzi, le rotte verso il mondo. Ma ogni quartiere ha la sua storia — il cibo, la musica, i forti, il porto. Scegli altri itinerari per continuare a scoprire Genova.'
+      },
+      tappe: [
+        {
+          n: 1,
+          nome: 'Porto Antico',
+          label: 'Dove il mare incontra la pietra',
+          emoji: '⚓',
+          dur: '',
+          coords: [44.409023, 8.927546],
+          img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1780862739/istockphoto-1454187584-612x612_txfzis.jpg',
+          audioUrl: 'https://res.cloudinary.com/dunzmrf6y/video/upload/v1782986325/ElevenLabs_2026-07-02T09_55_51_Marco_Ferrario_-_Conversational_pvc_sp102_s31_sb81_v3_ygp57c.mp3',
+          chicca: 'Prima del 1992 in questa zona c\'era un muro invalicabile, i genovesi non potevano camminare dove state camminando voi.',
+          storia: [
+            'Fino al 1992 questo molo era zona industriale chiusa al pubblico: capannoni, binari, petroliere. Il porto-lavoro separava fisicamente Genova dal mare. Le Colombiadi cambiano tutto: Renzo Piano ridisegna 25 ettari di porto abbandonato senza demolire nulla; conserva i magazzini storici e ci costruisce intorno l\'Acquario, il Bigo e la Biosfera.',
+            'Oggi il Porto Antico è il waterfront più frequentato d\'Italia: oltre 90 milioni di presenze in trent\'anni. D\'estate la piscina galleggiante sull\'Isola delle Chiatte è tra i posti più ambiti dai genovesi. Il Bigo che vedete è ancora l\'oggetto che meglio racconta tutto questo: una gru portuale che non carica più merci, ma solleva persone.'
+          ],
+          highlight: 'Osservate i bracci del Bigo: riproducono esattamente la forma delle antiche gru da carico delle navi mercantili. Stesso gesto, carico diverso.',
+          approfondimento: {
+            tag: 'Storia',
+            titolo: 'L\'architetto che ha riaperto la propria città',
+            storia: 'Il famoso architetto Renzo Piano nasce a Genova nel 1937. Quando negli anni Ottanta i traffici si spostano verso i nuovi scali di Genova Voltri e Genova Multedo, il porto storico della città entra in un lungo abbandono: resta un recinto di capannoni e gru che separa fisicamente Genova dal proprio mare. L\'occasione delle Colombiadi del 1992 cambia tutto: Piano, ormai architetto affermato a livello internazionale, riceve l\'incarico di ridisegnare l\'area e sceglie di non cancellare quello che trova. I Magazzini del Cotone, la Porta Siberia cinquecentesca, l\'archeologia industriale del vecchio porto restano al loro posto — intorno, nasce un linguaggio nuovo: l\'Acquario, il Bigo, la Biosfera. Tre finanziamenti in trent\'anni — Colombiadi 1992, G8 2001, Capitale Europea della Cultura 2004 — trasformano l\'area in uno degli interventi di riqualificazione urbana più riusciti d\'Europa, con oltre 90 milioni di presenze registrate. È anche l\'unico grande progetto della carriera di Piano realizzato nella città in cui è nato.',
+            lo_sapevi: [
+              'Prima dei capannoni industriali, questo molo era il regno dei camalli — la corporazione che controllava il carico e scarico delle merci nel porto di Genova da secoli. Quando i traffici si spostarono a ponente, anche loro sparirono.',
+              'Il Bigo non è un\'installazione decorativa: i suoi bracci in tensione reggono la copertura della Piazza delle Feste sottostante, che senza quella struttura non potrebbe esistere.',
+              'Il porto storico di Genova non è stato abbandonato per crisi economica: i traffici erano diventati troppo grandi per i moli storici e si erano spostati verso i nuovi scali a ponente.'
+            ],
+            foto: [
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782208923/R_1_n3xoyt.jpg', didascalia: 'Il Bigo' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782208923/porto-antico-iStock-1319960258-scaled_bdk7lw.avif', didascalia: 'Porto Antico dall\'alto' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782208923/34626_zlcthp.jpg', didascalia: 'Porto Antico dall\'alto' }
+            ],
+            luoghi_vicini: [
+              { nome: 'Acquario di Genova', tipo: 'altro', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782209280/acquario-di-genova_oawav7_hd527p.jpg', descrizione: 'Acquario più visitato d\'Europa — 6.000 esemplari, 600 specie, 61 vasche.', distanza: '80m', orari: '9:00–20:00 (estate), 9:00–19:00 (inverno)', ingresso: '€30 intero', indirizzo: 'Ponte Spinola' },
+              { nome: 'Biosfera', tipo: 'museo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782209812/genova-2012_wnpdy0.jpg', descrizione: 'Sfera in vetro e acciaio progettata da Piano per il G8 2001. Dentro: farfalle, iguane e piante tropicali.', distanza: '100m', orari: 'verificare su acquariodigenova.it', ingresso: 'A pagamento', indirizzo: 'Ponte Spinola' },
+              { nome: 'Palazzo San Giorgio', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782209813/palace-st-george-genova-italy-22949166_j70cki.webp', descrizione: 'Sede del primo banco pubblico del mondo (1408). La facciata affrescata è visibile dal molo.', distanza: '200m', orari: 'H24 esterno', ingresso: 'Gratuito', indirizzo: 'Via della Mercanzia, 2' },
+              { nome: 'Porta Siberia', tipo: 'monumento', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782209812/portasiberia_b2vkid.jpg', descrizione: 'Porta dorica del 1553, unica porta daziaria del porto storico ancora integra.', distanza: '150m', orari: 'H24 esterno', ingresso: 'Gratuito', indirizzo: 'Mura del Molo' },
+              { nome: 'Magazzini del Cotone', tipo: 'altro', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782209812/102552260-7b696fe9-b48b-4abb-a2c2-10d1b56fb95c_hz4u3a.jpg', descrizione: 'Ex magazzino portuale del Novecento, oggi con negozi, bar e cinema.', distanza: '150m', orari: 'H24 esterno', ingresso: 'Gratuito', indirizzo: 'Calata Cattaneo 15' }
+            ],
+            url: [{ label: 'Biglietti Acquario di Genova', href: 'https://acquario.genovatourismtickets.com' }],
+            info_pratiche: { orari: 'Area Porto Antico: sempre accessibile. Bigo: tutti i giorni, indicativamente 10:00-22:00 in estate e 10:00-18:00 in inverno (verificare su acquariodigenova.it)', ingresso: 'Area gratuita. Salita sul Bigo: intero €5, ridotto €4', indirizzo: 'Calata Cattaneo, Porto Antico, Genova', accessibilita: 'Area pianeggiante, completamente accessibile. Metro: San Giorgio o Darsena.' },
+            consiglio: 'Per la vista migliore del porto antico venite nel tardo pomeriggio: la luce radente sul porto rende magica questa zona.'
+          }
+        },
+        {
+          n: 2,
+          nome: 'Piazza Banchi',
+          label: 'Il salotto dei cambiavalute medievali',
+          emoji: '💰',
+          dur: '',
+          coords: [44.409336, 8.929896],
+          img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1779659189/Piazza-Banchi_h91eyn.jpg',
+          audioUrl: 'https://res.cloudinary.com/dunzmrf6y/video/upload/v1782989450/ElevenLabs_2026-07-02T10_35_15_Marco_Ferrario_-_Conversational_pvc_sp102_s31_sb81_v3_z0dcmd.mp3',
+          chicca: 'La parola \'bancarotta\' è nata qui. Letteralmente: un banco rotto a colpi d\'ascia.',
+          storia: [
+            'Piazza Banchi è stata il cuore finanziario di Genova per otto secoli. Dal 1100 i cambiavalute occupavano i portici con i loro banchi di legno: quando uno non pagava i debiti, il banco veniva rotto a colpi d\'ascia. Da quel gesto è nata la parola \'bancarotta\'.',
+            'Oggi la piazza è il crocevia tra porto e caruggi: banchetti di vinili, la Loggia della Mercanzia restaurata, e sotto la chiesa di San Pietro le stesse botteghe di ferramenta del Cinquecento — ancora aperte.'
+          ],
+          highlight: 'Osservate la chiesa di San Pietro in Banchi: è costruita sopra un basamento di botteghe commerciali ancora attive. La scalinata in pietra porta alla chiesa; le botteghe sono al livello della piazza.',
+          approfondimento: {
+            tag: 'Storia',
+            titolo: 'Otto secoli di affari in una piazza',
+            storia: 'Piazza Banchi per otto secoli è stata il luogo più rumoroso di Genova. Chi arrivava dal porto con merci o monete straniere doveva passare da qui: i cambiavalute occupavano i portici, i mercanti trattavano all\'aperto, i banditori gridavano gli ordini della Repubblica. Era una borsa a cielo aperto, senza pareti, senza orari. Il denaro che entrava in città dal mare prendeva forma qui — cambiava valuta, trovava un prezzo, stringeva accordi. Quando un cambiavalute non pagava i debiti, il suo banco di legno veniva rotto a colpi d\'ascia davanti a tutti. Da quel gesto pubblico e violento è nata la parola \'bancarotta\'. La piazza oggi è molto più silenziosa. I banchetti di vinili hanno sostituito i cambiavalute, la Loggia ospita mostre invece di contrattazioni, le botteghe sotto la chiesa vendono ferramenta invece di spezie. Ma la forma della piazza è rimasta quella medievale: uno spazio stretto, raccolto, pensato per fare affari a distanza ravvicinata.',
+            lo_sapevi: [
+              'La chiesa di San Pietro in Banchi fu costruita per adempiere a un voto pubblico della Repubblica dopo la peste del 1579-1580, che causò 28.250 morti in tre anni.',
+              'La struttura con le colonne e le arcate aperte addossata alla parete di fondo della piazza è la Loggia della Mercanzia, il posto dove il banditore pubblico leggeva gli ordini della Repubblica.',
+              'Il pavimento della piazza è in pietra di luserna, la stessa usata nei caruggi medievali. È scivolosa quando è bagnata: i genovesi lo sanno, i turisti lo scoprono.'
+            ],
+            foto: [
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769263/la-piazza-vista-dalla_mhofmz.jpg', didascalia: 'Vista Piazza' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769263/piazza-banchi-genoa-italy-jan-scene-san-pietro-church-shops-local-tourists-liguria-italy-50737125_nl5gcs.webp', didascalia: 'Vista Piazza' }
+            ],
+            luoghi_vicini: [
+              { nome: 'Chiesa di San Pietro in Banchi', tipo: 'chiesa', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769263/istockphoto-1454182292-170667a_hutpmz.jpg', descrizione: 'Unica chiesa in Italia costruita sopra botteghe commerciali attive — le stesse dal Cinquecento.', distanza: '0m', orari: 'aperture occasionali', ingresso: 'gratuito', indirizzo: 'Piazza Banchi' },
+              { nome: 'Loggia della Mercanzia', tipo: 'museo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769263/loggia_mercanzia_f47w2i.jpg', descrizione: 'Prima Borsa Merci d\'Italia (1855). L\'affresco di Pietro Sorri sulla parete di fondo è lì dal 1595.', distanza: '0m', orari: 'aperta solo per mostre ed eventi', ingresso: 'variabile', indirizzo: 'Piazza Banchi' },
+              { nome: 'Portici di Sottoripa', tipo: 'monumento', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769263/50258528557_a63fea8f87_z_iy4za3.jpg', descrizione: 'Portici medievali dal 1125, negozi e commercio quotidiano.', distanza: '50m', orari: 'H24', ingresso: 'Gratuito', indirizzo: 'Via Sottoripa' },
+              { nome: 'Friggitoria San Giorgio', tipo: 'mercato', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769263/hcmp304126_1755009_f77umy.jpg', descrizione: 'Il classico cono di fritto misto genovese — acciughe, calamari, panisse. Street food da mangiare camminando.', distanza: '50m', orari: 'tutti i giorni 11:00-21:00', ingresso: 'Gratuito', indirizzo: 'Piazza Caricamento 12r' }
+            ],
+            url: [],
+            info_pratiche: { orari: 'Piazza Banchi: accessibile H24', ingresso: 'Gratuito', indirizzo: 'Piazza Banchi, sestiere del Molo, Genova', accessibilita: 'Accessibile' },
+            consiglio: 'Le botteghe sotto la chiesa aprono la mattina; se passate in orario commerciale, entrate: sono rimaste praticamente identiche a cinquant\'anni fa.'
+          }
+        },
+        {
+          n: 3,
+          nome: 'Cattedrale di San Lorenzo',
+          label: 'La cattedrale che custodisce il Santo Graal',
+          emoji: '⛪',
+          dur: '',
+          coords: [44.407854, 8.930893],
+          img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1779659016/cattedrale_san_lorenzo_vw23fz.jpg',
+          audioUrl: 'https://res.cloudinary.com/dunzmrf6y/video/upload/v1782994803/ElevenLabs_2026-07-02T12_16_23_Marco_Ferrario_-_Conversational_pvc_sp102_s31_sb81_v3_izx5v7.mp3',
+          chicca: 'Dentro questa cattedrale c\'è quello che i genovesi hanno creduto per secoli essere il Santo Graal.',
+          storia: [
+            'La cattedrale di San Lorenzo esiste in questa forma dal 1118, quando papa Gelasio II la consacrò solennemente. Le strisce bianche e nere della facciata sono i colori della Repubblica di Genova — un codice di potere che ritrovate su tutta la città. Per secoli lo spazio davanti alla cattedrale è stato l\'unica piazza vera di Genova: qui si annunciavano le guerre, si leggevano le sentenze, si celebravano le vittorie.',
+            'Oggi è la cattedrale attiva della città, sede dell\'Arcivescovo di Genova, aperta tutto l\'anno. Sotto il cortile adiacente c\'è il Museo del Tesoro di San Lorenzo — dove sono conservati i tesori portati a Genova dalle Crociate, tra cui quello che i genovesi hanno creduto per secoli essere il Santo Graal.'
+          ],
+          highlight: 'Osservate la facciata: ha una sola torre campanaria, quella destra. Il progetto medievale ne prevedeva due gemelle ma l\'incendio del 1296 e una crisi economica hanno fermato il progetto a metà.',
+          approfondimento: {
+            tag: 'Storia',
+            titolo: 'Il Santo Graal che Napoleone ha restituito rotto',
+            storia: 'San Lorenzo non è mai stata solo una chiesa. Per secoli il suo sagrato è stato l\'unica piazza vera di Genova — in una città costruita su caruggi stretti e salite ripide, questo era l\'unico spazio aperto abbastanza largo da contenere la città intera. Qui si annunciavano le guerre, si leggevano le sentenze, si celebravano le vittorie navali. Il potere civile e quello religioso condividevano lo stesso pavimento.\n\nLe strisce bianche e nere della facciata raccontano la stessa storia in un altro linguaggio. Rivestire gli edifici con le bande bicolori era un privilegio riservato alle famiglie aristocratiche genovesi — un codice visibile a distanza, una dichiarazione di status.',
+            lo_sapevi: [
+              'La facciata è asimmetrica: il progetto medievale prevedeva due torri campanarie gemelle. L\'incendio del 1296 e una crisi economica bloccarono i lavori — fu costruita solo quella destra.',
+              'Nella facciata è nascosto un piccolo cane scolpito. La tradizione locale vuole che chi lo trova abbia fortuna.',
+              'I due leoni in marmo ai piedi della scalinata furono aggiunti nel 1840, quando la piazza fu abbassata e ampliata.'
+            ],
+            foto: [
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769681/Visita-al-Museo-del-Tesoro-di-San-Lorenzo-768x454_tl8rmd.jpg', didascalia: 'Interno Cattedrale' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769681/R_2_ythx9s.jpg', didascalia: 'Esterno Cattedrale' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782995317/pv361_hpdkta.jpg', didascalia: 'Piazza San Lorenzo' }
+            ],
+            luoghi_vicini: [
+              { nome: 'Museo del Tesoro di San Lorenzo', tipo: 'chiesa', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782770176/254784-Cathedral-Museum-Museo-Del-Tesoro-Della-Cattedrale-Di-San-Lorenzo_vn2ni2.jpg', descrizione: 'Conserva il Sacro Catino e i tesori delle Crociate, in un allestimento sotterraneo di Franco Albini del 1956.', distanza: '(sotterranei della cattedrale)', orari: 'lun-sab 9:00-12:00 / 15:00-18:00, chiuso domenica', ingresso: '€6-7', indirizzo: 'Piazza San Lorenzo' },
+              { nome: 'La bomba inesplosa di San Lorenzo', tipo: 'chiesa', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782995013/80-anni-fa-il-miracolo-della-bomba-inesplosa-in-Cattedrale_akkcoo.jpg', descrizione: 'Il proiettile inglese da una tonnellata che nel 1942 sfondò il tetto e cadde nella navata.', distanza: '0m', orari: 'Orari Cattedrale', ingresso: 'gratuito', indirizzo: 'Piazza San Lorenzo' }
+            ],
+            url: [],
+            info_pratiche: { orari: 'lun-sab 8:00-19:00, dom e festivi 13:00-19:00', ingresso: 'Gratuito', indirizzo: 'Piazza San Lorenzo, Genova', accessibilita: 'Accessibile' },
+            consiglio: 'Entrate nella cattedrale anche solo per cinque minuti: la navata destra conserva la replica della granata britannica che sfondò il tetto nel 1941 senza esplodere.'
+          }
+        },
+        {
+          n: 4,
+          nome: 'Palazzo Ducale',
+          label: 'Il palazzo dove un artigiano fece un doge',
+          emoji: '🏛️',
+          dur: '',
+          coords: [44.407130, 8.932832],
+          img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1779659147/palazzo_ducale_venj6s.jpg',
+          audioUrl: 'https://res.cloudinary.com/dunzmrf6y/video/upload/v1782995892/ElevenLabs_2026-07-02T12_36_20_Marco_Ferrario_-_Conversational_pvc_sp102_s31_sb81_v3_ztfleo.mp3',
+          chicca: 'Il primo Doge di Genova fu eletto da un artigiano che urlò il suo nome in mezzo alla folla.',
+          storia: [
+            'Il Palazzo Ducale è stato la sede del potere di Genova per cinque secoli — dal 1339, quando Simon Boccanegra fu acclamato primo Doge, fino alla caduta della Repubblica nel 1797. Il doge non fu eletto da un consiglio di nobili: fu un battiloro, un artigiano che lavorava i metalli preziosi, a urlare il suo nome tra la folla riunita in questa piazza.',
+            'Oggi il palazzo è il principale centro culturale della città: 38.000 mq di spazi aperti tutto l\'anno, mostre internazionali, e dal 2026 la Torre Grimaldina è visitabile fino al tetto con vista a 360° su Genova.'
+          ],
+          highlight: 'Alzate lo sguardo verso il corpo sud del palazzo: la torre che vedete è la Torre Grimaldina, usata come prigione dal XIV secolo fino alla Seconda Guerra Mondiale. Le celle sono ancora lì.',
+          approfondimento: {
+            tag: 'Storia',
+            titolo: 'Cinque secoli di potere in un palazzo',
+            storia: 'Per cinque secoli questo palazzo ha contenuto tutto il potere di Genova. I Dogi abitavano qui, ricevevano qui, a volte morivano qui — spesso in circostanze poco chiare. Simon Boccanegra, il primo, fu probabilmente avvelenato durante il suo terzo mandato. Non era un caso isolato: il dogato genovese era una carica logorante, contesa tra le grandi famiglie — Grimaldi, Doria, Spinola, Fieschi. Il palazzo è bruciato due volte: nel 1591 e nel 1777. Ogni volta è stato ricostruito più grande e più ricco. Quando nel 1797 Napoleone cancella la Repubblica Ligure, il palazzo perde tutto in un giorno.',
+            lo_sapevi: [
+              'La Torre Grimaldina è stata una prigione dal XIV secolo fino alla Seconda Guerra Mondiale. Sulle pareti delle celle i detenuti hanno lasciato graffiti, disegni di navi e vedute di Genova. Sono ancora lì.',
+              'I Dogi non potevano scegliere dove vivere: erano obbligati a risiedere nel palazzo per tutta la durata del mandato. Uscire senza autorizzazione era vietato.',
+              'Il palazzo ospita 365 giorni all\'anno eventi culturali, quasi tutti gratuiti — mostre, festival, incontri, concerti. Gli spazi comuni sono aperti tutti i giorni dalle 7 alle 23 senza biglietto.'
+            ],
+            foto: [
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782996182/pngtree-ducal-palace-in-genoaitaly-palazzo-genovese-neoclassical-italy-photo-image_21113358_ub8oss.jpg', didascalia: 'Palazzo Ducale da Piazza Matteotti' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782996144/R_3_p2zqlp.jpg', didascalia: 'Dentro Palazzo Ducale' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782996144/cappella-doge-veduta-verso-parete-di-fondo_dezeoe.jpg', didascalia: 'Dentro Palazzo Ducale' }
+            ],
+            luoghi_vicini: [
+              { nome: 'Torre Grimaldina e Carceri Ducali', tipo: 'monumento', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782996354/palazzo-ducale-genova-6_hcgv4f.jpg', descrizione: 'L\'antica prigione di massima sicurezza della Repubblica. Le pareti delle celle conservano ancora i graffiti incisi dai prigionieri politici nei secoli.', distanza: '50m', orari: 'visitabile sabato e domenica con visite guidate o durante eventi speciali', ingresso: 'A pagamento', indirizzo: 'Piazza Giacomo Matteotti, 9' },
+              { nome: 'Chiesa dei Santi Ambrogio e Andrea', tipo: 'chiesa', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782996666/unnamed_z4uwyw.jpg', descrizione: 'Trionfo del Barocco genovese. Custodisce due immensi capolavori di Rubens.', distanza: '50m', orari: 'mar-mer 07:00–13:00 e 16:00–19:00; gio-sab 07:00–13:00 e 16:00–19:00; dom 08:00–13:00 e 16:00–19:00; lun 16:30–19:00', ingresso: 'Gratuito', indirizzo: 'Via di Porta Soprana, 2' },
+              { nome: 'Porta Soprana', tipo: 'monumento', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782996736/unnamed_1_zovesw.jpg', descrizione: 'Le torri medievali del XII secolo, costruite dai genovesi per difendersi da Barbarossa.', distanza: '200m', orari: 'arco sempre visibile H24; torri mar-dom ca. 10:00–18:00', ingresso: 'Da verificare', indirizzo: 'Via di Porta Soprana' },
+              { nome: 'Chiostro di Sant\'Andrea', tipo: 'chiesa', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782996855/unnamed_2_ya5ixx.jpg', descrizione: 'Gioiello romanico salvato dalla demolizione e ricostruito pietra su pietra in un giardino con limoni.', distanza: '200m', orari: 'mar-ven 10:00–18:00; sab-dom 10:00–19:00 (lun chiuso)', ingresso: 'A pagamento (biglietto unico con Torri e Casa di Colombo)', indirizzo: 'Vico Dritto di Ponticello' }
+            ],
+            url: [],
+            info_pratiche: { orari: 'Spazi comuni: tutti i giorni 7:00-23:00', ingresso: 'Gratuito', indirizzo: 'Piazza Matteotti 9, Genova', accessibilita: '' },
+            consiglio: 'Se avete tempo entrate nel palazzo e salite sulla Torre Grimaldina — il percorso AT THE TOP porta fino al tetto con vista a 360° su Genova. Prenotate online: i posti sono limitati.'
+          }
+        },
+        {
+          n: 5,
+          nome: 'Piazza De Ferrari',
+          label: 'La piazza più giovane di Genova',
+          emoji: '⛲',
+          dur: '',
+          coords: [44.406940, 8.934033],
+          img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1779658944/piazza-de-ferrari-oggi_xkry08.webp',
+          audioUrl: 'https://res.cloudinary.com/dunzmrf6y/video/upload/v1782997551/ElevenLabs_2026-07-02T13_03_33_Marco_Ferrario_-_Conversational_pvc_sp102_s31_sb81_v3_ztnmm3.mp3',
+          chicca: 'La piazza più giovane di Genova — ha meno di duecento anni.',
+          storia: [
+            'Piazza De Ferrari è la piazza principale di Genova anche se è relativamente giovane, infatti ha meno di duecento anni. La piazza che vedete è nata da una serie di demolizioni tra l\'Ottocento e il Novecento: la chiesa di San Domenico abbattuta e il colle di Sant\'Andrea spianato.',
+            'Oggi è il cuore civico della città: manifestazioni, concerti, eventi pubblici. La fontana al centro — 36 tonnellate di bronzo, inaugurata nel 1936 — è il punto di riferimento di ogni genovese. Viene illuminata di colori diversi per ogni causa civica: dalle campagne di Amnesty alla Giornata Mondiale del Pesto.'
+          ],
+          highlight: 'Avvicinatevi alla vasca della fontana e cercate l\'epigrafe in bronzo sul bordo: \'Tenace affetto di Ligure / superando il destino / alla sua città donava\'.',
+          approfondimento: {
+            tag: 'Storia',
+            titolo: 'La piazza più giovane che sembra la più antica',
+            storia: 'Piazza De Ferrari non è nata da una vocazione medievale — è nata da una decisione politica. Nella seconda metà dell\'Ottocento Genova decide di darsi un centro moderno. Si demolisce la chiesa di San Domenico, si spiana il colle di Sant\'Andrea e si apre Via XX Settembre. Il processo dura quasi un secolo: i lavori cominciano negli anni Cinquanta dell\'Ottocento e si concludono nel 1936 con la collocazione della fontana. La fontana non fu pagata dal Comune né dallo Stato: Carlo Piaggio la donò alla città per onorare il desiderio testamentario del padre. Sulla vasca c\'è scritto \'tenace affetto di Ligure / superando il destino / alla sua città donava\'.',
+            lo_sapevi: [
+              'Il Palazzo della Nuova Borsa Valori — quello con la facciata curva in pietra rossa — fu inaugurato nel 1912 con tre giorni di festeggiamenti nazionali e tutte le Borse d\'Italia ferme.',
+              'Nel luglio 2001 il G8 trasformò Piazza De Ferrari in zona rossa inaccessibile per giorni. I genovesi non potevano entrare nella loro piazza principale.',
+              'La fontana viene illuminata di colori diversi per ogni causa civica: arancione per Amnesty International, rosso per la Siria, verde per la Giornata Mondiale del Pesto.'
+            ],
+            foto: [
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997631/individualnyy-tur-s-mestnym_pzljrx.jpg', didascalia: 'Vista Piazza' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997683/istockphoto-1446906090-612x612_c3gdr9.jpg', didascalia: 'Vista Palazzo Ducale' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997630/caption_tzjdxw.jpg', didascalia: 'Vista Piazza' }
+            ],
+            luoghi_vicini: [
+              { nome: 'Teatro Carlo Felice', tipo: 'altro', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997770/unnamed_3_vihoot.jpg', descrizione: 'Il teatro lirico principale della città, ricostruito mantenendo l\'antico pronao neoclassico sopravvissuto ai bombardamenti.', distanza: '50m', orari: 'stagione settembre-giugno, biglietteria lun-sab 10:00-17:00', ingresso: 'da €15', indirizzo: 'Passo Eugenio Montale 4' },
+              { nome: 'Palazzo della Nuova Borsa Valori', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997880/unnamed_4_mnlupy.jpg', descrizione: 'Uno dei massimi esempi di Liberty a Genova. Custodisce la Sala delle Grida, un immenso salone ellittico dove i broker urlavano i prezzi delle azioni.', distanza: '50m', orari: 'lun-dom 09:00-17:00', ingresso: 'Gratuito (atrio); Sala delle Grida per eventi', indirizzo: 'Via XX Settembre, 44' },
+              { nome: 'Galleria Mazzini', tipo: 'altro', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997946/unnamed_5_juuttq.jpg', descrizione: 'Elegante passaggio coperto ottocentesco ispirato ai "passages" di Parigi, con copertura in ferro e vetro.', distanza: '80m', orari: 'H24', ingresso: 'Gratuito', indirizzo: 'Galleria Giuseppe Mazzini, 8' },
+              { nome: 'Museo Accademia Ligustica di Belle Arti', tipo: 'museo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782998024/unnamed_ufn0ub.png', descrizione: 'Collezione d\'arte ligure dal Trecento al Novecento, incluso nel grande palazzo neoclassico che chiude la piazza.', distanza: '50m', orari: 'mar-ven 14:30–18:30; sab-dom 10:30–18:30 (lun chiuso)', ingresso: 'A pagamento', indirizzo: 'Largo Alessandro Pertini, 4' }
+            ],
+            url: [],
+            info_pratiche: { orari: 'Piazza: accessibile H24', ingresso: 'Gratuito', indirizzo: 'Piazza de Ferrari', accessibilita: 'Accessibile' },
+            consiglio: 'La fontana viene illuminata di sera — se passate in orario serale è molto più suggestiva che di giorno. Il momento migliore è dopo le 21:00 in estate.'
+          }
+        },
+        {
+          n: 6,
+          nome: 'Piazza Campetto',
+          label: 'La piazza dei fabbri diventata salotto',
+          emoji: '🏛️',
+          dur: '',
+          coords: [44.409050, 8.931562],
+          img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1780861869/40750335893_55a1801264_b_k7mq1g.jpg',
+          audioUrl: 'https://res.cloudinary.com/dunzmrf6y/video/upload/v1782999030/ElevenLabs_2026-07-02T13_28_45_Marco_Ferrario_-_Conversational_pvc_sp102_s31_sb81_v3_eblfxn.mp3',
+          chicca: 'Questa piazza si chiama Campetto da mille anni. Era un campo. Poi una fucina. Poi un salotto di palazzo.',
+          storia: [
+            'Piazza Campetto nel IX secolo era un campo coltivato fuori dalle mura della città. Quando nel 1155 arrivò la minaccia di Barbarossa si costruirono nuove mura e la piazza venne inglobata in città, diventando il quartiere dei fabbri: Campus Fabrorum. I vicoli intorno richiamano ancora il passato: via degli Orefici, degli Indoratori, degli Scudai.',
+            'Oggi la piazza ha ancora quella vocazione commerciale e artigianale che la caratterizza da mille anni: orologiai, gallerie d\'arte, antiquari. I nomi sono cambiati, il mestiere no. E dietro ai portoni dei palazzi — quelli che sembrano chiusi — si nascondono ancora capolavori del Seicento che quasi nessuno va a cercare.'
+          ],
+          highlight: 'Osservate la facciata di Palazzo Imperiale: gli stucchi, le cornici elaborate intorno alle finestre, i dettagli decorativi. Tutto quello che vedete fuori è solo l\'anticamera — gli affreschi di Cambiaso e del Bergamasco sono dentro, al piano nobile.',
+          approfondimento: {
+            tag: 'Storia Urbana',
+            titolo: 'La piazza dei fabbri che è diventata un museo',
+            storia: 'Piazza Campetto deve il suo nome a quello che era nel IX secolo: un campo coltivato appena fuori dalle mura. Con le mura del Barbarossa del 1155 venne inglobata nella città e per quattro secoli fu il quartiere artigianale più denso di Genova. Fabbri, orafi, indoratori, scudai. Ogni mestiere aveva il suo vicolo. Nel Cinquecento tutto cambia: le famiglie più ricche della Repubblica — gli Imperiale — cominciano a costruire qui. In pochi decenni la piazza dei fabbri diventa un salotto nobiliare. Il nome però non è mai cambiato. Per mille anni questa piazza si è sempre chiamata Campetto.',
+            lo_sapevi: [
+              'Nei palazzi che vedete intorno hanno lavorato Van Dyck, Rubens e Orazio Gentileschi. I quadri che dipinsero qui sono oggi nei musei di Washington e New York.',
+              'La fontana al centro si chiama Barchile di Ponticello — in genovese \'barch\' significa fontana. A Genova le fontane storiche hanno sempre avuto questa forma: una vasca in pietra scolpita, non un getto d\'acqua.',
+              'I vicoli che partono da questa piazza seguono lo stesso tracciato di mille anni fa — non sono mai stati allargati, raddrizzati o riprogettati.'
+            ],
+            foto: [
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782998199/unnamed_6_ddjchi.jpg', didascalia: 'Vista Piazza' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782998185/unnamed_9_jposp5.jpg', didascalia: 'Vista Piazza' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782998186/unnamed_8_pps92s.jpg', didascalia: 'Barchile di Ponticello' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782998198/unnamed_7_jkv8dt.jpg', didascalia: 'Vista Palazzo' }
+            ],
+            luoghi_vicini: [
+              { nome: 'Les Rouges Cucina & Cocktails', tipo: 'altro', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782999380/unnamed_11_ohfhay.jpg', descrizione: 'Cocktail bar al piano nobile di Palazzo Imperiale — affreschi originali del Settecento, soffitti alti dieci metri.', distanza: '0m', orari: 'lun-mar 18:00–23:00; mer-gio 18:00–00:00; ven-sab 18:00–01:00; dom 18:00–22:00', ingresso: 'Gratuito', indirizzo: 'Campetto 8a, primo piano' },
+              { nome: 'Confetteria Romanengo 1780', tipo: 'bottega', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782999452/unnamed_12_hprarf.jpg', descrizione: 'Confetteria storica dal 1780 — canditi, cioccolatini, gocce d\'infuso alla rosa. Giuseppe Verdi era cliente.', distanza: '50m', orari: 'lun 15:00-19:00, mar-sab 10:00-19:00, dom 10:00-18:00', ingresso: 'Gratuito', indirizzo: 'Via di Soziglia 74/76r' },
+              { nome: 'Macelleria Nico', tipo: 'bottega', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782999486/unnamed_13_ti9vqe.jpg', descrizione: 'Macelleria storica — il bancone in marmo di Carrara con i bassorilievi di Garibaldi e Mazzini è ancora quello originale dell\'Ottocento.', distanza: '100m', orari: 'lun-mar e gio-ven 8:30-13:00 / 16:00-19:15, mer e sab 8:30-13:00', ingresso: 'Gratuito', indirizzo: 'Via dei Macelli di Soziglia 8r' },
+              { nome: 'Palazzo Gio Vincenzo Imperiale', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782999725/Palazzo_imperiale__genova__affaccio_sul_cortile_al_primo_piano_02_qnq63s.jpg', descrizione: 'Dei Rolli UNESCO. Sale monumentali con affreschi barocchi, oggi centro culturale con cocktail bar al piano nobile.', distanza: '0m', orari: 'Rolli Days', ingresso: '', indirizzo: 'Campetto 8' },
+              { nome: 'Palazzo del Melograno', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782999822/unnamed_14_qpbeow.jpg', descrizione: 'Dei Rolli UNESCO dal 1614. Il soprannome viene dalla pianta di melograno nata spontaneamente tra i blocchi del portale — oggi c\'è un OVS al piano terra. Nell\'atrio, la statua di Ercole di Filippo Parodi.', distanza: '0m', orari: 'OVS lun-sab 9:30-20:00, dom 10:00-20:00', ingresso: 'Gratuito', indirizzo: 'Campetto 2' },
+              { nome: 'Santa Maria delle Vigne', tipo: 'chiesa', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1782999303/unnamed_10_i2akdk.jpg', descrizione: 'Una delle basiliche più antiche di Genova — origini prima dell\'anno mille. Campanile romanico e interni barocchi di sbalorditiva bellezza.', distanza: '100m', orari: 'lun-sab 08:00-19:00; dom 09:00-19:00', ingresso: 'Gratuito', indirizzo: 'Vico del Campanile delle Vigne, 5' }
+            ],
+            url: [],
+            info_pratiche: { orari: 'H24', ingresso: 'Gratuito', indirizzo: 'Piazza Campetto', accessibilita: 'Accessibile' },
+            consiglio: 'Entrate nell\'OVS al numero 2 — non per comprare qualcosa, ma per vedere la statua di Ercole di Filippo Parodi nell\'atrio. È uno dei capolavori del barocco genovese, in un negozio di abbigliamento.'
+          }
+        },
+        {
+          n: 7,
+          nome: 'Via Garibaldi',
+          label: 'La strada dei palazzi che ospitavano i re',
+          emoji: '👑',
+          dur: '',
+          coords: [44.4113, 8.9340],
+          img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1780862001/2544-rolli-palaces-via-garibaldi-3_wmlv17.jpg',
+          audioUrl: 'https://res.cloudinary.com/dunzmrf6y/video/upload/v1783000162/ElevenLabs_2026-07-02T13_47_32_Marco_Ferrario_-_Conversational_pvc_sp102_s31_sb81_v3_hzuqol.mp3',
+          chicca: 'Quando arrivava un re a Genova, la Repubblica sorteggiava chi doveva ospitarlo in questi palazzi. I proprietari non potevano rifiutare.',
+          storia: [
+            'Via Garibaldi nasce nel 1550 da un decreto del Senato: costruire una strada interamente residenziale, riservata all\'aristocrazia, senza botteghe né artigiani. Era la prima strada del genere in qualsiasi città del mondo. I palazzi furono edificati in trent\'anni dalle famiglie più ricche di Genova — i banchieri che prestavano denaro a Filippo II di Spagna.',
+            'Oggi è Patrimonio UNESCO dal 2006 e ospita tre musei in altrettanti palazzi: Palazzo Rosso, Palazzo Bianco e Palazzo Doria Tursi — quello davanti a voi, sede del Comune di Genova. Insieme formano uno dei percorsi museali più ricchi d\'Italia, con opere di Van Dyck, Caravaggio e Rubens.'
+          ],
+          highlight: 'Osservate la facciata di Palazzo Doria Tursi: è il palazzo più largo di Via Garibaldi — tre cortili sovrapposti che salgono verso il colle. Se è aperto, dal portale si intravede il primo cortile. È oggi la sede del Comune di Genova.',
+          approfondimento: {
+            tag: 'Storia',
+            titolo: 'La prima strada residenziale del mondo',
+            storia: 'Nel 1550 il Senato della Repubblica di Genova prende una decisione senza precedenti: costruire una strada interamente dedicata all\'abitazione di rappresentanza. Niente botteghe, niente artigiani, niente chiese — solo palazzi. La Strada Nuova, 225 metri di lunghezza e 7,5 metri di larghezza, è la prima via residenziale pianificata della storia urbana europea. I palazzi vengono edificati in trent\'anni dalle ventotto famiglie dell\'oligarchia genovese. Il sistema dei Rolli nasce nel 1576: un decreto del Senato obbliga i proprietari a ospitare, per sorteggio pubblico, gli ospiti di Stato. Il proprietario non poteva rifiutare. Era un sistema geniale — lo Stato non spendeva nulla per le residenze ufficiali. Il 13 luglio 2006 l\'UNESCO iscrive le Strade Nuove nel Patrimonio Mondiale. Il 2026 è il ventennale del riconoscimento. I Rolli Days riaprono i palazzi privati — i prossimi sono il 16-18 ottobre 2026.',
+            lo_sapevi: [
+              'Palazzo Doria Tursi fu costruito nel 1565 da Niccolò Grimaldi, detto \'il Monarcha\' per la sua straordinaria ricchezza. Era il privato più ricco d\'Europa. Il palazzo che costruì per sé è oggi la sede del Comune di Genova.',
+              'Due volte all\'anno i Rolli Days riaprono i palazzi privati. La sera, durante \'Palazzi in Luce\', le finestre si illuminano dall\'interno: dalla strada si vedono gli affreschi dei piani nobili senza entrare.',
+              'I sei palazzi principali di Via Garibaldi appartengono a famiglie diverse: Grimaldi, Doria, Tursi, Brignole Sale, Lomellini, Pallavicini. Nessuno di loro si parlava — erano rivali. Eppure costruirono insieme la strada più bella d\'Europa.'
+            ],
+            foto: [
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1783000252/2544-rolli-palaces-via-garibaldi-3_1_tabtu2.jpg', didascalia: 'Via Garibaldi' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1783000251/7c1e84c948110ff732893070096633b2_tza9g3.jpg', didascalia: 'Via Garibaldi' },
+              { url: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1783000238/Via-Garibaldi-Genoa-1000x1024_r3jskx.webp', didascalia: 'Via Garibaldi' }
+            ],
+            luoghi_vicini: [
+              { nome: 'Palazzo Bianco — Musei di Strada Nuova', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1783000643/unnamed_20_tutrr3.jpg', descrizione: 'Principale pinacoteca ligure — Rubens, Caravaggio, Van Dyck, Veronese. Biglietto unico con Palazzo Rosso e Tursi.', distanza: '50m', orari: 'mar-dom 10:00-19:00, chiuso lunedì', ingresso: '€9 (biglietto unico tre palazzi)', indirizzo: 'Via Garibaldi 11' },
+              { nome: 'Palazzo Rosso — Musei di Strada Nuova', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1783000393/unnamed_16_w2qtcu.jpg', descrizione: 'Van Dyck, Guercino, affreschi del Seicento ligure. Terrazza panoramica sul tetto con vista su Genova e il mare.', distanza: '50m', orari: 'tutti i giorni 10:00-19:00', ingresso: '€9 (biglietto unico tre palazzi)', indirizzo: 'Via Garibaldi 18' },
+              { nome: 'Palazzo Spinola — Galleria Nazionale', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1783000588/unnamed_19_cqzxsu.jpg', descrizione: 'Dimora aristocratica con interni originali intatti — Van Dyck, Rubens, Strozzi. Tra i musei più belli e meno affollati della città.', distanza: '50m', orari: 'mar-dom 13:30-19:00, chiuso lunedì', ingresso: '~€5', indirizzo: 'Piazza di Pellicceria 1' },
+              { nome: 'Palazzo Grimaldi della Meridiana', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1783000511/unnamed_18_vb2q0p.jpg', descrizione: 'Elegante palazzo tardo-rinascimentale, celebre per la meridiana. Sale monumentali con affreschi spettacolari.', distanza: '50m', orari: 'mer-lun 10:00–18:00 (sab-dom fino alle 19:00, mar chiuso)', ingresso: 'A pagamento per mostre', indirizzo: 'Salita di S. Francesco, 4' },
+              { nome: 'Palazzo Doria Tursi', tipo: 'palazzo', img: 'https://res.cloudinary.com/dunzmrf6y/image/upload/v1783000346/unnamed_15_w59kdx.jpg', descrizione: 'Il palazzo più maestoso della via — sede del Comune di Genova. Custodisce il violino "Il Cannone" di Paganini.', distanza: '0m', orari: 'mar-dom 10:00-19:00, chiuso lunedì', ingresso: '€9 (biglietto unico con Palazzo Rosso e Bianco)', indirizzo: 'Via Garibaldi 9' }
+            ],
+            url: [],
+            info_pratiche: { orari: 'Via Garibaldi: pedonale, accessibile H24. Musei di Strada Nuova: tutti i giorni 10:00-19:00 (lun solo Palazzo Rosso). Ultimo ingresso un\'ora prima.', ingresso: 'Via Garibaldi: gratuita. Musei di Strada Nuova: €9 intero, €7 ridotto, €5 under 18 con adulto.', indirizzo: 'Via Giuseppe Garibaldi', accessibilita: 'Via pedonale e pianeggiante. Metro: De Ferrari o Sarzano/Sant\'Agostino.' },
+            consiglio: 'Se i Rolli Days cadono durante la vostra visita prenotate subito: i palazzi privati non aprono in nessun altro momento dell\'anno e i posti si esauriscono in pochi giorni. Prenotazione gratuita su visitgenoa.it.'
+          }
+        }
+      ],
+
+      directions: [
+        { text: 'Attraversate la piazza ed entrate nei portici di Sottoripa. Proseguite dritto sotto i portici per circa 100 metri fino a sbucare in Piazza Banchi.', dist: '100 metri / 3 minuti' },
+        { text: 'Seguite la mappa attraverso i caruggi — ci sono diversi percorsi possibili e tutti valgono la pena.', dist: '300 metri / 4-5 minuti' },
+        { text: 'Seguite via san Lorenzo verso Piazza Matteotti — il Palazzo Ducale è riconoscibile dalla grande facciata che chiude la piazza.', dist: '200 metri / 3 minuti' },
+        { text: 'Uscite dal Palazzo Ducale e Piazza De Ferrari è immediatamente davanti a voi.', dist: '100 metri / 1 minuto' },
+        { text: 'Seguite la mappa verso nord attraverso i caruggi. Il percorso passa per Piazza Soziglia — vale la pena fermarsi un momento. Piazza Campetto è a pochi passi.', dist: '300 metri / 4 minuti' },
+        { text: 'Seguite la mappa verso nord. L\'uscita dai caruggi verso Via Garibaldi è netta — passerete da vicoli stretti a una strada larga e dritta.', dist: '250 metri / 4 minuti' },
+        null
+      ]
+    }
+  }
+};
+
+// ── Alias per compatibilità ──────────────────────────────────
+const _IT        = DB.itinerari['genova-essenziale'];
+const _ZW_IT_ID = _IT.id; // scope chiavi localStorage per itinerario
+
+const INTRO      = _IT.intro;
+const TAPPE      = _IT.tappe;
+const DIRECTIONS = _IT.directions;
+
+
+
+
+// ══════════════════════════════════════
+// STATO
+// ══════════════════════════════════════
+let curIdx = 0;
+let isPlaying = false;
+let speed = 1;
+let progress = 0;
+let progInterval = null;
+let fullMapInst = null;
+let detailHeroMapInst = null;
+let introAudio = null;
+let introPlaying = false;
+
+const PORTA_SOPRANA = _IT.partenza.coords; // nome storico della var, ora punta dinamicamente a partenza.coords
+const ORS_KEY = 'eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6ImRhMDdmZjEzMGM4MzQ4Nzg5MzMzZmY0YWJlZjI2NjA0IiwiaCI6Im11cm11cjY0In0=';
+
+// ══════════════════════════════════════
+// ANIMAZIONE CRISTOFORO HOME
+// ══════════════════════════════════════
+const CRIST_PARAGRAPHS = [
+  'Ciao! Sono Cristoforo, la tua guida locale a Genova. Sono nato qui, cresciuto qui — e dopo anni in giro per il mondo sono tornato qui. Perché Genova, quando la capisci davvero, non la lasci più.',
+  'Il mio lavoro è farti vedere la città vera. Quella che si nasconde dietro i portoni, sotto i vicoli, dentro i palazzi che sembrano chiusi. Ho preparato degli itinerari per accompagnarti — ognuno racconta un pezzo diverso di questa città straordinaria.',
+  'Scegli da dove vuoi cominciare.'
+];
+
+function animateCristoforo() {
+  const container = document.getElementById('cristText');
+  if (!container) return;
+
+  // Costruisce i paragrafi con le parole wrappate in span
+  container.innerHTML = CRIST_PARAGRAPHS.map((para, pi) => {
+    const words = para.split(' ').map((w, wi) =>
+      `<span class="crist-word" data-p="${pi}" data-w="${wi}">${w}</span>`
+    ).join(' ');
+    return `<p>${words}</p>`;
+  }).join('');
+
+  // Aggiunge il cursore lampeggiante alla fine
+  const cursor = document.createElement('span');
+  cursor.className = 'crist-cursor';
+  container.querySelector('p:last-child').appendChild(cursor);
+
+  // Raccoglie tutti gli span in ordine
+  const words = container.querySelectorAll('.crist-word');
+  const DELAY_START = 400;  // ms prima di iniziare
+  const DELAY_WORD = 65;    // ms per parola
+  const DELAY_PARA = 320;   // ms di pausa extra tra paragrafi
+
+  let t = DELAY_START;
+  let lastPara = -1;
+
+  words.forEach((span, i) => {
+    const pi = parseInt(span.dataset.p);
+    if (pi !== lastPara && lastPara !== -1) t += DELAY_PARA;
+    lastPara = pi;
+    setTimeout(() => span.classList.add('visible'), t);
+    t += DELAY_WORD;
+  });
+
+  // Rimuove il cursore quando finisce
+  setTimeout(() => cursor.remove(), t + 500);
+}
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+window.addEventListener('DOMContentLoaded', () => {
+  ZW.track('app_opened', { referrer: document.referrer || 'direct' });
+  animateCristoforo();
+  renderHomeCard();
+  buildDetailIntro();
+  initScrub();
+  try {
+    const savedScreen = localStorage.getItem('zw_screen');
+    const savedTappa = parseInt(localStorage.getItem('zw_tappa') || '0');
+    if (!savedScreen || savedScreen === 'home') return;
+    // Ripristina la schermata solo se l'ultima visita è entro 60 minuti.
+    // Oltre, si riparte dalla home (sessione considerata conclusa).
+    const savedTs = parseInt(localStorage.getItem('zw_ts') || '0');
+    const SESSION_MS = 60 * 60 * 1000; // 1 ora
+    if (!savedTs || (Date.now() - savedTs) > SESSION_MS) {
+      try { localStorage.removeItem('zw_screen'); localStorage.removeItem('zw_ts'); } catch (e) {}
+      return;
+    }
+    curIdx = isNaN(savedTappa) ? 0 : savedTappa;
+    switch (savedScreen) {
+      case 'player':
+        buildTracce(); renderPlayer(); switchTo('player'); break;
+      case 'detail':
+        renderDetailFields(); buildTracce(); renderDetailNotes(); switchTo('detail'); setTimeout(initDetailHeroMap, 300); break;
+      case 'navscreen':
+      case 'prenav':
+        buildTracce(); renderPlayer(); switchTo('player'); break;
+      case 'appro':
+        buildTracce(); renderPlayer(); switchTo('player'); setTimeout(() => openAppro(), 100); break;
+      case 'allnotes':
+        if (curIdx >= TAPPE.length - 1) { renderCompletion(); switchTo('completion'); updateCompNotesBtn(); }
+        else { renderDetailFields(); buildTracce(); renderDetailNotes(); switchTo('detail'); setTimeout(initDetailHeroMap, 300); }
+        break;
+      case 'completion':
+        renderCompletion(); switchTo('completion'); updateCompNotesBtn(); break;
+      case 'mapscreen':
+        switchTo('mapscreen'); setTimeout(initFullMap, 300); break;
+    }
+  } catch (e) {}
+});
+
+function renderHomeCard() {
+  const cat = DB.catalog[0];
+  if (!cat) return;
+  const nameEl = document.getElementById('hiCardName');
+  const metaEl = document.getElementById('hiCardMeta');
+  const ctaEl = document.getElementById('heroCtaText');
+  const durNum = (cat.durata || '').match(/\d+/);
+  const metaText = TAPPE.length + ' tappe · ' + (cat.distanza || '') + ' · ' + (durNum ? durNum[0] + ' min' : cat.durata || '');
+  if (nameEl) nameEl.textContent = cat.titolo;
+  if (metaEl) metaEl.textContent = metaText;
+  if (ctaEl) ctaEl.textContent = 'Inizia gratis · ' + cat.titolo;
+}
+
+function buildDetailIntro() {
+  const hasText = (INTRO.avText || []).some(p => p && p.trim());
+  const hasAudio = !!INTRO.audioUrl;
+  const wrap = document.getElementById('detailIntroWrap');
+  if (wrap) wrap.style.display = (hasText || hasAudio) ? '' : 'none';
+  const el = document.getElementById('detailIntroText');
+  if (el) el.innerHTML = hasText ? INTRO.avText.map(p => `<p>${p}</p>`).join('') : '';
+  const btn = document.getElementById('detailIntroBtn');
+  if (btn) btn.style.display = hasAudio ? 'flex' : 'none';
+  if (hasAudio) {
+    const dur = document.getElementById('detailIntroDur');
+    if (dur) dur.textContent = INTRO.dur;
+  }
+}
+
+function toggleIntroPlay() {
+  if (!INTRO.audioUrl) return;
+  const btn = document.getElementById('detailIntroBtn');
+  if (introAudio && !introAudio.paused) {
+    introAudio.pause(); introPlaying = false; btn.classList.remove('playing'); return;
+  }
+  if (!introAudio) {
+    introAudio = new Audio(INTRO.audioUrl);
+    introAudio.addEventListener('timeupdate', () => {
+      const rem = introAudio.duration - introAudio.currentTime;
+      const dur = document.getElementById('detailIntroDur');
+      if (dur && introAudio.duration) dur.textContent = fmtT(Math.round(rem));
+    });
+    introAudio.addEventListener('ended', () => { introPlaying = false; btn.classList.remove('playing'); });
+  }
+  introAudio.play().then(() => {
+    introPlaying = true; btn.classList.add('playing');
+  }).catch(() => {
+    introPlaying = false; btn.classList.remove('playing');
+    toast('Tocca di nuovo per avviare l\'audio');
+  });
+}
+
+// ══════════════════════════════════════
+// NAVIGAZIONE SCHERMATE
+// ══════════════════════════════════════
+function switchTo(id) {
+  const leaving = document.querySelector('.screen.active');
+  if (leaving && leaving.id === 'player' && id !== 'player') stopPlayerAudio();
+  if (id !== 'navscreen') stopNavScreenWatcher();
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById(id);
+  target.classList.add('active');
+  // Reset scroll: window + ogni container scrollabile della schermata aperta
+  window.scrollTo(0, 0);
+  target.querySelectorAll('[class*="-scroll"], .home-inner').forEach(el => { el.scrollTop = 0; });
+  if (target.scrollTop) target.scrollTop = 0;
+  try { localStorage.setItem('zw_screen', id); localStorage.setItem('zw_tappa', curIdx); localStorage.setItem('zw_ts', String(Date.now())); } catch (e) {}
+  if (typeof updateFeedbackWidget === 'function') updateFeedbackWidget(id);
+}
+function goHome() { switchTo('home'); stopPlayerAudio(); if (introAudio) { introAudio.pause(); introPlaying = false; } }
+function goDetail() { switchTo('detail'); }
+function renderDetailFields() {
+  const ti = document.getElementById('detailTitle');
+  if (ti) ti.innerHTML = _IT.tema;
+  const te = document.getElementById('detailTema');
+  if (te) te.textContent = _IT.descrizione || '';
+  const ro = document.getElementById('detailRoute');
+  if (ro) ro.textContent = _IT.partenza.nome + ' → ' + _IT.arrivo.nome + ' · ' + _IT.distanza.replace('km',' km').replace(/\s+/g,' ').trim();
+  const me = document.getElementById('detailMeta');
+  if (me) me.textContent = TAPPE.length + ' Tappe · ' + _IT.durata + ' · ' + _IT.difficolta.charAt(0).toUpperCase() + _IT.difficolta.slice(1);
+  const dtb = document.getElementById('detailTbTitle');
+  if (dtb) dtb.textContent = _IT.titolo;
+}
+
+function showDetail(origin) {
+  ZW.setScreen('detail');
+  ZW.track('itinerary_detail_opened', { itinerary: _IT.id, origin: origin || 'unknown' });
+  renderDetailFields();
+  buildTracce(); renderDetailNotes(); switchTo('detail'); setTimeout(initDetailHeroMap, 300);
+}
+function startFromDetail() { openPrenav(); }
+function openPlayer(i) { curIdx = i; renderPlayer(); switchTo('player'); }
+
+// ══════════════════════════════════════
+// HELPER — marker con foto circolare
+// ══════════════════════════════════════
+function makePhotoIcon(t, size) {
+  const s = size || 36;
+  const inner = t.img
+    ? `<img src="${t.img}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block">`
+    : `<div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#1A1210,#3D2A10);display:flex;align-items:center;justify-content:center;font-size:${Math.round(s*.45)}px">${t.emoji}</div>`;
+  return L.divIcon({
+    className: '',
+    html: `<div style="width:${s}px;height:${s}px;border-radius:50%;border:2.5px solid #C49A3C;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.5);position:relative">
+      ${inner}
+      <div style="position:absolute;bottom:0;right:0;width:${Math.round(s*.38)}px;height:${Math.round(s*.38)}px;background:#C49A3C;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${Math.round(s*.22)}px;font-weight:700;color:#1A1714;font-family:'DM Sans',sans-serif;border:1.5px solid #fff">${t.n}</div>
+    </div>`,
+    iconSize: [s, s],
+    iconAnchor: [s/2, s/2]
+  });
+}
+
+// ══════════════════════════════════════
+// DETAIL HERO MAP
+// ══════════════════════════════════════
+function initDetailHeroMap() {
+  if (detailHeroMapInst) { detailHeroMapInst.invalidateSize(true); return; }
+  detailHeroMapInst = L.map('detailHeroMap', { zoomControl: true, attributionControl: true, dragging: true, scrollWheelZoom: false, doubleClickZoom: true, touchZoom: true });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(detailHeroMapInst);
+  L.polyline(TAPPE.map(t => t.coords), { color: '#C49A3C', weight: 3, opacity: .8, dashArray: '7,5' }).addTo(detailHeroMapInst);
+  TAPPE.forEach((t, i) => {
+    const icon = makePhotoIcon(t, 44);
+    const popupContent = `
+      <div style="width:160px;font-family:'DM Sans',sans-serif;display:flex;flex-direction:column;gap:8px">
+        <div style="position:relative">
+          ${t.img
+            ? `<img src="${t.img}" style="width:calc(100% + 26px);height:72px;object-fit:cover;display:block;margin:-9px -13px 0;border-radius:8px 8px 0 0">`
+            : `<div style="height:56px;background:linear-gradient(135deg,#1A1210,#3D2A10);margin:-9px -13px 0;width:calc(100% + 26px);display:flex;align-items:center;justify-content:center;font-size:1.6rem;border-radius:8px 8px 0 0">${t.emoji}</div>`}
+          <button onclick="event.stopPropagation();detailHeroMapInst.closePopup()" style="position:absolute;top:4px;right:-6px;width:22px;height:22px;border-radius:50%;background:rgba(26,23,20,.7);border:none;cursor:pointer;color:rgba(244,239,228,.7);font-size:13px;display:flex;align-items:center;justify-content:center;line-height:1">×</button>
+        </div>
+        <div style="font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#C49A3C;margin-top:2px">Tappa ${t.n}</div>
+        <div style="font-size:12px;font-weight:500;color:rgba(244,239,228,.95);line-height:1.25">${t.nome}</div>
+        <button onclick="event.stopPropagation();openPlayer(${i})" style="width:100%;background:#C49A3C;color:#1A1714;border:none;border-radius:50px;padding:8px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;cursor:pointer">Ascolta →</button>
+      </div>`;
+    const marker = L.marker(t.coords, { icon }).addTo(detailHeroMapInst);
+    marker.bindPopup(popupContent, { maxWidth: 186, className: 'zw-popup', closeButton: false });
+    marker.on('popupopen', function(e) {
+      L.DomEvent.disableClickPropagation(e.popup.getElement());
+      L.DomEvent.disableScrollPropagation(e.popup.getElement());
+    });
+  });
+  const grp = L.featureGroup(TAPPE.map(t => L.marker(t.coords)));
+  detailHeroMapInst.fitBounds(grp.getBounds().pad(.12));
+  setTimeout(() => detailHeroMapInst.invalidateSize(true), 400);
+}
+
+// ══════════════════════════════════════
+// TRACCE / DETAIL
+// ══════════════════════════════════════
+function buildTracce() {
+  const g = document.getElementById('tracceGrid');
+  g.innerHTML = TAPPE.map((t, i) => `
+    <div class="traccia-card" onclick="openPlayer(${i})">
+      <div class="traccia-img">
+        ${t.img
+          ? `<img src="${t.img}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">`
+          : `<div style="position:absolute;inset:0;background:linear-gradient(135deg,#1A1210,#3D2A10);display:flex;align-items:center;justify-content:center;font-size:1.8rem">${t.emoji}</div>`}
+        <div class="traccia-num-badge">${t.n}</div>
+      </div>
+      <div class="traccia-body">
+        <div class="traccia-name">${t.nome}</div>
+        <div class="traccia-dur">${t.dur ? t.dur + " min" : ""}</div>
+      </div>
+    </div>`).join('');
+}
+
+function renderDetailNotes() {
+  const hasAny = TAPPE.some((_, i) => !!getNoteForTappa(i));
+  const box = document.getElementById('detailNotesBox');
+  if (box) box.style.display = hasAny ? 'block' : 'none';
+}
+
+// ══════════════════════════════════════
+// PLAYER
+// ══════════════════════════════════════
+function stopPlayerAudio() {
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  stopProg();
+  isPlaying = false;
+  const btn = document.getElementById('playBtn');
+  if (btn) btn.classList.remove('playing');
+  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+}
+
+// Crea l'oggetto audio per la tappa una sola volta, con i suoi listener.
+// preload='metadata' scarica solo la durata; il file completo parte al play.
+function setupAudio(t) {
+  currentAudio = new Audio();
+  currentAudio.preload = 'metadata';
+  currentAudio.src = t.audioUrl;
+  currentAudio.dataset.idx = String(curIdx);
+  currentAudio.playbackRate = speed;
+
+  let lastSaved = 0;
+  const posKey = `zw_pos_${_ZW_IT_ID}_${curIdx}`;
+
+  currentAudio.addEventListener('loadedmetadata', () => {
+    if (!currentAudio || currentAudio.dataset.idx !== String(curIdx)) return;
+    document.getElementById('timeTot').textContent = fmtT(Math.round(currentAudio.duration));
+    // Ripristina la posizione salvata (se non era a fine traccia)
+    try {
+      const saved = parseFloat(localStorage.getItem(posKey) || '0');
+      if (saved > 0 && saved < currentAudio.duration - 2) {
+        currentAudio.currentTime = saved;
+        progress = (saved / currentAudio.duration) * 100;
+        updProg(progress);
+        document.getElementById('timeEl').textContent = fmtT(Math.round(saved));
+      }
+    } catch (e) {}
+  });
+  currentAudio.addEventListener('timeupdate', () => {
+    if (!currentAudio || !currentAudio.duration) return;
+    progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+    updProg(progress);
+    document.getElementById('timeEl').textContent = fmtT(Math.round(currentAudio.currentTime));
+    document.getElementById('timeTot').textContent = fmtT(Math.round(currentAudio.duration));
+    // Salva la posizione al massimo una volta al secondo
+    const now = currentAudio.currentTime;
+    if (Math.abs(now - lastSaved) >= 1) {
+      lastSaved = now;
+      try { localStorage.setItem(posKey, String(now)); } catch (e) {}
+    }
+  });
+  currentAudio.addEventListener('ended', () => {
+    ZW.track('audio_completed', { tappa_n: curIdx + 1, nome: TAPPE[curIdx].nome });
+    isPlaying = false;
+    document.getElementById('playBtn').classList.remove('playing');
+    progress = 100; updProg(100);
+    if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+    try { localStorage.removeItem(posKey); } catch (e) {}
+  });
+}
+
+function renderPlayer() {
+  const _t = TAPPE[curIdx];
+  ZW.setScreen('player');
+  ZW.setTappa(curIdx + 1);
+  ZW.track('tappa_opened', { tappa_n: curIdx + 1, nome: _t.nome });
+  stopPlayerAudio(); progress = 0;
+  const t = TAPPE[curIdx];
+  document.getElementById('playerTopTitle').textContent = `Tappa ${t.n}`;
+  document.getElementById('playerProgress').textContent = `${t.n} / ${TAPPE.length}`;
+  const emojiEl = document.getElementById('playerEmoji');
+  const heroEl = document.getElementById('playerHero');
+  if (emojiEl) emojiEl.textContent = t.emoji;
+  if (heroEl && t.img) {
+    heroEl.style.backgroundImage = 'url('+t.img+')';
+    heroEl.style.backgroundSize = 'cover';
+    heroEl.style.backgroundPosition = 'center';
+    if (emojiEl) emojiEl.style.display = 'none';
+  } else if (heroEl) {
+    heroEl.style.backgroundImage = 'none';
+    if (emojiEl) emojiEl.style.display = 'block';
+  }
+  document.getElementById('playerTag').textContent = `Tappa ${t.n} di ${TAPPE.length} · ${t.label}`;
+  document.getElementById('playerTitle').textContent = t.nome;
+  document.getElementById('playerChicca').innerHTML = `<span class="chicca-star">✦</span> ${t.chicca}`;
+  document.getElementById('timeTot').textContent = '--:--';
+  document.getElementById('timeEl').textContent = '0:00';
+  document.getElementById('playBtn').classList.remove('playing');
+  updProg(0);
+
+  // Prepara l'oggetto audio una sola volta (metadata), riusato al play
+  if (t.audioUrl) setupAudio(t);
+
+  const paras = t.storia.map(p => `<p>${p}</p>`).join('');
+  document.getElementById('avText').innerHTML = paras + `<div style="display:flex;gap:.6rem;background:rgba(196,154,60,.08);border-left:2.5px solid var(--gold);border-radius:0 8px 8px 0;padding:.65rem .85rem;margin-top:.85rem;font-size:.8rem;color:rgba(244,239,228,.6);line-height:1.7">👁 ${t.highlight}</div>`;
+
+  document.getElementById('btnPrev').disabled = curIdx === 0;
+  const btnN = document.getElementById('btnNext');
+  const isLast = curIdx >= TAPPE.length - 1;
+  const svgArrow = `<svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--paper);fill:none;stroke-width:2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+  if (!isLast) {
+    btnN.innerHTML = `Prossima tappa ${svgArrow}`;
+    btnN.onclick = showNavModal;
+  } else {
+    btnN.innerHTML = `Fine percorso 🎉`;
+    btnN.onclick = nextT;
+  }
+  // mirror nel nav appro — sempre identico al player
+  const approBtnNext = document.getElementById('approBtnNext');
+  const approBtnPrev = document.getElementById('approBtnPrev');
+  if (approBtnNext) {
+    approBtnNext.innerHTML = !isLast
+      ? `Prossima tappa ${svgArrow}`
+      : `Fine percorso 🎉`;
+    approBtnNext.onclick = !isLast
+      ? () => { closeAppro(); showNavModal(); }
+      : () => { closeAppro(); nextT(); };
+  }
+  if (approBtnPrev) approBtnPrev.style.visibility = curIdx === 0 ? 'hidden' : '';
+
+  // Mostra/nasconde bottone approfondimento
+  const approBtn = document.getElementById('approBtn');
+  if (approBtn) approBtn.style.display = t.approfondimento ? 'flex' : 'none';
+
+  updateNoteIndicator();
+  updateMediaSession();
+}
+
+let currentAudio = null;
+
+function togglePlay() {
+  if (!ZW._audioStarted && !isPlaying) {
+    ZW._audioStarted = true;
+    ZW.track('audio_play', { tappa_n: curIdx + 1, nome: TAPPE[curIdx].nome });
+  }
+  const t = TAPPE[curIdx];
+  const btn = document.getElementById('playBtn');
+
+  if (t.audioUrl) {
+    // L'audio è già pronto da setupAudio(). Ricrealo solo se assente o di un'altra tappa.
+    if (!currentAudio || currentAudio.dataset.idx !== String(curIdx)) {
+      if (currentAudio) currentAudio.pause();
+      setupAudio(t);
+    }
+    if (currentAudio.paused) {
+      const target = currentAudio;
+      target.play().then(() => {
+        if (target !== currentAudio) return;
+        isPlaying = true;
+        btn.classList.add('playing');
+        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
+      }).catch(() => {
+        if (target !== currentAudio) return;
+        isPlaying = false;
+        btn.classList.remove('playing');
+        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+        toast('Tocca di nuovo per avviare l\'audio');
+      });
+    } else {
+      currentAudio.pause();
+      isPlaying = false;
+      btn.classList.remove('playing');
+      if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+    }
+  } else {
+    // Timer simulato (nessun audio)
+    isPlaying = !isPlaying;
+    isPlaying ? btn.classList.add('playing') : btn.classList.remove('playing');
+    isPlaying ? startProg() : stopProg();
+    updateMediaSessionState();
+  }
+}
+
+function startProg() {
+  stopProg();
+  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
+  const total = parseDur(TAPPE[curIdx].dur);
+  progInterval = setInterval(() => {
+    progress += (speed / total) * 100;
+    if (progress >= 100) {
+      progress = 100; stopProg();
+      isPlaying = false;
+      document.getElementById('playBtn').classList.remove('playing');
+      if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+    }
+    updProg(progress);
+    document.getElementById('timeEl').textContent = fmtT(Math.round((progress / 100) * total));
+  }, 1000);
+}
+
+function stopProg() {
+  if (progInterval) { clearInterval(progInterval); progInterval = null; }
+  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+}
+
+function updProg(pct) {
+  const fill = document.getElementById('progFill');
+  const handle = document.getElementById('progHandle');
+  if (fill) fill.style.width = pct + '%';
+  if (handle) handle.style.left = pct + '%';
+}
+
+// Scrub con drag: pointer events coprono mouse e touch.
+// L'area tattile è 44px (::before sulla traccia), la barra visibile resta sottile.
+let scrubbing = false;
+
+function scrubFromX(clientX) {
+  const track = document.getElementById('progTrack');
+  const r = track.getBoundingClientRect();
+  progress = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
+  updProg(progress);
+  if (currentAudio && TAPPE[curIdx].audioUrl && currentAudio.duration) {
+    currentAudio.currentTime = (progress / 100) * currentAudio.duration;
+  } else {
+    document.getElementById('timeEl').textContent = fmtT(Math.round((progress / 100) * parseDur(TAPPE[curIdx].dur)));
+  }
+}
+
+function initScrub() {
+  const track = document.getElementById('progTrack');
+  if (!track || track.dataset.bound) return;
+  track.dataset.bound = '1';
+
+  track.addEventListener('pointerdown', e => {
+    scrubbing = true;
+    track.classList.add('dragging');
+    track.setPointerCapture(e.pointerId);
+    scrubFromX(e.clientX);
+  });
+  track.addEventListener('pointermove', e => {
+    if (!scrubbing) return;
+    scrubFromX(e.clientX);
+  });
+  const end = () => { scrubbing = false; track.classList.remove('dragging'); };
+  track.addEventListener('pointerup', end);
+  track.addEventListener('pointercancel', end);
+}
+
+function skip(s) {
+  if (currentAudio && TAPPE[curIdx].audioUrl) {
+    currentAudio.currentTime = Math.max(0, Math.min(currentAudio.duration || 0, currentAudio.currentTime + s));
+    return;
+  }
+  const total = parseDur(TAPPE[curIdx].dur);
+  progress = Math.max(0, Math.min(100, progress + (s / total) * 100));
+  updProg(progress);
+  document.getElementById('timeEl').textContent = fmtT(Math.round((progress / 100) * total));
+}
+
+function cycleSpeed() {
+  const sp = [1, 1.5, 2, 0.75];
+  speed = sp[(sp.indexOf(speed) + 1) % sp.length];
+  document.getElementById('speedBtn').textContent = speed + 'X';
+  if (currentAudio) currentAudio.playbackRate = speed;
+  else if (isPlaying) { stopProg(); startProg(); }
+}
+
+function prevT() { if (curIdx > 0) { curIdx--; renderPlayer(); } }
+function nextT() {
+  if (curIdx < TAPPE.length - 1) { curIdx++; renderPlayer(); }
+  else { renderCompletion(); switchTo('completion'); updateCompNotesBtn(); try { localStorage.setItem('zw_screen', 'completion'); localStorage.setItem('zw_ts', String(Date.now())); } catch (e) {} }
+}
+
+function parseDur(s) {
+  if (!s || !s.includes(':')) return 180;
+  const p = s.split(':');
+  const v = parseInt(p[0]) * 60 + parseInt(p[1]);
+  return isNaN(v) ? 180 : v;
+}
+function fmtT(s) { return Math.floor(s / 60) + ':' + (s % 60 < 10 ? '0' : '') + s % 60; }
+
+// ══════════════════════════════════════
+// MEDIA SESSION
+// ══════════════════════════════════════
+function updateMediaSession() {
+  if (!('mediaSession' in navigator)) return;
+  const t = TAPPE[curIdx];
+  navigator.mediaSession.metadata = new MediaMetadata({ title: t.nome, artist: 'Cristoforo · ZenaWalk', album: _IT.titolo, artwork: t.img ? [{ src: t.img, sizes: '512x512', type: 'image/jpeg' }] : [{ src: 'https://via.placeholder.com/512/1A1714/C49A3C?text=ZW', sizes: '512x512', type: 'image/png' }] });
+  navigator.mediaSession.setActionHandler('play', () => { if (!isPlaying) togglePlay(); });
+  navigator.mediaSession.setActionHandler('pause', () => { if (isPlaying) togglePlay(); });
+  navigator.mediaSession.setActionHandler('previoustrack', () => { if (curIdx > 0) { curIdx--; renderPlayer(); switchTo('player'); } });
+  navigator.mediaSession.setActionHandler('nexttrack', () => { if (curIdx < TAPPE.length - 1) showNavModal(); });
+  navigator.mediaSession.setActionHandler('seekbackward', () => skip(-10));
+  navigator.mediaSession.setActionHandler('seekforward', () => skip(10));
+}
+function updateMediaSessionState() {
+  if (!('mediaSession' in navigator)) return;
+  navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
+}
+
+// ══════════════════════════════════════
+// PRE-NAV
+// ══════════════════════════════════════
+let prenavMap = null, prenavWatcher = null, prenavUserMarker = null, prenavRouteLine = null, prenavLastPos = null;
+
+function openPrenav() {
+  ZW.setScreen('prenav');
+  ZW.track('prenav_started', { itinerary: _IT.id });
+  if (prenavMap) { prenavMap.remove(); prenavMap = null; }
+  prenavUserMarker = null; prenavRouteLine = null; prenavLastPos = null;
+  prenavArrived = false;
+  const pb = document.querySelector('#prenav .btn-prenav-start');
+  if (pb) { pb.classList.remove('arrived'); const sp = pb.querySelector('span'); if (sp) sp.textContent = 'Sono arrivato — inizia il percorso'; }
+  const pi = document.getElementById('prenavInfo');
+  if (pi) pi.classList.remove('arrived');
+  stopPrenavWatcher();
+  const msgEl = document.getElementById('prenavMsg');
+  if (msgEl) msgEl.innerHTML = 'Prima di iniziare devi raggiungere <strong>' + _IT.partenza.nome + '</strong>. È lì che cominciamo.';
+  document.getElementById('prenavDistText').textContent = 'Rilevamento posizione…';
+  document.getElementById('prenavDistSub').textContent = 'a piedi fino a ' + _IT.partenza.nome;
+  if (navigator.geolocation) {
+    prenavWatcher = navigator.geolocation.watchPosition(
+      pos => onPrenavPosition(pos),
+      () => { ZW.markGeoDenied(); document.getElementById('prenavDistText').textContent = 'Posizione non disponibile'; document.getElementById('prenavDistSub').textContent = 'Raggiungi ' + _IT.partenza.nome + ' manualmente'; },
+      { enableHighAccuracy: true, maximumAge: 3000, timeout: 15000 }
+    );
+  }
+  switchTo('prenav');
+  requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(initPrenavMap, 300)));
+}
+
+function closePrenav() {
+  ZW.track('prenav_abandoned');
+  stopPrenavWatcher(); switchTo('detail');
+}
+function confirmArrival() {
+  const ratio = ZW.recordArrival(prenavArrived);
+  ZW.track('navscreen_arrived', { tappa_a: curIdx + 1, arrival_method: prenavArrived ? 'geofence' : 'manual', on_site_ratio: ratio });
+  stopPrenavWatcher(); curIdx = 0; openPlayer(0);
+}
+function openGoogleMaps() { window.open(`https://www.google.com/maps/dir/?api=1&destination=${PORTA_SOPRANA[0]},${PORTA_SOPRANA[1]}&travelmode=walking`, '_blank'); }
+function stopPrenavWatcher() { if (prenavWatcher !== null) { navigator.geolocation.clearWatch(prenavWatcher); prenavWatcher = null; } }
+
+function initPrenavMap() {
+  const container = document.getElementById('prenavMap');
+  if (!container) return;
+  if (prenavMap) { prenavMap.remove(); prenavMap = null; }
+  prenavMap = L.map(container, { zoomControl: false, attributionControl: true, dragging: true, scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(prenavMap);
+  const destIcon = makePhotoIcon(TAPPE[0], 44);
+  L.marker(PORTA_SOPRANA, { icon: destIcon }).addTo(prenavMap).bindPopup('<b>' + _IT.partenza.nome + '</b><br>Partenza del percorso');
+  prenavMap.setView(PORTA_SOPRANA, 15);
+  setTimeout(() => { if (prenavMap) prenavMap.invalidateSize(true); }, 200);
+  setTimeout(() => { if (prenavMap) prenavMap.invalidateSize(true); }, 600);
+  setTimeout(() => { if (prenavMap) prenavMap.invalidateSize(true); }, 1000);
+  if (!navigator.geolocation) { document.getElementById('prenavDistText').textContent = 'GPS non disponibile'; document.getElementById('prenavDistSub').textContent = 'Raggiungi Porta Soprana manualmente'; }
+}
+
+function onPrenavPosition(pos) {
+  const userLat = pos.coords.latitude, userLng = pos.coords.longitude;
+  const userIcon = L.divIcon({ className: '', html: `<div style="width:18px;height:18px;border-radius:50%;background:#4A9EFF;border:3px solid #fff;box-shadow:0 2px 8px rgba(74,158,255,.5)"></div>`, iconSize: [18, 18], iconAnchor: [9, 9] });
+  if (prenavUserMarker) prenavUserMarker.setLatLng([userLat, userLng]);
+  else prenavUserMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(prenavMap);
+  // Geofence: sei arrivato a Porta Soprana?
+  if (isWithinGeofence(userLat, userLng, PORTA_SOPRANA)) markPrenavArrived();
+  const moved = !prenavLastPos || haversine(prenavLastPos, [userLat, userLng]) > 15;
+  prenavLastPos = [userLat, userLng];
+  if (moved && !prenavArrived) fetchPrenavRoute(userLat, userLng);
+}
+
+function fetchPrenavRoute(fromLat, fromLng) {
+  fetch(`https://api.openrouteservice.org/v2/directions/foot-walking?api_key=${ORS_KEY}&start=${fromLng},${fromLat}&end=${PORTA_SOPRANA[1]},${PORTA_SOPRANA[0]}`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.features || !data.features[0]) { fallbackPrenavLine(fromLat, fromLng); return; }
+      const seg = data.features[0].properties.segments[0];
+      const distM = Math.round(seg.distance), timeMin = Math.round(seg.duration / 60);
+      const coords = data.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
+      const distLabel = distM < 1000 ? `${distM} m` : `${(distM/1000).toFixed(1)} km`;
+      document.getElementById('prenavDistText').textContent = `${distLabel} · ~${timeMin} min a piedi`;
+      document.getElementById('prenavDistSub').textContent = 'fino a ' + _IT.partenza.nome;
+      if (prenavRouteLine) prenavMap.removeLayer(prenavRouteLine);
+      prenavRouteLine = L.polyline(coords, { color: '#C49A3C', weight: 4, opacity: .9 }).addTo(prenavMap);
+      prenavMap.fitBounds(L.featureGroup([L.marker([fromLat, fromLng]), L.marker(PORTA_SOPRANA)]).getBounds().pad(.2));
+      setTimeout(() => prenavMap.invalidateSize(true), 200);
+    })
+    .catch(() => fallbackPrenavLine(fromLat, fromLng));
+}
+
+function fallbackPrenavLine(fromLat, fromLng) {
+  if (prenavRouteLine) prenavMap.removeLayer(prenavRouteLine);
+  prenavRouteLine = L.polyline([[fromLat, fromLng], PORTA_SOPRANA], { color: '#C49A3C', weight: 3, opacity: .7, dashArray: '8,5' }).addTo(prenavMap);
+  prenavMap.fitBounds(L.featureGroup([L.marker([fromLat, fromLng]), L.marker(PORTA_SOPRANA)]).getBounds().pad(.2));
+  document.getElementById('prenavDistText').textContent = `${Math.round(haversine([fromLat, fromLng], PORTA_SOPRANA))} m (linea retta)`;
+}
+
+function haversine(a, b) {
+  const R = 6371000, dLat = (b[0]-a[0])*Math.PI/180, dLng = (b[1]-a[1])*Math.PI/180;
+  const x = Math.sin(dLat/2)**2 + Math.cos(a[0]*Math.PI/180)*Math.cos(b[0]*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1-x));
+}
+
+// ══════════════════════════════════════
+// GEOFENCE — rilevamento arrivo
+// ══════════════════════════════════════
+const GEOFENCE_RADIUS = 25; // metri
+let prenavArrived = false, navArrived = false;
+
+// Restituisce true se l'utente è entro il raggio della destinazione
+function isWithinGeofence(userLat, userLng, dest) {
+  return haversine([userLat, userLng], dest) <= GEOFENCE_RADIUS;
+}
+
+// Segnale di arrivo: vibrazione una sola volta
+function signalArrival() {
+  if (navigator.vibrate) { try { navigator.vibrate([60, 40, 60]); } catch (e) {} }
+}
+
+function markPrenavArrived() {
+  ZW.track('prenav_arrived');
+  ZW.startGpsPing();
+  if (prenavArrived) return;
+  prenavArrived = true;
+  signalArrival();
+  const btn = document.querySelector('#prenav .btn-prenav-start');
+  if (btn) { btn.classList.add('arrived'); const sp = btn.querySelector('span'); if (sp) sp.textContent = 'Sei arrivato — inizia il percorso'; }
+  const info = document.getElementById('prenavInfo');
+  if (info) info.classList.add('arrived');
+  const dt = document.getElementById('prenavDistText');
+  if (dt) dt.textContent = 'Sei a ' + _IT.partenza.nome + ' ✦';
+  const ds = document.getElementById('prenavDistSub');
+  if (ds) ds.textContent = 'Tocca per iniziare con Cristoforo';
+}
+
+function markNavArrived(nextName) {
+  if (navArrived) return;
+  navArrived = true;
+  signalArrival();
+  const btn = document.querySelector('#navscreen .btn-prenav-start');
+  if (btn) btn.classList.add('arrived');
+  const info = document.getElementById('navScreenInfo');
+  if (info) info.classList.add('arrived');
+  const dt = document.getElementById('navScreenDistText');
+  if (dt) dt.textContent = `Sei arrivato a ${nextName} ✦`;
+  const ds = document.getElementById('navScreenDistSub');
+  if (ds) ds.textContent = 'Tocca per continuare';
+}
+
+// ══════════════════════════════════════
+// NAV INTER-TAPPA (navscreen)
+// ══════════════════════════════════════
+let navScreenMap = null, navScreenWatcher = null, navScreenUserMarker = null, navScreenRouteLine = null, navScreenLastPos = null, navDestCoords = null;
+
+function showNavModal() {
+  ZW.setScreen('navscreen');
+  ZW.track('navscreen_opened', { tappa_da: curIdx + 1, tappa_a: curIdx + 2 });
+  if (curIdx >= TAPPE.length - 1) { nextT(); return; }
+  const next = TAPPE[curIdx + 1];
+  navDestCoords = next.coords;
+  navArrived = false;
+  const nb = document.querySelector('#navscreen .btn-prenav-start');
+  if (nb) nb.classList.remove('arrived');
+  const ni = document.getElementById('navScreenInfo');
+  if (ni) ni.classList.remove('arrived');
+  document.getElementById('navScreenTitle').textContent = next.nome;
+  const dir = DIRECTIONS[curIdx];
+  document.getElementById('navScreenMsg').innerHTML = `Prossima tappa: <strong>${next.nome}</strong>. ${dir ? dir.text : 'Raggiungi la tappa successiva.'}`;
+  document.getElementById('navScreenDistSub').textContent = `fino a ${next.nome}`;
+  document.getElementById('navScreenDistText').textContent = 'Rilevamento posizione…';
+  stopNavScreenWatcher();
+  if (navigator.geolocation) {
+    navScreenWatcher = navigator.geolocation.watchPosition(
+      pos => onNavScreenPosition(pos),
+      () => { ZW.markGeoDenied(); document.getElementById('navScreenDistText').textContent = 'Posizione non disponibile'; if (navScreenMap) navScreenFallbackFromTappa(); },
+      { enableHighAccuracy: true, maximumAge: 3000, timeout: 15000 }
+    );
+  }
+  switchTo('navscreen');
+  requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(initNavScreenMap, 300)));
+}
+
+function closeNavScreen() { stopNavScreenWatcher(); switchTo('player'); }
+function confirmNavNext() {
+  const ratio = ZW.recordArrival(navArrived);
+  ZW.track('tappa_transition', { tappa_da: curIdx + 1, tappa_a: curIdx + 2, arrival_method: navArrived ? 'geofence' : 'manual', on_site_ratio: ratio });
+  stopNavScreenWatcher();
+  if (curIdx < TAPPE.length - 1) { curIdx++; renderPlayer(); switchTo('player'); }
+  else { renderCompletion(); switchTo('completion'); updateCompNotesBtn(); try { localStorage.setItem('zw_screen', 'completion'); localStorage.setItem('zw_ts', String(Date.now())); } catch (e) {} }
+}
+function openGoogleMapsTo(coords) { if (!coords) return; window.open(`https://www.google.com/maps/dir/?api=1&destination=${coords[0]},${coords[1]}&travelmode=walking`, '_blank'); }
+function stopNavScreenWatcher() { if (navScreenWatcher !== null) { navigator.geolocation.clearWatch(navScreenWatcher); navScreenWatcher = null; } }
+
+function initNavScreenMap() {
+  if (navScreenMap) { navScreenMap.remove(); navScreenMap = null; }
+  navScreenUserMarker = null; navScreenRouteLine = null; navScreenLastPos = null;
+  const container = document.getElementById('navScreenMap');
+  if (!container) return;
+  navScreenMap = L.map(container, { zoomControl: false, attributionControl: true, dragging: true, scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(navScreenMap);
+  const next = TAPPE[curIdx + 1];
+  if (!next) return;
+  const destIcon = makePhotoIcon(next, 40);
+  L.marker(next.coords, { icon: destIcon }).addTo(navScreenMap).bindPopup(`<b>${next.nome}</b>`);
+  navScreenMap.setView(next.coords, 15);
+  setTimeout(() => { if (navScreenMap) navScreenMap.invalidateSize(true); }, 200);
+  setTimeout(() => { if (navScreenMap) navScreenMap.invalidateSize(true); }, 600);
+  setTimeout(() => { if (navScreenMap) navScreenMap.invalidateSize(true); }, 1000);
+  if (!navigator.geolocation) { document.getElementById('navScreenDistText').textContent = 'GPS non disponibile'; navScreenFallbackFromTappa(); }
+}
+
+function onNavScreenPosition(pos) {
+  const userLat = pos.coords.latitude, userLng = pos.coords.longitude;
+  const userIcon = L.divIcon({ className: '', html: `<div style="width:18px;height:18px;border-radius:50%;background:#4A9EFF;border:3px solid #fff;box-shadow:0 2px 8px rgba(74,158,255,.5)"></div>`, iconSize: [18, 18], iconAnchor: [9, 9] });
+  if (navScreenUserMarker) navScreenUserMarker.setLatLng([userLat, userLng]);
+  else navScreenUserMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(navScreenMap);
+  // Geofence: sei arrivato alla prossima tappa?
+  if (navDestCoords && isWithinGeofence(userLat, userLng, navDestCoords)) {
+    markNavArrived(TAPPE[curIdx + 1] ? TAPPE[curIdx + 1].nome : 'destinazione');
+  }
+  const moved = !navScreenLastPos || haversine(navScreenLastPos, [userLat, userLng]) > 15;
+  navScreenLastPos = [userLat, userLng];
+  if (moved && !navArrived) fetchNavScreenRoute(userLat, userLng);
+}
+
+function fetchNavScreenRoute(fromLat, fromLng) {
+  const dest = TAPPE[curIdx + 1].coords;
+  fetch(`https://api.openrouteservice.org/v2/directions/foot-walking?api_key=${ORS_KEY}&start=${fromLng},${fromLat}&end=${dest[1]},${dest[0]}`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.features || !data.features[0]) { navScreenFallbackLine(fromLat, fromLng); return; }
+      const seg = data.features[0].properties.segments[0];
+      const distM = Math.round(seg.distance), timeMin = Math.round(seg.duration / 60);
+      const coords = data.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
+      document.getElementById('navScreenDistText').textContent = `${distM < 1000 ? distM + ' m' : (distM/1000).toFixed(1) + ' km'} · ~${timeMin} min a piedi`;
+      if (navScreenRouteLine) navScreenMap.removeLayer(navScreenRouteLine);
+      navScreenRouteLine = L.polyline(coords, { color: '#C49A3C', weight: 4, opacity: .9 }).addTo(navScreenMap);
+      navScreenMap.fitBounds(L.featureGroup([L.marker([fromLat, fromLng]), L.marker(dest)]).getBounds().pad(.2));
+      setTimeout(() => navScreenMap.invalidateSize(true), 200);
+    })
+    .catch(() => navScreenFallbackLine(fromLat, fromLng));
+}
+
+function navScreenFallbackLine(fromLat, fromLng) {
+  const dest = TAPPE[curIdx + 1].coords;
+  if (navScreenRouteLine) navScreenMap.removeLayer(navScreenRouteLine);
+  navScreenRouteLine = L.polyline([[fromLat, fromLng], dest], { color: '#C49A3C', weight: 3, opacity: .7, dashArray: '8,5' }).addTo(navScreenMap);
+  navScreenMap.fitBounds(L.featureGroup([L.marker([fromLat, fromLng]), L.marker(dest)]).getBounds().pad(.2));
+  document.getElementById('navScreenDistText').textContent = `${Math.round(haversine([fromLat, fromLng], dest))} m (linea retta)`;
+}
+
+function navScreenFallbackFromTappa() {
+  const from = TAPPE[curIdx].coords, dest = TAPPE[curIdx + 1].coords;
+  fetch(`https://api.openrouteservice.org/v2/directions/foot-walking?api_key=${ORS_KEY}&start=${from[1]},${from[0]}&end=${dest[1]},${dest[0]}`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.features || !data.features[0]) { navScreenFallbackLine(from[0], from[1]); return; }
+      const coords = data.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
+      const seg = data.features[0].properties.segments[0];
+      document.getElementById('navScreenDistText').textContent = `${Math.round(seg.distance)} m · ~${Math.round(seg.duration/60)} min a piedi`;
+      if (navScreenRouteLine) navScreenMap.removeLayer(navScreenRouteLine);
+      navScreenRouteLine = L.polyline(coords, { color: '#C49A3C', weight: 4, opacity: .9 }).addTo(navScreenMap);
+      navScreenMap.fitBounds(L.featureGroup([L.marker(from), L.marker(dest)]).getBounds().pad(.2));
+      setTimeout(() => navScreenMap.invalidateSize(true), 200);
+    })
+    .catch(() => navScreenFallbackLine(from[0], from[1]));
+}
+
+// ══════════════════════════════════════
+// MAPPA COMPLETA
+// ══════════════════════════════════════
+function showMapScreen() { document.getElementById('mapTbTitle').textContent = 'Mappa — ' + _IT.titolo; switchTo('mapscreen'); setTimeout(initFullMap, 300); }
+
+function initFullMap() {
+  if (fullMapInst) { fullMapInst.invalidateSize(true); return; }
+  fullMapInst = L.map('fullMap', { zoomControl: true, attributionControl: true });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(fullMapInst);
+  L.polyline(TAPPE.map(t => t.coords), { color: '#C49A3C', weight: 3, opacity: .8, dashArray: '7,5' }).addTo(fullMapInst);
+  TAPPE.forEach((t, i) => {
+    const icon = makePhotoIcon(t, 40);
+    L.marker(t.coords, { icon }).addTo(fullMapInst).bindPopup(`<b>${t.nome}</b>`).on('click', () => openPlayer(i));
+  });
+  const grp = L.featureGroup(TAPPE.map(t => L.marker(t.coords)));
+  fullMapInst.fitBounds(grp.getBounds().pad(.15));
+  setTimeout(() => fullMapInst.invalidateSize(true), 400);
+}
+
+// ══════════════════════════════════════
+// APPROFONDIMENTO
+// ══════════════════════════════════════
+function openAppro() {
+  ZW.setScreen('appro');
+  ZW.track('approfondimento_opened', { tappa_n: curIdx + 1, nome: TAPPE[curIdx].nome });
+  const approViewIdx = curIdx;
+
+  const t = TAPPE[approViewIdx];
+  const a = t.approfondimento;
+  if (!a) return;
+  document.getElementById('approTopTitle').textContent = t.nome;
+  document.getElementById('approTag').textContent = `Tappa ${t.n} · ${t.label}`;
+  document.getElementById('approTitle').textContent = t.nome;
+  document.getElementById('approStoria').textContent = a.storia;
+  const heroImg = document.getElementById('approHeroImg');
+  const approEmoji = document.getElementById('approEmoji');
+  if (t.img) { heroImg.style.backgroundImage = 'url('+t.img+')'; approEmoji.style.display = 'none'; }
+  else { heroImg.style.backgroundImage = ''; approEmoji.textContent = t.emoji; approEmoji.style.display = 'block'; }
+  document.getElementById('approCuriosa').innerHTML = (a.lo_sapevi||[]).filter(c=>c).map((c, i) => `<div class="appro-cur-item"><div class="appro-cur-dot">${i+1}</div><div class="appro-cur-text">${c}</div></div>`).join('');
+
+  // FOTO
+  const foto = a.foto || [];
+  const fotoSection = document.getElementById('approFotoSection');
+  if (foto.length) {
+    fotoSection.style.display = '';
+    document.getElementById('approFotoStrip').innerHTML = foto.map(function(f, i) {
+      var cls = i===0 ? 'appro-foto-main' : 'appro-foto-sm';
+      var cap = f.didascalia ? '<div class="appro-foto-cap">'+f.didascalia+'</div>' : '';
+      var safeCap=(f.didascalia||'').replace(/'/g,"&#39;");return '<div class="appro-foto-item" style="cursor:pointer" onclick="openFoto(\'' + f.url + '\',\'' + safeCap + '\')"><img class="'+cls+'" src="'+f.url+'" alt="'+(f.didascalia||'')+'">'+cap+'</div>';
+    }).join('');
+  } else { fotoSection.style.display = 'none'; }
+
+  // LUOGHI VICINI
+  const luoghi = a.luoghi_vicini || [];
+  const luoghiSection = document.getElementById('approLuoghiSection');
+  if (luoghi.length) {
+    luoghiSection.style.display = '';
+    document.getElementById('approLuoghi').innerHTML = luoghi.map(function(l, i) {
+      var imgHtml = l.img ? '<img class="appro-luogo-img" src="'+l.img+'" alt="'+l.nome+'">' : '<div class="appro-luogo-img-placeholder">📍</div>';
+      var tipoHtml = l.tipo ? '<span class="appro-luogo-tipo">'+l.tipo+'</span>' : '';
+      var distHtml = l.distanza ? '<span class="appro-luogo-dist">'+l.distanza+'</span>' : '';
+      var descHtml = l.descrizione ? '<div class="appro-luogo-desc">'+l.descrizione+'</div>' : '';
+      var pratiche = '';
+      if (l.orari) pratiche += '<div class="appro-luogo-prat-item"><div class="appro-luogo-prat-lbl">Orari</div><div class="appro-luogo-prat-val">'+l.orari+'</div></div>';
+      if (l.ingresso) pratiche += '<div class="appro-luogo-prat-item"><div class="appro-luogo-prat-lbl">Ingresso</div><div class="appro-luogo-prat-val">'+l.ingresso+'</div></div>';
+      if (l.indirizzo) pratiche += '<div class="appro-luogo-prat-item" style="grid-column:1/-1"><div class="appro-luogo-prat-lbl">Indirizzo</div><div class="appro-luogo-prat-val">'+l.indirizzo+'</div></div>';
+      return '<div class="appro-luogo-card"><div class="appro-luogo-hd" onclick="toggleLuogo('+i+')">'+imgHtml+
+        '<div class="appro-luogo-info"><div class="appro-luogo-nome">'+l.nome+'</div><div class="appro-luogo-meta">'+tipoHtml+distHtml+'</div></div>'+
+        '<span class="appro-luogo-chevron" id="luogoChev'+i+'">▼</span></div>'+
+        '<div class="appro-luogo-body" id="luogoBody'+i+'" style="display:none">'+descHtml+'<div class="appro-luogo-pratiche">'+pratiche+'</div></div></div>';
+    }).join('');
+  } else { luoghiSection.style.display = 'none'; }
+
+  // URL
+  const urlSection = document.getElementById('approUrlSection');
+  const urls = a.url || [];
+  if (urls.length) {
+    urlSection.style.display = '';
+    document.getElementById('approUrl').innerHTML = urls.map(function(u) {
+      return '<a class="appro-link-item" href="'+u.href+'" target="_blank"><span class="appro-link-label">'+u.label+'</span><span class="appro-link-icon">↗</span></a>';
+    }).join('');
+  } else { urlSection.style.display = 'none'; }
+
+  const ip = a.info_pratiche || {};
+  var ipHtml = '';
+  if (ip.orari) ipHtml += '<div class="appro-info-item"><div class="appro-info-label">Orari</div><div class="appro-info-val">'+ip.orari+'</div></div>';
+  if (ip.ingresso) ipHtml += '<div class="appro-info-item"><div class="appro-info-label">Ingresso</div><div class="appro-info-val">'+ip.ingresso+'</div></div>';
+  if (ip.indirizzo) ipHtml += '<div class="appro-info-item" style="grid-column:1/-1"><div class="appro-info-label">Indirizzo</div><div class="appro-info-val">'+ip.indirizzo+'</div></div>';
+  if (ip.accessibilita) ipHtml += '<div class="appro-info-item" style="grid-column:1/-1"><div class="appro-info-label">Accessibilità</div><div class="appro-info-val">'+ip.accessibilita+'</div></div>';
+  document.getElementById('approInfoGrid').innerHTML = ipHtml;
+  document.getElementById('approConsiglio').innerHTML = a.consiglio ? '💡 ' + a.consiglio : '';
+  switchTo('appro');
+}
+
+function openFoto(url, cap) {
+  ZW.track('foto_opened', { tappa_n: curIdx + 1, url });
+  const lb = document.getElementById('fotoLightbox');
+  document.getElementById('fotoLightboxImg').src = url;
+  document.getElementById('fotoLightboxCap').textContent = cap || '';
+  lb.classList.add('open');
+}
+function closeFoto() {
+  document.getElementById('fotoLightbox').classList.remove('open');
+}
+
+function toggleLuogo(i) {
+  const body = document.getElementById('luogoBody'+i);
+  const chev = document.getElementById('luogoChev'+i);
+  const open = body.style.display !== 'none';
+  body.style.display = open ? 'none' : '';
+  if (chev) chev.classList.toggle('open', !open);
+  // nav appro aggiornata da renderPlayer()
+
+}
+
+function closeAppro() { switchTo('player'); try { localStorage.setItem('zw_screen', 'player'); localStorage.setItem('zw_ts', String(Date.now())); } catch (e) {} }
+
+// ══════════════════════════════════════
+// NOTE
+// ══════════════════════════════════════
+let allnotesFrom = 'completion';
+
+function openAllNotes(from) {
+  allnotesFrom = from || 'completion';
+  const scroll = document.getElementById('allnotesScroll');
+  const notes = TAPPE.map((t, i) => ({ tappa: t, idx: i, text: getNoteForTappa(i) })).filter(n => n.text);
+  if (notes.length === 0) {
+    scroll.innerHTML = `<div class="allnotes-empty"><div class="allnotes-empty-icon">📝</div><div class="allnotes-empty-title">Nessuna nota</div><div class="allnotes-empty-sub">Durante il percorso puoi annotare osservazioni, dettagli, pensieri — tappa per tappa.</div></div>`;
+  } else {
+    scroll.innerHTML = notes.map(n => `<div class="allnotes-item"><div class="allnotes-item-header"><div class="allnotes-item-num">${n.tappa.n}</div><div class="allnotes-item-name">${n.tappa.nome}</div><button class="allnotes-item-edit" onclick="editNoteFromAll(${n.idx})">Modifica</button></div><div class="allnotes-item-text">${escHtml(n.text)}</div></div>`).join('');
+  }
+  switchTo('allnotes');
+}
+
+function closeAllNotes() { switchTo(allnotesFrom); if (allnotesFrom === 'detail') renderDetailNotes(); }
+function editNoteFromAll(idx) { curIdx = idx; renderPlayer(); switchTo('player'); setTimeout(() => openNote(), 350); }
+function escHtml(str) { return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function updateCompNotesBtn() { const hasAny = TAPPE.some((_, i) => !!getNoteForTappa(i)); const btn = document.getElementById('btnCompNotes'); if (btn) btn.style.display = hasAny ? 'flex' : 'none'; }
+
+function openNote() {
+  const t = TAPPE[curIdx];
+  document.getElementById('noteTappaLabel').textContent = `Tappa ${t.n} · ${t.nome}`;
+  document.getElementById('noteTextarea').value = getNoteForTappa(curIdx) || '';
+  document.getElementById('noteModal').classList.add('show');
+  setTimeout(() => document.getElementById('noteTextarea').focus(), 300);
+}
+function closeNoteModal(e) { if (e && e.target !== document.getElementById('noteModal')) return; document.getElementById('noteModal').classList.remove('show'); }
+function saveNote() {
+  const val = document.getElementById('noteTextarea').value.trim();
+  if (val) { try { localStorage.setItem(`zw_note_${_ZW_IT_ID}_${curIdx}`, val); } catch (e) {} updateNoteIndicator(); toast('Nota salvata ✓'); }
+  document.getElementById('noteModal').classList.remove('show');
+}
+function deleteNote() {
+  try { localStorage.removeItem(`zw_note_${_ZW_IT_ID}_${curIdx}`); } catch (e) {}
+  document.getElementById('noteTextarea').value = '';
+  updateNoteIndicator(); toast('Nota eliminata');
+  document.getElementById('noteModal').classList.remove('show');
+}
+function getNoteForTappa(idx) { try { return localStorage.getItem(`zw_note_${_ZW_IT_ID}_${idx}`); } catch (e) { return null; } }
+function updateNoteIndicator() {
+  const hasNote = !!getNoteForTappa(curIdx);
+  const dot = document.getElementById('noteIndicator');
+  if (dot) dot.style.display = hasNote ? 'block' : 'none';
+}
+
+// ══════════════════════════════════════
+// SHARE
+// ══════════════════════════════════════
+function renderCompletion() {
+  ZW.setScreen('completion');
+  ZW.stopGpsPing();
+  ZW.track('itinerary_completed', {
+    itinerary: _IT.id,
+    tappe_completate: curIdx + 1,
+    tappe_totali: TAPPE.length,
+    durata_min: Math.round((Date.now() - ZW._sessionStart) / 60000),
+    arrivi_geofence: ZW._geofenceArrivals,
+    arrivi_manuali: ZW._manualArrivals,
+    on_site_ratio: ZW.onSiteRatio(),
+    session_type: (ZW.onSiteRatio() ?? 0) >= 0.6 ? 'on_site' : 'couch',
+    geo_permission_denied: ZW._geoDenied
+  });
+  const c = _IT.completion || {};
+  document.getElementById('compTitle').innerHTML = (c.titolo || '') + '<br><em>' + (c.titolo_highlight || '') + '</em>';
+  document.getElementById('compSub').textContent = c.sottotitolo || '';
+  document.getElementById('compStatTappe').textContent = TAPPE.length;
+  const distNum = (_IT.distanza || '').replace(/[^\d.,]/g, '').replace('.', ',');
+  document.getElementById('compStatKm').textContent = distNum || '—';
+  const durNum = (_IT.durata || '').match(/\d+/);
+  document.getElementById('compStatMin').textContent = durNum ? '~' + durNum[0] : '—';
+}
+
+// ── endpoint email "avvisami" (usato dalle card "in lavorazione" in home) ──
+const PRICE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwjCj7s7QyTxzrkaKIyVTNkrPtLcxV9BUJVall_QzJTw3EODZLXJd7RFbSpsJ0W_VZV/exec';
+// ══════════════════════════════════════
+// INTEREST SHEET — cattura interesse sulle card "Prossimamente" (home)
+// Stessa logica del blocco prezzo in completion, ma per singolo itinerario:
+// sessionStorage scoped per nome (slug), non globale.
+// ══════════════════════════════════════
+let _interestCurrent = null;
+
+function _slug(name) {
+  return name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+function openInterestSheet(name) {
+  _interestCurrent = name;
+  ZW.track('home_interest_opened', { itinerario: name });
+  // Sempre la domanda: una risposta precedente non deve mai impedire di rispondere di nuovo.
+  renderInterestForm();
+  document.getElementById('interestOverlay').classList.add('show');
+  document.getElementById('interestSheet').classList.add('show');
+}
+
+function renderInterestForm() {
+  const body = document.getElementById('interestSheetBody');
+  body.innerHTML =
+    '<div class="interest-sheet-name">' + _interestCurrent + '</div>' +
+    '<div class="interest-sheet-q">È un itinerario ancora in lavorazione. Ti avviso quando esce?</div>' +
+    '<div class="comp-price-btns">' +
+    '<button class="btn-price-no" onclick="handleInterestReaction(false)">No, grazie</button>' +
+    '<button class="btn-price-yes" onclick="handleInterestReaction(true)">Sì, avvisami</button>' +
+    '</div>' +
+    '<div class="comp-price-email" id="interestEmailBox">' +
+    '<div class="comp-price-email-label">Lascia la tua email — ti avviso quando esce.</div>' +
+    '<div class="comp-price-email-row">' +
+    '<input class="comp-price-input" id="interestEmailInput" type="email" inputmode="email" autocomplete="email" placeholder="la-tua-email@esempio.it">' +
+    '<button class="btn-price-send" onclick="sendInterestEmail()">Invia</button>' +
+    '</div>' +
+    '<button class="btn-price-skip" onclick="handleInterestSkip()">Continua senza lasciare l\'email</button>' +
+    '</div>';
+}
+
+// 'no' e 'sì-no-email' non sono mai terminali: resta sempre un link per ripensarci.
+// Solo 'yes-email' lo è (l'email è già stata data).
+function renderInterestDone(kind) {
+  const body = document.getElementById('interestSheetBody');
+  const msgs = {
+    'yes-email': 'Grazie — <em>ti scriviamo</em> appena esce.',
+    'sì-no-email': 'Grazie del riscontro — <em>ti aggiorneremo</em> comunque presto.',
+    'no': 'Grazie del riscontro.'
+  };
+  const reconsider = (kind === 'yes-email')
+    ? ''
+    : '<button class="btn-price-skip" onclick="reopenInterestEmail()">Lascia comunque la tua email</button>';
+  body.innerHTML =
+    '<div class="interest-sheet-name">' + _interestCurrent + '</div>' +
+    '<div class="comp-price-done">' + msgs[kind] + '</div>' + reconsider;
+}
+
+function reopenInterestEmail() {
+  ZW.track('home_interest_reconsidered', { itinerario: _interestCurrent });
+  const body = document.getElementById('interestSheetBody');
+  body.innerHTML =
+    '<div class="interest-sheet-name">' + _interestCurrent + '</div>' +
+    '<div class="comp-price-email-label">Lascia la tua email — ti avviso quando esce.</div>' +
+    '<div class="comp-price-email-row">' +
+    '<input class="comp-price-input" id="interestEmailInput" type="email" inputmode="email" autocomplete="email" placeholder="la-tua-email@esempio.it">' +
+    '<button class="btn-price-send" onclick="sendInterestEmail()">Invia</button>' +
+    '</div>';
+  setTimeout(() => { const i = document.getElementById('interestEmailInput'); if (i) i.focus(); }, 150);
+}
+
+function closeInterestSheet() {
+  document.getElementById('interestOverlay').classList.remove('show');
+  document.getElementById('interestSheet').classList.remove('show');
+}
+
+function handleInterestReaction(interested) {
+  ZW.track('home_interest_reaction', { interessato: interested, itinerario: _interestCurrent });
+  if (interested) {
+    document.getElementById('interestEmailBox').classList.add('show');
+    setTimeout(() => { const i = document.getElementById('interestEmailInput'); if (i) i.focus(); }, 200);
+  } else {
+    try { sessionStorage.setItem('zw_interest_' + _slug(_interestCurrent), 'no'); } catch (e) {}
+    renderInterestDone('no');
+  }
+}
+
+function handleInterestSkip() {
+  try { sessionStorage.setItem('zw_interest_' + _slug(_interestCurrent), 'no'); } catch (e) {}
+  renderInterestDone('sì-no-email');
+}
+
+function sendInterestEmail() {
+  const input = document.getElementById('interestEmailInput');
+  const email = input.value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    input.style.borderColor = '#c0392b';
+    toast('Email non valida');
+    return;
+  }
+  const key = 'zw_interest_' + _slug(_interestCurrent);
+  try { sessionStorage.setItem(key, 'yes-email'); } catch (e) {}
+  if (!PRICE_ENDPOINT.startsWith('INSERISCI')) {
+    fetch(PRICE_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ email, interessato: 'sì', itinerario: _interestCurrent })
+    }).catch(() => {});
+  }
+  ZW.track('home_interest_email_submitted', { itinerario: _interestCurrent });
+  renderInterestDone('yes-email');
+  setTimeout(closeInterestSheet, 1400);
+}
+
+// ── CTA feedback strutturato a fine giro: apre il Google Form in una nuova scheda ──
+// NB: FEEDBACK_FORM_URL è un placeholder — sostituire con il link reale del form.
+const FEEDBACK_FORM_URL = 'https://forms.gle/PLACEHOLDER';
+
+function openFeedbackForm() {
+  ZW.track('feedback_form_tapped', { itinerario: _IT.id });
+  window.open(FEEDBACK_FORM_URL, '_blank');
+}
+
+function shareApp() {
+  const url = window.location.href;
+  const text = 'Ho appena attraversato Genova con ZenaWalk — ' + _IT.partenza.nome + ' → ' + _IT.arrivo.nome + ', ' + TAPPE.length + ' tappe, storie che non trovi sui tour in pullman. Ed è gratis.';
+  if (navigator.share) { navigator.share({ title: 'ZenaWalk', text, url }).catch(() => copyFallback(url)); }
+  else { copyFallback(url); }
+}
+function copyFallback(url) {
+  if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(url).then(() => toast('Link copiato negli appunti ✓')).catch(() => manualCopy(url)); }
+  else { manualCopy(url); }
+}
+function manualCopy(url) {
+  const ta = document.createElement('textarea');
+  ta.value = url;
+  ta.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0;width:1px;height:1px';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  const ok = document.execCommand('copy');
+  document.body.removeChild(ta);
+  toast(ok ? 'Link copiato negli appunti ✓' : 'Copia il link: ' + url);
+}
+
+function toast(msg) {
+  const el = document.getElementById('toastEl');
+  el.textContent = msg; el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), msg.length > 40 ? 4000 : 2600);
+}
+
+// ══════════════════════════════════════
+// PWA — service worker statico (/sw.js).
+// Manifest e icone sono file statici reali, referenziati direttamente
+// nell'<head> (vedi <link rel="manifest">) — niente più blob: URL,
+// che rendevano start_url/icone non validi per lo spec PWA.
+// ══════════════════════════════════════
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(() => {});
+}
+
+window.addEventListener('pagehide', () => { if (currentAudio) currentAudio.pause(); });
+</script>
+<!-- ════════════════════════════════════════════
+     FEEDBACK VALIDAZIONE — RIMUOVERE DOPO LA FASE DI TEST
+     (widget WhatsApp + banner introduttivo)
+════════════════════════════════════════════ -->
+<style>
+#fbWidget{
+  position:fixed;right:1rem;bottom:calc(1rem + var(--safe-bottom));z-index:900;
+  display:none;align-items:center;gap:.5rem;
+  background:#25D366;color:#fff;
+  border:none;border-radius:50px;
+  padding:.7rem 1.1rem .7rem .9rem;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:grab;
+  touch-action:none;
+  animation:fbPulse 2.5s ease-in-out infinite;
+}
+#fbWidget.show{display:inline-flex}
+#fbWidget.dragging{animation:none;cursor:grabbing;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+#fbWidget svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+@keyframes fbPulse{0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.35)}50%{box-shadow:0 4px 22px rgba(37,211,102,.6)}}
+
+#fbBanner{
+  position:fixed;inset:0;z-index:950;
+  display:none;align-items:center;justify-content:center;
+  background:rgba(18,15,12,.82);backdrop-filter:blur(4px);
+  padding:1.5rem;
+}
+#fbBanner.show{display:flex}
+.fb-banner-card{
+  background:var(--ink);border:.5px solid rgba(196,154,60,.3);
+  border-radius:16px;padding:1.75rem 1.5rem;max-width:340px;text-align:center;position:relative;
+}
+.fb-banner-icon{display:flex;justify-content:center;margin:0 auto 1.25rem}
+.fb-banner-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:300;color:rgba(244,239,228,.95);margin-bottom:.7rem;line-height:1.2}
+.fb-banner-text{font-size:.9rem;line-height:1.65;color:rgba(244,239,228,.9);font-weight:500;margin-bottom:1.1rem}
+.fb-banner-text b{color:rgba(244,239,228,.92);font-weight:600}
+.fb-banner-pill-inline{
+  display:inline-flex;align-items:center;gap:.3rem;
+  background:#25D366;color:#fff;border-radius:50px;
+  padding:.25rem .6rem .25rem .45rem;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;
+  vertical-align:middle;margin:0 .1rem;white-space:nowrap;
+}
+.fb-banner-pill-inline svg{width:14px;height:14px;fill:#fff;flex-shrink:0}
+.fb-banner-bonus{
+  background:rgba(196,154,60,.14);border:1px solid rgba(196,154,60,.45);
+  border-radius:12px;padding:.9rem 1rem;margin-bottom:1.5rem;text-align:left;
+}
+.fb-banner-bonus-tag{
+  display:inline-block;background:var(--gold);color:var(--ink);
+  font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:.2rem .55rem;border-radius:20px;margin-bottom:.55rem;
+}
+.fb-banner-bonus-text{font-size:.86rem;line-height:1.55;color:rgba(244,239,228,.9)}
+.fb-banner-bonus-text b{color:var(--gold);font-weight:700}
+.fb-banner-btn{width:100%;background:var(--gold);color:var(--ink);border:none;border-radius:50px;padding:.9rem;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.fb-banner-btn:active{opacity:.85}
+</style>
+
+<button id="fbWidget">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.76.46 3.42 1.27 4.86L2 22l5.27-1.38A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.5 14.2c-.23.65-1.35 1.24-1.86 1.28-.5.04-.97.22-3.27-.68-2.76-1.09-4.5-3.92-4.64-4.1-.14-.18-1.12-1.49-1.12-2.84s.71-2.01.96-2.29c.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.23.55.78 1.9.85 2.04.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.18-.21.69-.81.87-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.12.07.65-.16 1.29z"/></svg>
+  Feedback
+</button>
+
+<div id="fbBanner">
+  <div class="fb-banner-card">
+    <div class="fb-banner-title">Stai provando ZenaWalk in Anteprima</div>
+    <div class="fb-banner-text">Genova Essenziale è un itinerario in fase Beta.<br>Clicca il pulsante
+      <span class="fb-banner-pill-inline">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.76.46 3.42 1.27 4.86L2 22l5.27-1.38A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.5 14.2c-.23.65-1.35 1.24-1.86 1.28-.5.04-.97.22-3.27-.68-2.76-1.09-4.5-3.92-4.64-4.1-.14-.18-1.12-1.49-1.12-2.84s.71-2.01.96-2.29c.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.23.55.78 1.9.85 2.04.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.18-.21.69-.81.87-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.12.07.65-.16 1.29z"/></svg>
+        Feedback
+      </span>
+      <br>per darci un <b>feedback</b>.
+    </div>
+    <div class="fb-banner-bonus">
+      <span class="fb-banner-bonus-tag">Bonus</span>
+      <div class="fb-banner-bonus-text">Lascia un feedback completo<br>a fine itinerario e ricevi <b>gratis</b> in esclusiva la <b>versione premium</b>.</div>
+    </div>
+    <button class="fb-banner-btn" onclick="closeFeedbackBanner()">Ho capito</button>
+  </div>
+</div>
+
+<script>
+// Schermate dell'itinerario in cui il widget è visibile (non in home)
+const FB_SCREENS = ['detail','prenav','player','navscreen','appro'];
+const FB_NUMBER = '393208125071';
+const FB_TEXT = 'Ciao! Sto provando ZenaWalk (Genova Essenziale) in fase di test. Ecco il mio feedback:';
+
+function updateFeedbackWidget(screenId) {
+  const btn = document.getElementById('fbWidget');
+  if (!btn) return;
+  if (FB_SCREENS.includes(screenId)) btn.classList.add('show');
+  else btn.classList.remove('show');
+  // Il banner appare a ogni ingresso in detail, non solo la prima volta.
+  if (screenId === 'detail') document.getElementById('fbBanner').classList.add('show');
+}
+function closeFeedbackBanner() {
+  document.getElementById('fbBanner').classList.remove('show');
+}
+function handleFbWidgetClick() {
+  openFeedbackWA();
+}
+
+// Pulsante fisso, sempre "Feedback": tap per aprire WhatsApp, tenuto premuto per trascinarlo.
+// Ricorda l'ultima posizione scelta.
+(function initFbDrag() {
+  const btn = document.getElementById('fbWidget');
+  if (!btn) return;
+  const MARGIN = 8;
+  let dragging = false, moved = false, startX = 0, startY = 0, startLeft = 0, startTop = 0;
+
+  function place(left, top) {
+    const r = btn.getBoundingClientRect();
+    const maxLeft = window.innerWidth - r.width - MARGIN;
+    const maxTop = window.innerHeight - r.height - MARGIN;
+    left = Math.min(Math.max(left, MARGIN), Math.max(maxLeft, MARGIN));
+    top = Math.min(Math.max(top, MARGIN), Math.max(maxTop, MARGIN));
+    btn.style.left = left + 'px';
+    btn.style.top = top + 'px';
+    btn.style.right = 'auto';
+    btn.style.bottom = 'auto';
+  }
+  try {
+    const saved = JSON.parse(localStorage.getItem('zw_fb_pos') || 'null');
+    if (saved) place(saved.left, saved.top);
+  } catch (e) {}
+
+  btn.addEventListener('pointerdown', (e) => {
+    dragging = true; moved = false;
+    const r = btn.getBoundingClientRect();
+    startX = e.clientX; startY = e.clientY; startLeft = r.left; startTop = r.top;
+    btn.setPointerCapture(e.pointerId);
+    btn.classList.add('dragging');
+  });
+  btn.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - startX, dy = e.clientY - startY;
+    if (Math.abs(dx) > 6 || Math.abs(dy) > 6) moved = true;
+    if (moved) place(startLeft + dx, startTop + dy);
+  });
+  function endDrag() {
+    if (!dragging) return;
+    dragging = false;
+    btn.classList.remove('dragging');
+    if (moved) {
+      const r = btn.getBoundingClientRect();
+      try { localStorage.setItem('zw_fb_pos', JSON.stringify({ left: r.left, top: r.top })); } catch (e) {}
+      ZW.track('feedback_widget_moved', {});
+    } else {
+      handleFbWidgetClick();
+    }
+  }
+  btn.addEventListener('pointerup', endDrag);
+  btn.addEventListener('pointercancel', endDrag);
+  window.addEventListener('resize', () => {
+    if (!btn.style.left) return;
+    const r = btn.getBoundingClientRect();
+    place(r.left, r.top);
+  });
+})();
+
+function openFeedbackWA() {
+  ZW.track('feedback_tapped', { audio_pct: ZW._audioPct });
+  window.open(`https://wa.me/${FB_NUMBER}?text=${encodeURIComponent(FB_TEXT)}`, '_blank');
+}
+</script>
+<!-- ════════════ FINE FEEDBACK VALIDAZIONE ════════════ -->
+
+<div class="foto-lightbox" id="fotoLightbox" onclick="closeFoto()">
+  <button class="foto-lightbox-close" onclick="event.stopPropagation();closeFoto()">×</button>
+  <img id="fotoLightboxImg" src="" alt="" onclick="event.stopPropagation()">
+  <div class="foto-lightbox-cap" id="fotoLightboxCap"></div>
+</div>
+</body>
+</html>
