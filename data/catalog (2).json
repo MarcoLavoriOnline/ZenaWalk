@@ -1,0 +1,28 @@
+[
+  {
+    "id": "genova-essenziale",
+    "titolo": "Genova Essenziale",
+    "tema": "La città che ha finanziato il mondo",
+    "accesso": "free",
+    "prezzo": null,
+    "stato": "available",
+    "durata": "50-55 min",
+    "distanza": "1.5 km",
+    "difficolta": "facile",
+    "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1780301227/wp9520306_bluc0r.jpg",
+    "tappe_count": 7
+  },
+  {
+    "id": "genoa-cfc",
+    "titolo": "Genoa CFC",
+    "tema": "Il club di calcio più antico in Italia",
+    "accesso": "free",
+    "prezzo": null,
+    "stato": "available",
+    "durata": "60-75 min",
+    "distanza": "2,4 km",
+    "difficolta": "facile",
+    "img_card": "",
+    "tappe_count": 13
+  }
+]
