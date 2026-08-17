@@ -1,0 +1,91 @@
+{
+  "id": "la-storia-di-de-andre",
+  "titolo": "La storia di De André",
+  "tema": "Nei vicoli di Faber, tra poesia, anarchia e anime salve",
+  "descrizione": "Vuoi ripercorrere la vita e i luoghi che hanno ispirato la poetica del cantautore più amato d'Italia? Questo è l'itinerario perfetto per esplorare la Genova di Fabrizio De Andrè: un viaggio emozionante nei caruggi del centro storico, tra i vicoli delle Bad Marias, i porticcioli e gli angoli che hanno dato voce agli ultimi, ai reietti e ai poeti. Lasciati guidare attraverso le canzoni e i racconti della sua infanzia e della sua giovinezza, scoprendo scorci autentici che trasudano musica e memoria. Acquista l'itinerario per vivere Genova come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "120 Min",
+  "distanza": "3.5 KM",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533221/Fabrizio-De-Andre-1_oxljsa.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533221/Fabrizio-De-Andre-1_oxljsa.jpg",
+  "partenza": {
+    "nome": "Piazza del Campo (Caricamento)",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Via Del Campo",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Introduzione",
+      "label": "",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4056,
+        8.9463
+      ],
+      "img": "",
+      "audioUrl": "",
+      "chicca": "",
+      "storia": [
+        ""
+      ],
+      "highlight": "",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    null
+  ],
+  "teaser_include": "Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\nTour guidato nei luoghi simbolo della vita e delle canzoni di Fabrizio De Andrè\nAudioguida completa in italiano, sempre disponibile sul tuo telefono\nAccesso illimitato, puoi fermarti e ripartire quando vuoi\nMappa interattiva con navigazione passo-passo\nPunti chiave legati alla storia e ai brani più celebri di Faber\nConsigli sugli angoli più suggestivi del centro storico legati alla sua memoria",
+  "teaser_aspettarsi": "Un percorso intimo e poetico attraverso i vicoli di Genova, proprio lì dove la città si fa più vera e profonda. Camminerai calpestando le stesse pietre raccontate nelle sue ballate, scoprendo botteghe storiche, piazze nascoste e scorci sul porto che hanno nutrito la sua straordinaria ispirazione artistica, regalandoti un'immersione totale nel mondo di Faber.",
+  "teaser_incontro": "Punto di incontro comunicato via email dopo la prenotazione.",
+  "teaser_accessibilita": "Percorso all'interno del centro storico con lastricato tradizionale e tipici vicoli in pendenza. Non adatto a persone con difficoltà motorie.",
+  "teaser_info": "Consigliato a chi ama la musica d'autore, ma godibile anche da chi non conosce ancora De André\nConsigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe comode.",
+  "teaser_cancellazione": "Cancellazione gratuita fino a 24 ore prima dell'inizio dell'esperienza.",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "teaser_cta": "Acquista Ora",
+  "teaser_gallery": [
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1779659016/cattedrale_san_lorenzo_vw23fz.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1779659147/palazzo_ducale_venj6s.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1779658944/piazza-de-ferrari-oggi_xkry08.webp"
+  ]
+}
