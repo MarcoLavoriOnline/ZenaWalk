@@ -1,0 +1,86 @@
+{
+  "id": "mangia-come-un-genovese",
+  "titolo": "Mangia come un genovese",
+  "tema": "Un viaggio goloso tra focaccia, friggitorie storiche e antiche botteghe",
+  "descrizione": "Vuoi scoprire i sapori autentici della tradizione gastronomica genovese lontano dalle trappole per turisti? Questo è l'itinerario perfetto per esplorare Genova attraverso il palato: un viaggio goloso tra i caruggi alla scoperta della vera focaccia calda, della farinata croccante, delle friggitorie storiche e delle botteghe artigiane dove il tempo sembra essersi fermato. Lasciati guidare dai racconti sui segreti della cucina ligure, dalle ricette della nonna ai profumi inconfondibili del basilico e dell'olio buono. Acquista l'itinerario per vivere Genova come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "120 Min",
+  "distanza": "2.5 Km",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg",
+  "partenza": {
+    "nome": "Piazza Banchi",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Mercato Orientale di Genova (MOG)",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Introduzione",
+      "label": "",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4056,
+        8.9463
+      ],
+      "img": "",
+      "audioUrl": "",
+      "chicca": "",
+      "storia": [
+        ""
+      ],
+      "highlight": "",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    null
+  ],
+  "teaser_include": "- Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\n- Tour guidato tra i sapori e le botteghe storiche della tradizione genovese\n- Audioguida completa in italiano, sempre disponibile sul tuo telefono\n- Accesso illimitato, puoi fermarti e ripartire quando vuoi\n- Mappa interattiva con navigazione passo-passo\n- Punti chiave legati ai piatti tipici, ai prodotti locali e alla cultura enogastronomica\n- Consigli sulle migliori tappe golose e indirizzi imperdibili nel centro storico",
+  "teaser_aspettarsi": "Un percorso sensoriale nel cuore di Genova, guidati dai profumi irresistibili della focaccia appena sfornata e della frittura di pesce nei vicoli. Attraverserai mercati storici, antiche sciamadde e botteghe centenarie, scoprendo le storie e i segreti dei piatti simbolo della cucina marinara e contadina ligure, per un'esperienza da veri local.",
+  "teaser_incontro": "",
+  "teaser_accessibilita": "Percorso all'interno del centro storico con lastricato tradizionale e tipici vicoli in pendenza. Adatto a tutti, con possibilità di pause gastronomiche lungo il tragitto.",
+  "teaser_info": "- Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\n- Consigliate scarpe comode e... appetito!",
+  "teaser_cancellazione": "",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "teaser_cta": "Acquista Ora"
+}

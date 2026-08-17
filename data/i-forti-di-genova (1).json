@@ -1,0 +1,86 @@
+{
+  "id": "i-forti-di-genova",
+  "titolo": "I forti di Genova",
+  "tema": "Sui crinali della Superba tra fortificazioni militari, storia e panorami infiniti",
+  "descrizione": "Vuoi scoprire il sistema fortificato più grande d'Europa sospeso tra cielo e mare? Questo è l'itinerario perfetto per esplorare le imponenti architetture militari che dominano la città dall'alto: un viaggio spettacolare lungo i crinali verdi dei monti genovesi, tra bastioni di pietra, antiche polveriere e sentieri panoramici mozzafiato. Lasciati guidare attraverso le storie di battaglie, assedi e strategie di difesa che hanno protetto la Repubblica di Genova nel corso dei secoli. Acquista l'itinerario per vivere Genova come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "4:00 - 4:30 Ore",
+  "distanza": "12 KM",
+  "difficolta": "impegnativa",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533110/escursioni-guidate-liguria-forti-di-genova-1678546256_xcr7uj.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533110/escursioni-guidate-liguria-forti-di-genova-1678546256_xcr7uj.jpg",
+  "partenza": {
+    "nome": "Funicolare Zecca-Righi",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Funicolare Zecca-Righi",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Introduzione",
+      "label": "",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4056,
+        8.9463
+      ],
+      "img": "",
+      "audioUrl": "",
+      "chicca": "",
+      "storia": [
+        ""
+      ],
+      "highlight": "",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    null
+  ],
+  "teaser_include": "- Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\n- Tour guidato lungo i sentieri e le fortificazioni storiche dei monti di Genova\n- Audioguida completa in italiano, sempre disponibile sul tuo telefono\n- Accesso illimitato, puoi fermarti e ripartire quando vuoi\n- Mappa interattiva con navigazione passo-passo\n- Punti chiave legati alla storia militare, architettonica e paesaggistica dei forti\n- Consigli sui migliori punti di osservazione e sui panorami a picco sul golfo",
+  "teaser_aspettarsi": "Un percorso immersivo e naturalistico che si sviluppa sulle alture della città, lontano dal caos urbano, offrendo una vista spettacolare che spazia dai tetti di Genova fino all'arco dell'orizzonte marino. Camminerai lungo mulattiere storiche e antichi camminamenti di ronda, scoprendo la maestosità di fortezze dimenticate e la bellezza selvaggia della natura che le circonda.",
+  "teaser_incontro": "",
+  "teaser_accessibilita": "Percorso escursionistico su sentieri sterrati, mulattiere e tratti in pendenza. Richiede calzature adatte al trekking e un minimo di allenamento.",
+  "teaser_info": "- Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\n- Consigliate scarpe da trekking, acqua e protezione solare. ",
+  "teaser_cancellazione": "",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "teaser_cta": "Acquista Ora"
+}
