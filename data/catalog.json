@@ -250,29 +250,4 @@
     "teaser_info": "Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe comode e protezione solare.",
     "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore."
   },
-  {
-    "id": "la-citta-che-ha-visto-il-mondo",
-    "titolo": "La città che ha visto il mondo",
-    "tema": "Porto",
-    "accesso": "premium",
-    "prezzo": 4.99,
-    "stato": "coming_soon",
-    "durata": "",
-    "distanza": "",
-    "difficolta": "facile",
-    "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533368/R_pyh1et.jpg",
-    "tappe_count": 1,
-    "descrizione": "",
-    "teaser_cta": "",
-    "teaser_gallery": [
-      "https://res.cloudinary.com/dunzmrf6y/image/upload/v1779659189/Piazza-Banchi_h91eyn.jpg",
-      "https://res.cloudinary.com/dunzmrf6y/image/upload/v1779659016/cattedrale_san_lorenzo_vw23fz.jpg",
-      "https://res.cloudinary.com/dunzmrf6y/image/upload/v1779659147/palazzo_ducale_venj6s.jpg"
-    ],
-    "teaser_include": "Racconto della storia marittima e commerciale di Genova\nVisita ai luoghi simbolo del porto storico\nAneddoti su mercanti, esploratori e rotte commerciali\nSoste panoramiche sul Porto Antico",
-    "teaser_aspettarsi": "Un percorso lungo il fronte mare, tra storia del commercio marittimo e racconti di una città che ha sempre guardato al mondo.",
-    "teaser_accessibilita": "Percorso pianeggiante lungo il porto, adatto a passeggini e sedie a rotelle.",
-    "teaser_info": "Consigliato l'abbigliamento comodo. Durata indicativa 90 minuti.",
-    "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore."
-  }
 ]
