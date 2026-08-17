@@ -1,0 +1,85 @@
+{
+  "id": "genoa-e-samp-rivalita-calcistica",
+  "titolo": "Genoa e Samp: una rivalità calcistica",
+  "tema": "Sport",
+  "descrizione": "",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "",
+  "distanza": "",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532956/Coliseum-Summit-News-Genova-Stadio-Luigi-Ferraris_bkfnjh.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532956/Coliseum-Summit-News-Genova-Stadio-Luigi-Ferraris_bkfnjh.jpg",
+  "partenza": {
+    "nome": "",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Introduzione",
+      "label": "",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4056,
+        8.9463
+      ],
+      "img": "",
+      "audioUrl": "",
+      "chicca": "",
+      "storia": [
+        ""
+      ],
+      "highlight": "",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    null
+  ],
+  "teaser_include": "Visita ai luoghi simbolo della rivalità calcistica genovese\nRacconto della storia di Genoa CFC e Sampdoria\nAneddoti sui derby più famosi\nSoste fotografiche nei punti panoramici sullo stadio",
+  "teaser_aspettarsi": "Un itinerario a piedi tra i quartieri che hanno fatto la storia del calcio genovese, dallo stadio Ferraris ai luoghi di ritrovo storici dei tifosi.",
+  "teaser_incontro": "Punto di incontro comunicato via email dopo la prenotazione.",
+  "teaser_accessibilita": "Percorso con alcuni tratti in salita, non adatto a sedie a rotelle.",
+  "teaser_info": "Consigliato per chi ama il calcio, ma pensato per essere godibile anche da chi non è genovese.",
+  "teaser_cancellazione": "Cancellazione gratuita fino a 24 ore prima dell'inizio dell'esperienza.",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore."
+}

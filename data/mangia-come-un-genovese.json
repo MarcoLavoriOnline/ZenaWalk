@@ -1,0 +1,85 @@
+{
+  "id": "mangia-come-un-genovese",
+  "titolo": "Mangia come un genovese",
+  "tema": "Gastronomia",
+  "descrizione": "",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "",
+  "distanza": "",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg",
+  "partenza": {
+    "nome": "",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Introduzione",
+      "label": "",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4056,
+        8.9463
+      ],
+      "img": "",
+      "audioUrl": "",
+      "chicca": "",
+      "storia": [
+        ""
+      ],
+      "highlight": "",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    null
+  ],
+  "teaser_include": "2 ore di degustazione con una guida locale che racconta la storia di Genova\n5 piatti tipici genovesi: focaccia, farinata, pesto, panera, pesce fritto\n2 dei migliori vini liguri\nMenu in base alle tue preferenze o esigenze\nVegano, vegetariano, adatto alle famiglie e agli animali domestici",
+  "teaser_aspettarsi": "Un percorso a piedi tra botteghe storiche e banchi del mercato, con soste per assaggiare i prodotti tipici mentre Cristoforo racconta la storia del quartiere.",
+  "teaser_incontro": "Il punto di incontro esatto verrà comunicato via email dopo la prenotazione.",
+  "teaser_accessibilita": "Percorso pianeggiante, adatto a passeggini e sedie a rotelle nella maggior parte del tragitto.",
+  "teaser_info": "Consigliato l'abbigliamento comodo e scarpe da passeggio. Durata indicativa 2 ore.",
+  "teaser_cancellazione": "Cancellazione gratuita fino a 24 ore prima dell'inizio dell'esperienza.",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore."
+}
