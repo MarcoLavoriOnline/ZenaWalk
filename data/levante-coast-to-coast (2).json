@@ -1,0 +1,54 @@
+{
+  "id": "levante-coast-to-coast",
+  "titolo": "Levante Coast to Coast",
+  "tema": "Un respiro di salsedine tra borghi marinari",
+  "descrizione": "Vuoi scoprire dove fanno il bagno i genovesi lontano dai circuiti turistici di massa? Questo è l'itinerario perfetto per vivere la costa levantina come un vero \"local\": un percorso dinamico tra spiagge di ciottoli, calette nascoste e piattaforme di roccia che si affacciano su un mare cristallino. Attraverserai i quartieri storici di Sturla e Quarto, scoprendo i segreti marinari e i migliori punti panoramici sul Golfo Paradiso. Non perdere l'occasione di un tuffo rigenerante o di una sosta speciale in un angolo di paradiso urbano. Acquista l'itinerario per vivere la Riviera come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "2:30 Ore",
+  "distanza": "5 KM",
+  "difficolta": "media",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998558/scogliera_genova_nervi-1920w_tti6u2.webp",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998558/scogliera_genova_nervi-1920w_tti6u2.webp",
+  "teaser_cta": "Acquista Ora",
+  "teaser_gallery": [
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998558/scogliera_genova_nervi-1920w_tti6u2.webp",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998600/monumento_di_Quarto_dei_Mille_sndnoc.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998689/spiaggia-genova-quinto-al-mare_rwvvql.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998688/oratorio-sant-erasmo-genova-quinto_oobyon.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998690/passeggiata-costiera-genova-quarto-liguria_ldsmah.jpg"
+  ],
+  "teaser_include": "Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\nTour guidato lungo la direttrice costiera e le spiagge del levante\nAudioguida completa in italiano, sempre disponibile sul tuo telefono\nAccesso illimitato, puoi fermarti e ripartire quando vuoi\nMappa interattiva con navigazione passo-passo\nPunti panoramici sul golfo e calette nascoste\nConsigli sulle tappe e sui punti di sosta balneare più belli",
+  "teaser_aspettarsi": "Un itinerario vibrante che esplora il volto più autentico e marinaro della costa genovese, portandoti a scoprire la trasformazione del paesaggio urbano in rifugi naturali affacciati sul mare. Attraverserai quartieri storici come Sturla e Quarto, addentrandoti in calette di ciottoli, piattaforme di roccia naturale e angoli di costa dove l'acqua cristallina è la protagonista assoluta. Sarà un'esperienza che alterna il cammino lungo la costa alla scoperta di scorci panoramici imperdibili sul Golfo Paradiso, offrendoti la prospettiva perfetta per vivere il mare di Genova lontano dal caos cittadino.",
+  "teaser_accessibilita": "Tragitto misto lungo marciapiedi urbani e discese verso le spiagge o le scogliere. Non adatto a passeggini o persone con mobilità ridotta.",
+  "teaser_info": "Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe comode, costume da bagno e protezione solare.",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "partenza": {
+    "nome": "Quartiere di Sturla",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Nervi",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [],
+  "directions": []
+}
