@@ -1,0 +1,64 @@
+{
+  "id": "nervi-parchi-e-scogliere",
+  "titolo": "Nervi: Parchi e Scogliere",
+  "tema": "Dove la terra bacia il mare",
+  "descrizione": "Vuoi rigenerarti tra il verde lussureggiante e il blu infinito del Mediterraneo? Questo è l'itinerario perfetto per chi cerca l'eleganza senza tempo di Nervi: un viaggio sensoriale tra ville nobiliari, giardini botanici da sogno e la celebre passeggiata a picco sulla scogliera. Lasciati guidare attraverso il profumo del roseto storico e il suono rilassante delle onde, scoprendo scorci mozzafiato e il fascino autentico del porticciolo.\nAcquista l'itinerario per vivere la Riviera come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "60-90 Min",
+  "distanza": "3 Km",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998568/passeggiata-nervi_barca-vela_djdybg.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998568/passeggiata-nervi_barca-vela_djdybg.jpg",
+  "teaser_cta": "Acquista Ora",
+  "teaser_gallery": [
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998568/passeggiata-nervi_barca-vela_djdybg.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998580/passeggiata-anita-garibaldi-nervi-02_ztiilo.webp",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998558/scogliera_genova_nervi-1920w_tti6u2.webp",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998552/passeggiata-anita-garibaldi_bc3tyo.webp"
+  ],
+  "teaser_include": "Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\nPasseggiata guidata tra parchi storici, porticciolo e scogliera\nAudioguida completa in italiano, sempre disponibile sul tuo telefono\nAccesso illimitato, puoi fermarti e ripartire quando vuoi\nMappa interattiva con navigazione passo-passo\nPunti panoramici sul mare e sulla riviera\nConsigli sugli angoli più suggestivi del percorso",
+  "teaser_aspettarsi": "Un percorso che ti guida attraverso la quiete rigenerante dei Parchi di Nervi, dove il verde lussureggiante delle esotiche collezioni botaniche e delle rose antiche incontra il blu profondo del mar Ligure. La camminata prosegue poi lungo la leggendaria Passeggiata Anita Garibaldi, un suggestivo sentiero a picco sulla scogliera che offre scorci spettacolari ad ogni passo, per concludersi nell'atmosfera autentica del piccolo porticciolo, dove il tempo sembra essersi fermato tra le tipiche case colorate e le barche dei pescatori.",
+  "teaser_accessibilita": "Tragitto misto lungo marciapiedi urbani e discese verso le spiagge o le scogliere. Non adatto a passeggini o persone con mobilità ridotta.",
+  "teaser_info": "Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe comode, costume da bagno e protezione solare.",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "partenza": {
+    "nome": "Stazione di Genova Nervi",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Passeggiata di Nervi (zona Capolungo)",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [],
+  "directions": [],
+  "durata_en": "60-90 min",
+  "distanza_en": "3 km",
+  "teaser_assistenza_en": "For any questions, please email us at assistenza@zenawalk.com; we respond within 24 hours.",
+  "teaser_info_en": "Headphones recommended for the best listening experience.\nComfortable shoes, a swimsuit, and sunscreen are recommended.",
+  "teaser_accessibilita_en": "Mixed route along urban sidewalks and paths leading down to beaches or cliffs. Not suitable for strollers or people with reduced mobility.",
+  "teaser_aspettarsi_en": "A route that guides you through the refreshing calm of the Nervi Parks, where the lush greenery of exotic botanical collections and antique roses meets the deep blue of the Ligurian Sea. The walk then continues along the legendary Anita Garibaldi Promenade, a striking cliffside path offering spectacular views at every step, concluding in the authentic atmosphere of the small marina, where time seems to have stopped among the colorful traditional houses and fishermen's boats.",
+  "teaser_include_en": "Here is the English translation for your app features and details, keeping it consistent with the previous sections:\n\n\"Self-guided digital tour with an audio guide (no physical guide on-site)\nGuided walk through historic parks, the small marina, and the cliffs\nComplete audio guide in Italian, always available on your phone\nUnlimited access, pause and resume whenever you want\nInteractive map with step-by-step navigation\nPanoramic views of the sea and the Riviera\nTips on the most charming spots along the route",
+  "descrizione_en": "Want to refresh your spirit amid lush greenery and the endless blue of the Mediterranean? This is the perfect itinerary for those seeking the timeless elegance of Nervi: a sensory journey through noble villas, dreamlike botanical gardens, and the famous cliffside promenade. Let yourself be guided by the scent of the historic rose garden and the soothing sound of the waves, discovering breathtaking views and the authentic charm of the small marina.\nPurchase the itinerary to experience the Riviera like you've never seen it before.",
+  "tema_en": "Where land meets the sea",
+  "titolo_en": "Nervi: Parks and Cliffs",
+  "teaser_cta_en": "Buy Now"
+}

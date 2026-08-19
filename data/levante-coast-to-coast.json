@@ -1,0 +1,65 @@
+{
+  "id": "levante-coast-to-coast",
+  "titolo": "Levante Coast to Coast",
+  "tema": "Un respiro di salsedine tra borghi marinari",
+  "descrizione": "Vuoi scoprire dove fanno il bagno i genovesi lontano dai circuiti turistici di massa? Questo è l'itinerario perfetto per vivere la costa levantina come un vero \"local\": un percorso dinamico tra spiagge di ciottoli, calette nascoste e piattaforme di roccia che si affacciano su un mare cristallino. Attraverserai i quartieri storici di Sturla e Quarto, scoprendo i segreti marinari e i migliori punti panoramici sul Golfo Paradiso. Non perdere l'occasione di un tuffo rigenerante o di una sosta speciale in un angolo di paradiso urbano. Acquista l'itinerario per vivere la Riviera come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "2:30 Ore",
+  "distanza": "5 KM",
+  "difficolta": "media",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998558/scogliera_genova_nervi-1920w_tti6u2.webp",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998558/scogliera_genova_nervi-1920w_tti6u2.webp",
+  "teaser_cta": "Acquista Ora",
+  "teaser_gallery": [
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998558/scogliera_genova_nervi-1920w_tti6u2.webp",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998600/monumento_di_Quarto_dei_Mille_sndnoc.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998689/spiaggia-genova-quinto-al-mare_rwvvql.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998688/oratorio-sant-erasmo-genova-quinto_oobyon.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998690/passeggiata-costiera-genova-quarto-liguria_ldsmah.jpg"
+  ],
+  "teaser_include": "Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\nTour guidato lungo la direttrice costiera e le spiagge del levante\nAudioguida completa in italiano, sempre disponibile sul tuo telefono\nAccesso illimitato, puoi fermarti e ripartire quando vuoi\nMappa interattiva con navigazione passo-passo\nPunti panoramici sul golfo e calette nascoste\nConsigli sulle tappe e sui punti di sosta balneare più belli",
+  "teaser_aspettarsi": "Un itinerario vibrante che esplora il volto più autentico e marinaro della costa genovese, portandoti a scoprire la trasformazione del paesaggio urbano in rifugi naturali affacciati sul mare. Attraverserai quartieri storici come Sturla e Quarto, addentrandoti in calette di ciottoli, piattaforme di roccia naturale e angoli di costa dove l'acqua cristallina è la protagonista assoluta. Sarà un'esperienza che alterna il cammino lungo la costa alla scoperta di scorci panoramici imperdibili sul Golfo Paradiso, offrendoti la prospettiva perfetta per vivere il mare di Genova lontano dal caos cittadino.",
+  "teaser_accessibilita": "Tragitto misto lungo marciapiedi urbani e discese verso le spiagge o le scogliere. Non adatto a passeggini o persone con mobilità ridotta.",
+  "teaser_info": "Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe comode, costume da bagno e protezione solare.",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "partenza": {
+    "nome": "Quartiere di Sturla",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Nervi",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [],
+  "directions": [],
+  "durata_en": "2h 30min",
+  "distanza_en": "5 km",
+  "descrizione_en": "Want to discover where the locals go swimming, far from the mass tourist spots? This is the perfect itinerary to experience the eastern coast like a true 'local': a dynamic route through pebble beaches, hidden coves, and rocky platforms overlooking crystal-clear waters. You'll walk through the historic neighborhoods of Sturla and Quarto, uncovering maritime secrets and the best panoramic viewpoints over the Gulf of Paradiso. Don't miss the chance to take a refreshing dip or a special stop in this corner of urban paradise. Purchase the itinerary to experience the Riviera like you've never seen it before.",
+  "tema_en": "A breath of sea salt among seaside villages",
+  "titolo_en": "Levante Coast to Coast",
+  "teaser_cta_en": "Buy Now",
+  "teaser_include_en": "Self-guided digital tour with an audio guide (no physical guide on-site)\nGuided tour along the eastern coast route and its beaches\nComplete audio guide in Italian, always available on your phone\nUnlimited access, pause and resume whenever you want\nInteractive map with step-by-step navigation\nPanoramic viewpoints over the gulf and hidden coves\nTips on the best stops and swimming spots",
+  "teaser_aspettarsi_en": "A vibrant itinerary exploring the most authentic and maritime side of the Genoa coastline, taking you to discover how the urban landscape transforms into natural seaside retreats. You'll walk through historic neighborhoods like Sturla and Quarto, venturing into pebble coves, natural rock platforms, and stretches of coastline where crystal-clear water steals the show. It’s an experience that alternates coastal walking with the discovery of unmissable panoramic views over the Gulf of Paradiso, offering you the perfect perspective to enjoy Genoa's sea away from the city hustle",
+  "teaser_accessibilita_en": "Mixed route along urban sidewalks and paths leading down to beaches or cliffs. Not suitable for strollers or people with reduced mobility.",
+  "teaser_info_en": "Headphones recommended for the best listening experience.\nComfortable shoes, a swimsuit, and sunscreen are recommended.",
+  "teaser_assistenza_en": "For any questions, please email us at assistenza@zenawalk.com; we respond within 24 hours."
+}

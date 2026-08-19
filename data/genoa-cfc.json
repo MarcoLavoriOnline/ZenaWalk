@@ -1,0 +1,1289 @@
+{
+  "id": "genoa-cfc",
+  "titolo": "La Storia del Genoa CFC",
+  "tema": "Il club di calcio più antico in Italia",
+  "descrizione": "Vuoi scoprire la storia del club di calcio più antico d'Italia? Questo è l'itinerario perfetto per te: oltre 130 anni di storia rossoblù raccontati tappa dopo tappa tra case private, negozi storici e luoghi iconici, in un percorso pensato per chi vuole andare oltre lo stadio e i trofei. Sarai guidato dai racconti di Cristoforo, che trasformerà una semplice passeggiata in un viaggio nella memoria della città e della sua squadra. Ottimizza il tuo tempo, guarda la mappa e premi play.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "available",
+  "durata": "60-75 min",
+  "distanza": "2,4 km",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786538361/Logo-nuovo-Genoa-2022_wyafsz.png",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786538361/Logo-nuovo-Genoa-2022_wyafsz.png",
+  "partenza": {
+    "nome": "Via Palestro",
+    "coords": [
+      44.4119864,
+      8.9396612
+    ],
+    "come_arrivare": "Zona Piazza Corvetto: fermate bus AMT in piazza (linee multiple) o dieci minuti a piedi da Via Garibaldi/De Ferrari. Parcheggio pubblico Corvetto nelle vicinanze.",
+    "come_arrivare_en": "Piazza Corvetto area: AMT bus stops right on the square (multiple lines), or a ten-minute walk from Via Garibaldi/De Ferrari. Corvetto public car park nearby."
+  },
+  "arrivo": {
+    "nome": "Piazza De Ferrari",
+    "coords": [
+      44.4071699,
+      8.9340399
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "Hai completato",
+    "titolo_highlight": "Genova è il Genoa",
+    "sottotitolo": "Dal consolato di Via Palestro alla piazza dove tutto ricomincia ogni anno. Scegli altri itinerari per continuare a scoprire Genova.",
+    "titolo_en": "You've completed",
+    "titolo_highlight_en": "Genoa Is the Genoa",
+    "sottotitolo_en": "From the consulate on Via Palestro to the square where it all begins again every year. Choose another itinerary to keep discovering Genoa."
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Via Palestro",
+      "label": "Dove nacque il calcio a Genova",
+      "emoji": "⚽",
+      "dur": "1.5",
+      "coords": [
+        44.41086023174613,
+        8.938618168726919
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786538529/c3ec5e5ffc6b96bc9ed55adf1ff0df97_b3njyt.jpg",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786528909/Via_Palestro_-_Genoa_CFC_rzedbj.mp3",
+      "chicca": "Qui, in un consolato britannico, nacque per caso il club di calcio più antico d'Italia.",
+      "storia": [
+        "Nella sera del 7 settembre 1893, in una sala del Consolato Britannico al civico 10 di questa via, trenta cittadini inglesi residenti a Genova misero per iscritto la fondazione del Genoa Cricket and Athletic Club, l'atto che avrebbe dato origine al club di calcio più antico d'Italia ancora in attività.",
+        "Tre anni dopo, un medico inglese arrivato per curare gli equipaggi delle navi in porto trova questo club e lo trasforma: spinge perché il calcio, fino ad allora un ripiego invernale, diventi la vera identità del Genoa, e nel 1899 gli dà il nome che porta ancora oggi - Genoa Cricket and Football Club."
+      ],
+      "highlight": "Cercate il numero \"4\" tra i citofoni del civico 10: è all'interno 4 che, quella sera del 1893, si riunirono i fondatori del club.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Il calcio come ripiego",
+        "storia": "Giovedì 7 settembre 1893, in una sala del Consolato Britannico al civico 10 interno 4, si riunisce un gruppo di inglesi residenti a Genova. A presiedere è Charles Alfred Payton, baronetto dell'Impero Britannico e Console Generale della Regina Vittoria in città. Intorno a lui una trentina di connazionali, che versano dieci lire a testa e ricevono il regolamento appena scritto di un nuovo club.\n\nGiovedì 7 settembre 1893, in una sala del Consolato Britannico al civico 10 interno 4, si riunisce un gruppo di inglesi residenti a Genova. A presiedere è Charles Alfred Payton, baronetto dell'Impero Britannico e Console Generale della Regina Vittoria in città. Intorno a lui una trentina di connazionali, che versano dieci lire a testa e ricevono il regolamento appena scritto di un nuovo club.\n\nNon stanno fondando una squadra di calcio. Il regolamento parla di cricket e di atletica, gli sport che quella comunità inglese praticava già informalmente da un paio d'anni, lontano da casa ma non dalle proprie abitudini. Il calcio entra nel programma solo più tardi, come ripiego: quando i campi di cricket diventano fango sotto la pioggia genovese, serve un'attività per riempire i mesi invernali. È poco più di una nota a margine del regolamento, non il suo cuore.\n\nEppure è quella nota a margine ad attraversare centotrent'anni, mentre cricket e atletica — le vere ragioni della fondazione — sono quasi scomparsi dalla memoria della città. Di questa sera, in Via Palestro, non resta nessun segno visibile: solo l'indirizzo, e un numero (l'interno 4) a certificare che è successo proprio qui.\n\nTra i trenta soci di quella sera non c'è ancora l'uomo che avrebbe reso serio quel ripiego. James Spensley arriva a Genova solo nel 1896, come medico di bordo per le navi carboniere inglesi in porto. Trova un club che gioca a calcio quasi per caso, nei mesi in cui il cricket non si può praticare — e nel giro di pochi anni lo trasforma: spinge perché quel gioco invernale diventi la vera identità del club, si batte perché anche i soci italiani possano entrare, e nel 1899 propone il nuovo nome che il Genoa porta ancora oggi, Genoa Cricket and Football Club. La sua storia più intensa — dove viveva, il primo derby cittadino — arriva più avanti in questo percorso.",
+        "lo_sapevi": [
+          "Il club nato in questa via è oggi la squadra di calcio più antica d'Italia ancora in attività: delle sette che nel 1898 fondarono la federazione italiana, è l'unica sopravvissuta fino a oggi.",
+          "Alla fine dell'Ottocento Genova era uno dei porti più attivi d'Europa nei traffici con l'Inghilterra, soprattutto dopo l'apertura del canale di Suez nel 1869: fu questa intensa comunità britannica residente a fondare, in questa via, il primo club sportivo inglese della città.",
+          "I fondatori furono circa trenta, e ciascuno versò dieci lire per l'iscrizione: una somma modesta per l'atto che avrebbe dato inizio al calcio in Italia."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786538793/Atto_fondazione_Genoa_inaxa2.jpg",
+            "didascalia": "Atto costitutivo del Genoa"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786538802/1898_Genoa_Cricket_and_Athletic_Club_d37wkp.jpg",
+            "didascalia": "Il Genoa nel 1898 circa. Da sinistra a destra: Ghigliotti, De Galleani, Spensley, Edoardo Pasteur, Leaver, Enrico Pasteur, Passadoro, Arkelss, Dapples, Deteindre e Agar"
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "Chiesa dello Spirito Santo",
+            "tipo": "Chiesa",
+            "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786538965/OIP_3_e5h9py.webp",
+            "descrizione": "Il luogo di culto della stessa comunità inglese che fondò il Genoa nel 1893, ancora attivo oggi con funzioni in lingua inglese.",
+            "distanza": "2 min a piedi",
+            "orari": "Mercoledì 11:00-13:00, domenica 10:00-12:00",
+            "ingresso": "Gratuito",
+            "indirizzo": "Piazza Marsala 3, 16122 Genova",
+            "descrizione_en": "The place of worship for the same English community that founded the Genoa in 1893, still holding services in English today.",
+            "orari_en": "Wed 11am–1pm, Sun 10am–12pm",
+            "ingresso_en": "Free"
+          }
+        ],
+        "url": [],
+        "info_pratiche": {
+          "orari": "ia pubblica, accessibile sempre",
+          "ingresso": "Gratuito",
+          "indirizzo": "Via Palestro 10",
+          "accessibilita": "Via in salita verso Castelletto",
+          "orari_en": "Public street, always accessible",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Uphill street toward Castelletto"
+        },
+        "consiglio": "Se capitate qui di giovedì, è lo stesso giorno della settimana in cui, nel 1893, si tenne la riunione fondativa. Un modo per sincronizzarvi con quella sera, a centotrent'anni di distanza.",
+        "titolo_en": "Football as an afterthought",
+        "storia_en": "On Thursday 7 September 1893, in a room at the British Consulate at number 10, flat 4, a group of English residents of Genoa gathers. Presiding is Charles Alfred Payton, a baronet of the British Empire and Queen Victoria's Consul General in the city. Around him, some thirty compatriots each pay ten lire and receive the freshly written rules of a new club.\n\nThey are not founding a football team. The rules speak of cricket and athletics, the sports that English community had already been practising informally for a couple of years — far from home, but not from their own habits. Football enters the picture only later, as an afterthought: when the cricket pitches turn to mud under the Genoese rain, the club needs something to fill the winter months. It's little more than a footnote in the rulebook, not its heart.\n\nAnd yet it's that footnote that has lasted a hundred and thirty years, while cricket and athletics — the true reasons for the club's founding — have all but vanished from the city's memory. Of that evening on Via Palestro, no visible trace remains: only the address, and a flat number, to certify that it happened right here.\n\nAmong the thirty members that evening, the man who would turn that afterthought into something serious isn't there yet. James Spensley doesn't arrive in Genoa until 1896, as a ship's doctor for the English coal freighters docking in the port. He finds a club that plays football almost by chance, in the months when cricket isn't possible — and within a few years he transforms it: he pushes for that winter game to become the club's true identity, fights to let Italian members join too, and in 1899 proposes the new name the Genoa still carries today, Genoa Cricket and Football Club. His more personal story — where he lived, the city's first derby — comes later on this route.",
+        "lo_sapevi_en": [
+          "The club born on this street is today Italy's oldest football team still active: of the seven that founded the Italian federation in 1898, it's the only one to have survived to this day.",
+          "In the late 1800s, Genoa was one of Europe's busiest ports for trade with England, especially after the Suez Canal opened in 1869: it was this large resident British community that founded, on this street, the city's first English sports club.",
+          "There were about thirty founders, each paying ten lire to join: a modest sum for the act that would launch football in Italy."
+        ],
+        "consiglio_en": "If you happen to be here on a Thursday, that's the same day of the week the founding meeting was held in 1893 — a way to sync up with that evening, a hundred and thirty years on."
+      },
+      "label_en": "Where football was born in Genoa",
+      "chicca_en": "Here, in a British consulate, Italy's oldest football club was born almost by accident.",
+      "storia_en": [
+        "On the evening of 7 September 1893, in a room at the British Consulate at number 10 on this street, thirty English residents of Genoa put into writing the founding of the Genoa Cricket and Athletic Club — the act that would give rise to Italy's oldest football club still in existence today.",
+        "Three years later, an English doctor who'd arrived to treat the crews of ships in the port found the club and transformed it: he pushed for football — until then just a winter stopgap — to become the Genoa's true identity, and in 1899 gave it the name it still carries today: Genoa Cricket and Football Club."
+      ],
+      "highlight_en": "Look for the number \"4\" among the intercoms at number 10: it was in flat 4 that the club's founders met that evening in 1893."
+    },
+    {
+      "n": 2,
+      "nome": "Villetta Serra",
+      "label": "Dal salotto borghese al pallone",
+      "emoji": "🏰",
+      "dur": "1.5",
+      "coords": [
+        44.40879425743385,
+        8.939320553381398
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786539165/Villetta_Serra_all_acquasola_oggi_rgtav7.jpg",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786526572/Villetta_Serra_-_Genoa_CFC_mancrt.mp3",
+      "chicca": "I marchesi Serra vendettero l'edificio al Comune di Genova nel 1888, per 550.000 lire.",
+      "storia": [
+        "Nell'Ottocento questo piccolo castello neogotico, appartenuto ai marchesi Serra, era un caffè alla moda: luci artistiche la sera, concerti, frequentato dalla buona società genovese. Dal 1911 al 1924, per tredici anni, fu la prima vera sede del Genoa.",
+        "Da allora l'edificio ha cambiato ancora vita: prima gli alpinisti del CAI, oggi un museo del teatro. Della squadra che vi ebbe la sua prima casa non resta traccia visibile."
+      ],
+      "highlight": "Guardate la torre panoramica sullo spigolo dell'edificio: per tredici anni, da quelle finestre, chi dirigeva il club più forte d'Italia guardava la città che stava conquistando.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Diciotto anni senza una casa",
+        "storia": "Diciotto anni. È il tempo che passa tra la sera del settembre 1893 in cui trenta soci firmano un regolamento in una sala d'affitto, e il giorno in cui il club ottiene, per la prima volta, un edificio tutto suo. In mezzo, il Genoa non resta fermo: nel giro di pochi anni diventa la squadra più forte del paese, vince scudetto dopo scudetto, si apre anche ai soci italiani. Ma gioca, si allena, si riunisce sempre in prestito — una stanza qui, una base d'appoggio in un albergo là.\n\nNel 1911 arriva finalmente questa villetta neogotica: prima un caffè alla moda, ora la prima vera sede del club. Non più uno spazio preso in affitto per un'ora, ma un indirizzo permanente, con tanto di torre panoramica.\n\nIl ritardo dice qualcosa. Un club che vince prima di avere una casa dimostra che, all'inizio, contava il gioco, non la rappresentanza. La sede arriva solo quando il club è già un'istituzione — quasi una conseguenza del successo, non la sua causa.\n\nTredici anni dopo, nel 1924, il Genoa se ne va di nuovo — e anche stavolta nessuna fonte spiega perché. L'edificio passa al Club Alpino Italiano, poi diventa museo del teatro: la parentesi calcistica, oggi, è quasi invisibile.",
+        "lo_sapevi": [
+          "Fino al 1897 il club era riservato ai soli cittadini britannici residenti a Genova: quell'anno le porte si aprirono anche ai soci italiani, un passo che anticipò di pochi anni l'arrivo qui, nella sua prima vera sede.",
+          "Dopo il Genoa, lo stesso edificio fu per trentun anni sede del Club Alpino Italiano, dal 1927 al 1958: un'altra comunità completamente diversa, nella stessa struttura.",
+          "Oggi l'edificio ospita il Museo Biblioteca dell'Attore, dedicato alla storia del teatro genovese e italiano: la quarta vita diversa della stessa struttura in poco più di un secolo."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786539351/maxresdefault_arsnz5.jpg",
+            "didascalia": "Museo Biblioteca dell'attore"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786539406/unnamed_21_jeh3i7.jpg",
+            "didascalia": "Villetta serra vista dal parco dell'acquasola"
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "Parco dell'acquasola",
+            "tipo": "Parco",
+            "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786539575/caption_1_j53m1t.jpg",
+            "descrizione": "Il Parco dell'Acquasola (storicamente noto come Spianata dell'Acquasola) è il primo e più antico parco pubblico monumentale del centro di Genova",
+            "distanza": "0 metri",
+            "orari": "tutti i giorni 09:30–19",
+            "ingresso": "Libero",
+            "indirizzo": "Spianata dell'acquasola, Genova",
+            "descrizione_en": "The Acquasola Park (historically known as the Spianata dell'Acquasola) is the first and oldest monumental public park in central Genoa.",
+            "orari_en": "daily 9:30am–7pm",
+            "ingresso_en": "Free"
+          }
+        ],
+        "url": [
+          {
+            "label": "Villa Serra, un edificio singolare — Genova Città Segreta",
+            "href": "https://genovacittasegreta.com/2022/02/10/villa-serra-un-edificio-singolare/",
+            "label_en": "Villa Serra, a singular building — Genova Città Segreta"
+          },
+          {
+            "label": "La sede storica — Museo Biblioteca dell'Attore",
+            "href": "https://www.museoattore.it/chi-siamo/la-sede-storica-villetta-serra/",
+            "label_en": "The historic headquarters — Actor's Museum and Library"
+          },
+          {
+            "label": "Contatti, orari e prenotazioni — Museo Biblioteca dell'Attore",
+            "href": "https://www.museoattore.it/contatti/",
+            "label_en": "Contact, hours and bookings — Actor's Museum and Library"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Lunedì, mercoledì, giovedì 9:00–16:00; martedì e venerdì 9:00–13:00",
+          "ingresso": "Non risulta un biglietto a pagamento — visite guidate su prenotazione",
+          "indirizzo": "Viale IV Novembre, 16121 Genova GE",
+          "accessibilita": "Di fronte al parco dell'Acquasola",
+          "orari_en": "Mon, Wed, Thu 9am–4pm; Tue and Fri 9am–1pm",
+          "ingresso_en": "No admission fee on record — guided tours by appointment",
+          "accessibilita_en": "Opposite the Acquasola park"
+        },
+        "consiglio": "Lo stesso anno in cui il Genoa arriva qui, il 22 gennaio 1911, la squadra inaugura anche il suo primo vero stadio in muratura, a Marassi, quello che oggi conoscete come Ferraris. Un 1911 doppio: la casa amministrativa e quella sportiva, quasi nello stesso momento.",
+        "titolo_en": "Eighteen years without a home",
+        "storia_en": "Eighteen years. That's how long passes between the September evening in 1893 when thirty members sign a set of rules in a rented room, and the day the club finally gets a building of its own. In between, the Genoa doesn't stand still: within a few years it becomes the country's strongest team, wins title after title, opens up to Italian members too. But it plays, trains and meets always on borrowed space — a room here, a base in a hotel there.\n\nIn 1911, this little neo-Gothic villa finally arrives: once a fashionable café, now the club's first true headquarters. No longer space rented by the hour, but a permanent address, complete with a panoramic tower.\n\nThe delay says something. A club that wins before it has a home shows that, at the start, what mattered was the game, not appearances. The headquarters arrives only once the club is already an institution — almost a consequence of success, not its cause.\n\nThirteen years later, in 1924, the Genoa moves out again — and once more, no source explains why. The building passes to the Italian Alpine Club, then becomes a theatre museum: today, the football chapter is almost invisible.",
+        "lo_sapevi_en": [
+          "Until 1897, the club was reserved for British citizens resident in Genoa only: that year its doors opened to Italian members too, a step that came just a few years before the club arrived here, at its first real home.",
+          "After the Genoa, the same building served for thirty-one years as the headquarters of the Italian Alpine Club, from 1927 to 1958: a completely different community, in the same building.",
+          "Today the building houses the Actor's Museum and Library, dedicated to the history of Genoese and Italian theatre: the fourth different life of the same building in a little over a century."
+        ],
+        "consiglio_en": "The same year the Genoa arrived here, on 22 January 1911, the team also opened its first proper brick stadium, at Marassi — the one you know today as the Ferraris. A double 1911: the administrative home and the sporting one, almost at the same time."
+      },
+      "label_en": "From bourgeois salon to football",
+      "chicca_en": "The Serra marquises sold the building to the City of Genoa in 1888, for 550,000 lire.",
+      "storia_en": [
+        "In the 1800s, this small neo-Gothic castle, once owned by the Serra marquises, was a fashionable café: artistic lighting in the evening, concerts, frequented by Genoese high society. From 1911 to 1924, for thirteen years, it was the Genoa's first real headquarters.",
+        "Since then the building has changed life again: first the Italian Alpine Club, today a theatre museum. Of the team that once had its first home here, no visible trace remains."
+      ],
+      "highlight_en": "Look at the panoramic tower on the corner of the building: for thirteen years, from those windows, the people running Italy's strongest club looked out over the city they were conquering."
+    },
+    {
+      "n": 3,
+      "nome": "Salita Santa Caterina ",
+      "label": "Il capitano che aprì una bottega",
+      "emoji": "🏪",
+      "dur": "",
+      "coords": [
+        44.409938,
+        8.936670013074307
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786540476/OIP_4_cgqsnf.webp",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786528583/Salita_Santa_Caterina_-_Genoa_CFC_z6ugqn.mp3",
+      "chicca": "Pasteur giocò fianco a fianco con Spensley per undici anni, vincendo sei scudetti, poi ne diventò presidente.",
+      "storia": [
+        "Edoardo Pasteur fu il secondo capitano della storia del Genoa, succeduto a James Spensley. Dopo la carriera da giocatore e dirigente, aprì un negozio di articoli sportivi in città. Secondo la tradizione, la bottega si trovava in questa salita medievale.",
+        "Oggi l'ingresso della salita è segnato dal Cinema Sivori, la sala più antica d'Italia. Del negozio di Pasteur non resta traccia."
+      ],
+      "highlight": "Guardate l'insegna del Cinema Sivori: il 30 maggio 1896, qui dentro, fu proiettato il primo film della storia italiana, cinque mesi dopo la prima dei fratelli Lumière a Parigi.",
+      "approfondimento": {
+        "tag": "Sport",
+        "titolo": "Il capitano diventato bottegaio",
+        "storia": "Edoardo Pasteur è tra i pionieri del Genoa, in campo fianco a fianco con James Spensley: gioca come mediano destro dal 1896 al 1907, vincendo sei scudetti da titolare inamovibile — un record di titoli che condivide proprio con Spensley. Viene da una famiglia svizzera, imparentata alla lontana con il celebre batteriologo Louis Pasteur, formatosi tra Berna e Losanna prima di stabilirsi a Genova.\n\nNel 1904 il ruolo cambia: da giocatore diventa presidente del club, succedendo a George Fawcus. Diventa poi anche dirigente federale e arbitro internazionale, negli anni in cui il calcio italiano, ancora giovanissimo, comincia a fare i conti con le prime accuse di professionismo mascherato — pagamenti sottobanco ai giocatori più forti, camuffati da rimborsi spese. Pasteur è tra chi difende con più convinzione l'idea di uno sport ancora dilettantistico.\n\nChiusa anche questa parentesi da dirigente, secondo la tradizione apre proprio in questa salita un negozio di articoli sportivi — il suo ultimo indirizzo nel mondo del calcio, non più in campo, non più in federazione, ma dietro un bancone. Nessuna fonte indipendente conferma dove fosse esattamente: del presidente bottegaio resta solo il racconto.",
+        "lo_sapevi": [
+          "Pasteur non era l'unico della sua famiglia nel Genoa: anche suo fratello Enrico giocò nel club, contribuendo ai primi scudetti della sezione di pallanuoto, negli anni Dieci del Novecento.",
+          "Pasteur si formò tra Berna e Losanna prima di tornare a Genova, dove costruì l'intera carriera sportiva e dirigenziale che lo avrebbe portato a diventare capitano.",
+          "Pasteur amava definirsi \"un oriundo alla rovescia\": l'unico giocatore genovese in una squadra fondata da inglesi. Tra i compagni di squadra era conosciuto con il soprannome \"Dadin\"."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786540476/OIP_4_cgqsnf.webp",
+            "didascalia": "Salita Santa Caterina"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786540480/71_sal.S.Caterina_con_aquedotto_demolito_nel_1873_ed_Mangini_yywvtm.jpg",
+            "didascalia": "Salita Santa Caterina in passato "
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [
+          {
+            "label": "Edoardo Pasteur — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Edoardo_Pasteur",
+            "label_en": "Edoardo Pasteur — Wikipedia"
+          },
+          {
+            "label": "Edoardo Pasteur, il vincitore di 6 scudetti — Sito ufficiale Genoa CFC",
+            "href": "https://genoacfc.it/edoardo-pasteur-il-vincitore-di-6-scudetti/",
+            "label_en": "Edoardo Pasteur, winner of 6 titles — Genoa CFC official site"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "H24",
+          "ingresso": "libero",
+          "indirizzo": "Via santa caterina",
+          "accessibilita": "libero",
+          "orari_en": "Always open",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Open access"
+        },
+        "consiglio": "Percorrete lentamente questa salita fino in fondo: secondo la tradizione, è la stessa che Pasteur attraversava ogni giorno per raggiungere il suo negozio.",
+        "titolo_en": "The captain who became a shopkeeper",
+        "storia_en": "Edoardo Pasteur is among the Genoa's pioneers, playing alongside James Spensley on the pitch: he played right-half from 1896 to 1907, winning six titles as an ever-present starter — a record he shares with Spensley himself. He came from a Swiss family, distantly related to the famous bacteriologist Louis Pasteur, and trained between Bern and Lausanne before settling in Genoa.\n\nIn 1904, his role changed: from player he became club president, succeeding George Fawcus. He later also became a federation official and international referee, in the years when Italian football, still very young, was starting to reckon with its first accusations of disguised professionalism — under-the-table payments to top players, dressed up as expense reimbursements. Pasteur was among the strongest defenders of the idea that the sport should stay amateur.\n\nOnce that chapter as an official closed too, tradition has it he opened a sports goods shop right on this lane — his last address in the world of football, no longer on the pitch, no longer at the federation, but behind a counter. No independent source confirms exactly where it stood: of the shopkeeper-president, only the story remains.",
+        "lo_sapevi_en": [
+          "Pasteur wasn't the only one in his family at the Genoa: his brother Enrico also played for the club, contributing to the water polo section's first titles in the 1910s.",
+          "Pasteur trained between Bern and Lausanne before returning to Genoa, where he built the entire sporting and administrative career that would make him captain.",
+          "Pasteur liked to call himself \"an oriundo in reverse\": the only Genoese player in a team founded by Englishmen. Among his teammates he was known by the nickname \"Dadin.\""
+        ],
+        "consiglio_en": "Walk slowly all the way up this lane: tradition says it's the same one Pasteur walked every day to reach his shop."
+      },
+      "label_en": "The captain who opened a shop",
+      "chicca_en": "Pasteur played alongside Spensley for eleven years, winning six titles, then became club president.",
+      "storia_en": [
+        "Edoardo Pasteur was the Genoa's second captain in history, succeeding James Spensley. After his career as a player and club official, he opened a sports goods shop in the city. According to tradition, the shop stood on this medieval lane.",
+        "Today the entrance to the lane is marked by the Cinema Sivori, Italy's oldest cinema. No trace remains of Pasteur's shop."
+      ],
+      "highlight_en": "Look at the Cinema Sivori sign: on 30 May 1896, inside this very building, the first film in Italian history was screened, just five months after the Lumière brothers' premiere in Paris."
+    },
+    {
+      "n": 4,
+      "nome": "Salita Dinegro",
+      "label": "Da redazione operaia a museo di calcio",
+      "emoji": "🗞️",
+      "dur": "",
+      "coords": [
+        44.410086,
+        8.936113
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786540844/OIP_5_a4fadd.webp",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786529517/Saita_Dinegro_-_genoa_CFC_ia91kc.mp3",
+      "chicca": "Il museo nacque per salvare qualcosa che si stava perdendo: documenti e cimeli del club dispersi nel tempo, prima che sparissero per sempre.",
+      "storia": [
+        "guardate l'imbocco di Salita Dinegro: al civico 7 c'erano un tempo gli uffici del giornale \"Il Lavoro\", diretto per anni da Sandro Pertini, futuro Presidente della Repubblica. Nel 2009, quegli stessi uffici si trasformarono nella prima sede della memoria storica del Genoa.",
+        "Oggi quella prima sede non esiste più: nel 2013 tutto si è trasferito altrove, in uno spazio molto più grande, che visiterete più avanti in questo percorso. Da qui resta solo la salita, senza alcun segno."
+      ],
+      "highlight": "Guardate l'imbocco della salita: lì lavorò per anni Sandro Pertini, futuro Presidente della Repubblica, alla guida di un giornale di battaglie operaie decenni prima che quello stesso spazio raccontasse un'altra storia.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Da redazione operaia a museo di calcio",
+        "storia": "Prima di diventare un museo, questi uffici al civico 7 di Salita Dinegro avevano un'altra vita. Per anni ospitarono la redazione del quotidiano \"Il Lavoro\", diretto — tra gli altri — da Sandro Pertini, che sarebbe diventato Presidente della Repubblica Italiana dal 1978 al 1985. Un giornale di ispirazione socialista, voce del mondo operaio genovese.\n\nDecenni dopo, la redazione chiude e gli spazi cambiano funzione. Il 5 giugno 2009 vi apre la prima sede ufficiale del Museo della Storia del Genoa — un anno dopo che una mostra temporanea, nel 2008, aveva già portato qui i primi visitatori, prima ancora che il museo avesse un'insegna definitiva.\n\nLa stessa stanza che per anni aveva raccontato le lotte dei lavoratori genovesi diventa, con un salto netto di funzione, la prima casa della memoria di una squadra di calcio. Due modi diversi di raccontare la stessa città, nello stesso indirizzo, a distanza di generazioni.\n\nIl museo resta qui solo quattro anni: nel 2013 si trasferisce al Porto Antico, in uno spazio molto più grande. Da questa salita, oggi, non resta alcun segno di quella prima tappa — solo il civico, e questa storia.",
+        "lo_sapevi": [
+          "La mostra del 2008 che anticipò l'apertura si intitolava \"Football. L'età dei pionieri (1898-1908)\": il titolo fu coniato dal giornalista e storico Gianni Brera.",
+          "Lo scopo dichiarato, fin dall'inizio, era colmare un vuoto: recuperare documenti e cimeli del club dispersi nel tempo, prima che andassero persi per sempre.",
+          "Nel 2026 il museo nato qui nel 2009 è entrato a far parte di Museimpresa, la rete nazionale dei musei d'impresa italiani — un riconoscimento che premia oltre 130 anni di storia custodita."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786540844/OIP_5_a4fadd.webp",
+            "didascalia": "Salita Dinegro"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786540841/OIP_6_qfpko2.webp",
+            "didascalia": "Presidente Sandro Pertini"
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [
+          {
+            "label": "Museo della storia del Genoa — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Museo_della_storia_del_Genoa",
+            "label_en": "Genoa History Museum — Wikipedia"
+          },
+          {
+            "label": "Sandro Pertini — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Sandro_Pertini",
+            "label_en": "Sandro Pertini — Wikipedia"
+          },
+          {
+            "label": "Museo della Storia del Genoa — Ministero della Cultura",
+            "href": "https://cultura.gov.it/luogo/museo-della-storia-del-genoa",
+            "label_en": "Genoa History Museum — Ministry of Culture"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "H24",
+          "ingresso": "Libero",
+          "indirizzo": "Salita Dinegro 7/R, 16123 Genova",
+          "accessibilita": "Libero",
+          "orari_en": "Always open",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Open access"
+        },
+        "consiglio": "Quando arriverete al museo vero, più avanti nel percorso, cercate il logo della rete Museimpresa: è il segno che quello nato qui, in un paio di vetrine, è oggi riconosciuto ufficialmente tra i musei d'impresa italiani.",
+        "titolo_en": "From workers' newsroom to football museum",
+        "storia_en": "Before becoming a museum, these offices at number 7 Salita Dinegro had another life. For years they housed the newsroom of the newspaper \"Il Lavoro,\" edited — among others — by Sandro Pertini, who would go on to become President of the Italian Republic from 1978 to 1985. A socialist-leaning paper, the voice of Genoa's working class.\n\nDecades later, the newsroom closes and the space changes use. On 5 June 2009, the first official home of the Genoa History Museum opens here — a year after a temporary exhibition in 2008 had already brought the first visitors, before the museum even had a permanent sign.\n\nThe same room that for years had told the story of Genoese workers' struggles becomes, in a sharp change of purpose, the first home of a football club's memory. Two different ways of telling the story of the same city, at the same address, generations apart.\n\nThe museum stays here for only four years: in 2013 it moves to the Porto Antico, into a much larger space. From this lane today, no sign remains of that first stop — only the street number, and this story.",
+        "lo_sapevi_en": [
+          "The 2008 exhibition that preceded the opening was titled \"Football. The Age of the Pioneers (1898–1908)\": the title was coined by journalist and historian Gianni Brera.",
+          "The stated goal, from the very start, was to fill a gap: recovering club documents and memorabilia scattered over time, before they were lost for good.",
+          "In 2026, the museum born here in 2009 joined Museimpresa, Italy's national network of corporate museums — recognition for over 130 years of preserved history."
+        ],
+        "consiglio_en": "When you reach the real museum later on this route, look for the Museimpresa network logo: it's the sign that what was born here, in a couple of display cases, is now officially recognised among Italy's corporate museums."
+      },
+      "label_en": "From workers' newsroom to football museum",
+      "chicca_en": "The museum was born to save something that was slipping away: club documents and memorabilia scattered over time, before they vanished for good.",
+      "storia_en": [
+        "Look at the entrance to Salita Dinegro: at number 7 there once stood the offices of the newspaper \"Il Lavoro,\" edited for years by Sandro Pertini, future President of the Republic. In 2009, those same offices became the first home of the Genoa's historical memory.",
+        "Today that first home no longer exists: in 2013 everything moved elsewhere, to a much larger space you'll visit later on this route. All that's left here is the lane itself, with no sign at all."
+      ],
+      "highlight_en": "Look at the entrance to the lane: Sandro Pertini, future President of the Republic, worked here for years running a newspaper devoted to workers' struggles — decades before that same space told a completely different story."
+    },
+    {
+      "n": 5,
+      "nome": "Via Luccoli",
+      "label": "Il campione sbarcato dal mare",
+      "emoji": "🚢",
+      "dur": "",
+      "coords": [
+        44.40984291793793,
+        8.934164094788576
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541101/OIP_7_mfe5ap.webp",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786545315/Via_Luccoli_-_Genoa_CFC_xawjz8.mp3",
+      "chicca": "Il Genoa pagò 25.000 pesos argentini per acquistare Stabile dall'Huracán di Buenos Aires.",
+      "storia": [
+        "Guillermo Stabile arrivò in questa via nel 1930, appena consacrato capocannoniere del primo Mondiale di calcio della storia. Sbarcò a Genova via nave, e due giorni dopo debuttò con il Genoa segnando una tripletta al Bologna.",
+        "Oggi Via Luccoli resta una delle vie più eleganti del centro storico, tra botteghe d'antiquariato e palazzi nobiliari. Della sua residenza qui non c'è conferma certa: la tradizione dice che Stabile vivesse in uno di questi palazzi."
+      ],
+      "highlight": "Osservate i palazzi nobiliari lungo la via, come il Palazzo Franzone Spinola al civico 23: uno di questi, secondo la tradizione, ospitò per qualche tempo il campione del mondo Guillermo Stabile.",
+      "approfondimento": {
+        "tag": "Sport",
+        "titolo": "Il campione arrivato dal mare",
+        "storia": "Il 14 novembre 1930, un venerdì, la nave che riporta Guillermo Stabile dall'Argentina attracca al porto di Genova. Ad aspettarlo, secondo le cronache dell'epoca, una piccola folla di tifosi in festa. Stabile arrivava fresco di un record che nessuno aveva mai ottenuto prima — capocannoniere del primissimo Campionato del Mondo, disputato pochi mesi prima in Uruguay.\n\nDue giorni dopo, la domenica, debutta al Ferraris contro il Bologna, campione d'Italia in carica. Segna una tripletta. Il pubblico, già pronto ad amarlo, lo consacra prima ancora che la stagione entri nel vivo.\n\nMa il calcio non guarda ai curriculum. Nel giro di pochi anni, due gravi fratture alla stessa gamba destra — la prima nel 1931, la seconda nel 1933 — spezzano la traiettoria di un campione arrivato via mare come una leggenda vivente. Nel ricordo dei tifosi resta soprattutto quello: l'arrivo, la tripletta, la promessa — più della carriera che ne seguì.",
+        "lo_sapevi": [
+          "Dopo il ritiro, Stabile allenò per anni la nazionale argentina, vincendo sei Copa América: resta ancora oggi il commissario tecnico più vincente nella storia del torneo.",
+          "Fu anche tra i primi calciatori-opinionisti della storia della radio argentina, una seconda carriera nata dopo aver appeso le scarpette al chiodo.",
+          "Il soprannome \"El Filtrador\" nasceva dal suo modo di giocare: si \"infiltrava\" tra le difese avversarie con finte e cambi di ritmo, invece di puntarle di forza."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541101/OIP_7_mfe5ap.webp",
+            "didascalia": "Via Luccoli"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541096/OIP_9_o1fw5w.webp",
+            "didascalia": "guillermo stabile"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541082/OIP_8_efyrqw.webp",
+            "didascalia": "guillermo stabile"
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [
+          {
+            "label": "Guillermo Stábile — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Guillermo_St%C3%A1bile",
+            "label_en": "Guillermo Stábile — Wikipedia"
+          },
+          {
+            "label": "Correva l'anno 1930: Stabile arrivava al Genoa — PianetaGenoa1893",
+            "href": "https://www.pianetagenoa1893.net/la-storia-del-genoa/correva-lanno-1930-stabile-arrivava-al-genoa/",
+            "label_en": "The year was 1930: Stabile arrives at the Genoa — PianetaGenoa1893"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Via pubblica, accessibile H24",
+          "ingresso": "Free",
+          "indirizzo": "Via Luccoli",
+          "accessibilita": "Libero",
+          "orari_en": "Public street, always accessible",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Open access"
+        },
+        "consiglio": "Alzate lo sguardo verso gli ultimi piani degli edifici, non verso le vetrine: le residenze signorili di inizio Novecento, come quella attribuita a Stabile, erano ai piani alti — il livello strada era già commerciale allora come oggi.",
+        "titolo_en": "The champion who arrived by sea",
+        "storia_en": "On Friday 14 November 1930, the ship bringing Guillermo Stabile back from Argentina docks in the port of Genoa. Waiting for him, according to accounts from the time, is a small crowd of celebrating fans. Stabile arrives fresh off a record no one had ever achieved before — top scorer of the very first World Cup, played just months earlier in Uruguay.\n\nTwo days later, on the Sunday, he makes his debut at the Ferraris against Bologna, the reigning Italian champions. He scores a hat-trick. The crowd, already ready to love him, crowns him before the season has even properly begun.\n\nBut football doesn't care about résumés. Within a few years, two serious fractures to the same right leg — the first in 1931, the second in 1933 — cut short the trajectory of a champion who'd arrived by sea like a living legend. In fans' memory, what remains is mostly that: the arrival, the hat-trick, the promise — more than the career that followed.",
+        "lo_sapevi_en": [
+          "After retiring, Stabile coached the Argentine national team for years, winning six Copa Américas: he remains, to this day, the most successful coach in the tournament's history.",
+          "He was also among the first football pundits in the history of Argentine radio, a second career that began after he hung up his boots.",
+          "His nickname \"El Filtrador\" (the infiltrator) came from his style of play: he \"filtered\" through opposing defences with feints and changes of pace, rather than taking them on with force."
+        ],
+        "consiglio_en": "Look up toward the top floors of the buildings, not the shop windows: the elegant early-1900s residences, like the one attributed to Stabile, were on the upper floors — street level was already commercial then, just as it is today."
+      },
+      "label_en": "The champion who arrived by sea",
+      "chicca_en": "The Genoa paid 25,000 Argentine pesos to sign Stabile from Huracán of Buenos Aires.",
+      "storia_en": [
+        "Guillermo Stabile arrived on this street in 1930, freshly crowned top scorer of football's first-ever World Cup. He landed in Genoa by ship, and two days later made his debut for the Genoa, scoring a hat-trick against Bologna.",
+        "Today Via Luccoli remains one of the old town's most elegant streets, lined with antique shops and noble palazzi. There's no firm confirmation of where he actually lived: tradition says Stabile lodged in one of these buildings."
+      ],
+      "highlight_en": "Look at the noble palazzi along the street, like Palazzo Franzone Spinola at number 23: tradition says one of these once housed, for a while, world champion Guillermo Stabile."
+    },
+    {
+      "n": 6,
+      "nome": "Piazza Campetto",
+      "label": "il primo derby della storia del calcio genovese",
+      "emoji": "⚽",
+      "dur": "",
+      "coords": [
+        44.40905,
+        8.931562
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782998199/unnamed_6_ddjchi.jpg",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786545499/Piazza_Campetto_-_genoa_CFC_ewyfxe.mp3",
+      "chicca": "Fino al 1897 il Genoa era un club riservato ai soli cittadini britannici, poi Spensley ne aprì le porte anche agli italiani.",
+      "storia": [
+        "Al civico 9, nell'allora Hotel Union, visse a lungo James Spensley: il medico inglese che tra il 1896 e i primi del Novecento trasformò il Genoa in una vera squadra di calcio. ",
+        "Poi fa una cosa che oggi sembrerebbe impensabile: aiuta un club rivale, l'Andrea Doria, a mettere in piedi la propria sezione calcio. Il 9 marzo 1902 le due squadre si affrontano per la prima volta — è il derby che oggi chiamate Genoa-Sampdoria — e il Genoa vince 3 a 1."
+      ],
+      "highlight": "Osservate il portone del civico 9: dietro, in un androne normalmente chiuso al pubblico, una targa ricorda il medico inglese che rese possibile tutto questo itinerario.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Il campo che tornò a essere un campo",
+        "storia": "Prima di essere un salotto nobiliare, Piazza Campetto era, letteralmente, un campo: nato nel IX secolo fuori dalle mura cittadine, il nome non è mai cambiato in mille anni, nemmeno quando la piazza è diventata quartiere di fabbri e poi, dal Cinquecento, uno dei salotti più eleganti della città.\n\nMa la storia che conta di più per questo itinerario comincia nel 1896, quando un giovane medico inglese, James Spensley, arriva a Genova per curare gli equipaggi delle navi carboniere in porto. Si stabilisce al civico 9, nell'allora Hotel Union, e nel giro di pochi anni diventa la figura che più di ogni altra trasforma il piccolo Genoa Cricket and Athletic Club in una squadra di calcio vera e propria. Nel 1897 si batte perché anche i soci italiani possano entrare nel club, fino ad allora riservato ai soli inglesi; nel 1899 propone il cambio di nome in Genoa Cricket and Football Club — la dicitura che il club porta ancora oggi.\n\nÈ da questa casa, il 9 marzo 1902, che parte il giorno che rende Campetto una tappa obbligata per chi segue la storia del calcio genovese: qui si gioca il primo derby ufficiale della città, Genoa contro Andrea Doria. Novanta minuti in cui la piazza, dopo mille anni, torna a essere quello che il suo nome aveva sempre detto: un campo.\n\nOggi di quella storia resta solo una targa, in un androne che quasi nessuno vede.",
+        "lo_sapevi": [
+          "L'Andrea Doria, avversaria in quel primo derby del 1902, confluì nel 1946 in una nuova società: la Sampdoria, ancora oggi rivale storica del Genoa.",
+          "Fu Spensley a proporre, nel 1899, di cambiare il nome del club in \"Genoa Cricket and Football Club\" — la dicitura ancora oggi riconoscibile nel nome ufficiale della squadra.",
+          "Nel 2023, per i 130 anni del Genoa, la casa editrice Galata ha dedicato a Spensley una graphic novel intitolata \"Spensley, il mito del primo genoano\"."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782998199/unnamed_6_ddjchi.jpg",
+            "didascalia": "Piazza Campetto"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541299/R_4_cnkelt.jpg",
+            "didascalia": "james spensley"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541295/OIP_10_evzz0m.webp",
+            "didascalia": "james spensley"
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [
+          {
+            "label": "Le lapidi di James R. Spensley — Marco Cazzulo",
+            "href": "http://cazzulo.altervista.org/le-lapidi-di-james-r-spensley/",
+            "label_en": "The gravestones of James R. Spensley — Marco Cazzulo"
+          },
+          {
+            "label": "James Spensley diventa un graphic novel e apre le porte di casa al pubblico — Mentelocale",
+            "href": "https://www.mentelocale.it/genova/38434-james-spensley-diventa-graphic-novel-apre-porte-casa-pubblico.htm",
+            "label_en": "James Spensley becomes a graphic novel and opens the doors of his home to the public — Mentelocale"
+          },
+          {
+            "label": "James Richardson Spensley — Liber Liber",
+            "href": "https://liberliber.it/autori/autori-s/james-richardson-spensley/",
+            "label_en": "James Richardson Spensley — Liber Liber"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Piazza accessibile liberamente H24",
+          "ingresso": "Free",
+          "indirizzo": "Piazza Campetto",
+          "accessibilita": "Sempre accessibile",
+          "orari_en": "Square freely accessible, always open",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Always accessible"
+        },
+        "consiglio": "Se capitate qui il 9 marzo, sappiate che è la data esatta del primo derby del 1902: nel 2024 è stato rievocato con un arbitro in costume da Spensley e giovani scout come giocatori.",
+        "titolo_en": "The square that went back to being a pitch",
+        "storia_en": "Before it was a noble drawing room, Piazza Campetto was, literally, a field: born in the 9th century outside the city walls, its name hasn't changed in a thousand years — not even when the square became the blacksmiths' quarter, and later, from the 1500s, one of the city's most elegant drawing rooms.\n\nBut the story that matters most for this itinerary begins in 1896, when a young English doctor, James Spensley, arrives in Genoa to treat the crews of coal ships in the port. He settles at number 9, in what was then the Hotel Union, and within a few years becomes the figure who, more than any other, transforms the small Genoa Cricket and Athletic Club into a proper football team. In 1897 he fights to let Italian members into the club, until then reserved for the English only; in 1899 he proposes changing the name to Genoa Cricket and Football Club — the name the club still carries today.\n\nIt's from this home, on 9 March 1902, that the day begins which makes Campetto a required stop for anyone following the history of Genoese football: here the city's first official derby is played, Genoa against Andrea Doria. Ninety minutes in which the square, after a thousand years, goes back to being exactly what its name had always said: a pitch.\n\nToday, all that remains of that story is a plaque, in an entrance hall that almost no one sees.",
+        "lo_sapevi_en": [
+          "Andrea Doria, the opponent in that first 1902 derby, merged in 1946 into a new club: Sampdoria, still the Genoa's historic rival today.",
+          "It was Spensley who proposed, in 1899, changing the club's name to \"Genoa Cricket and Football Club\" — the name still recognisable in the team's official title today.",
+          "In 2023, for the Genoa's 130th anniversary, publisher Galata dedicated a graphic novel to Spensley titled \"Spensley, il mito del primo genoano\" (\"Spensley, the Legend of the First Genoa Fan\")."
+        ],
+        "consiglio_en": "If you happen to be here on 9 March, know that it's the exact date of the first 1902 derby: in 2024 it was re-enacted with a referee dressed as Spensley and young scouts playing the match."
+      },
+      "label_en": "The first derby in Genoese football history",
+      "chicca_en": "Until 1897 the Genoa was a club reserved for British citizens only — then Spensley opened its doors to Italians too.",
+      "storia_en": [
+        "At number 9, in what was then the Hotel Union, James Spensley lived for years: the English doctor who, between 1896 and the early 1900s, turned the Genoa into a proper football team.",
+        "Then he does something that would seem unthinkable today: he helps a rival club, Andrea Doria, set up its own football section. On 9 March 1902 the two teams face off for the first time — it's the derby you know today as Genoa–Sampdoria — and the Genoa wins 3–1."
+      ],
+      "highlight_en": "Look at the doorway of number 9: behind it, in an entrance hall normally closed to the public, a plaque commemorates the English doctor who made this entire itinerary possible."
+    },
+    {
+      "n": 7,
+      "nome": "Chiostro delle Vigne",
+      "label": "Le origini dello scoutismo",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4097752,
+        8.9318111
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541540/Genova-Santa-maria-delle-vigne-chiostro_yablhi.jpg",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786545671/Chiostro_delle_vigne_-_Genoa_CFC_gbqkex.mp3",
+      "chicca": "Lo scoutismo italiano nasce cattolico nel 1905, diventa laico nel 1910 con Spensley, e qui, nel 1913, ritorna cattolico.",
+      "storia": [
+        "James Spensley non si fermò al calcio. Il medico inglese che aveva reso il Genoa capace di vincere sei scudetti su sette vedeva nello sport uno strumento educativo, non solo agonistico — e nel 1910, con lo stesso spirito, portò a Genova lo scoutismo, insieme al maestro Mario Mazza.",
+        "Nel 1911 Mazza si separò da lui e rifondò qui due anni dopo, in questo chiostro, un proprio gruppo scout. Oggi il chiostro medievale, accanto alla basilica delle Vigne, è uno degli angoli più silenziosi del centro storico."
+      ],
+      "highlight": "Osservate le arcate medievali del chiostro: qui, nel 1913, si tenne la cerimonia di fondazione della prima associazione scout cattolica d'Italia.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Le origini dello scoutismo a Genova",
+        "storia": "Lo scoutismo è un movimento educativo per ragazzi nato in Inghilterra nei primi anni del Novecento: attività all'aperto, campeggio, vita in gruppo, per imparare a cavarsela da soli e a prendersi cura degli altri. In pochi anni si diffonde in tutta Europa.\n\nA Genova arriva nel 1905 in forma ancora acerba: il maestro Mario Mazza radunava già un gruppo di ragazzi chiamato \"le Gioiose\", con un'ispirazione religiosa. Nel 1910 Mazza incontra James Spensley — il medico inglese che a Genova aveva già trasformato un club di cricket in una squadra di calcio — e scopre che sta cercando di fare la stessa cosa: portare lo scoutismo in città. Uniscono le forze e fondano la prima vera sezione genovese di scout, aperta a tutti, non solo ai cattolici. Non nasce qui, ma nella vicina chiesa sconsacrata di Sant'Agostino.\n\nL'accordo dura solo un anno. Nel 1911 Mazza litiga con chi dirige l'associazione e se ne va. Con il permesso della Curia arcivescovile, rifonda un proprio gruppo scout, questa volta dichiaratamente cattolico. La cerimonia si tiene proprio in questo chiostro.\n\nSpensley non è più coinvolto: la loro collaborazione, cominciata nel 1910, si era già interrotta. Ma il simbolo scelto per il nuovo gruppo resta lo stesso giglio usato fin dall'inizio — un segno che, anche dopo la rottura, quella storia comune non viene rinnegata.",
+        "lo_sapevi": [
+          "Il simbolo scelto originariamente a Bagni di Lucca nel 1910 per il primo gruppo scout italiano era un giglio borbonico; a Genova fu sostituito con un giglio diverso, legato alla tradizione della chiesa di Sant'Agostino.",
+          "Il primo assistente spirituale della nuova associazione cattolica fondata qui fu don Vittorio Bruzzo, canonico della basilica: nel 1928, quando il regime fascista sciolse lo scoutismo, difese pubblicamente il movimento e fu denunciato come antifascista.",
+          "Dalla sezione genovese del REI nacque nel 1913 il CNGEI, il Corpo Nazionale Giovani Esploratori Italiani: una pattuglia di sette esploratori liguri, guidata proprio da Spensley, partecipò quello stesso anno al primo grande raduno scout internazionale, a Birmingham."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541540/Genova-Santa-maria-delle-vigne-chiostro_yablhi.jpg",
+            "didascalia": "Chiostro delle Vigne"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541564/Immagine_2026-08-12_153146_zd7ksk.png",
+            "didascalia": "Targa origine scoutismo"
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [
+          {
+            "label": "Nascita e sviluppo dello scoutismo in Italia — Genova54.it",
+            "href": "https://www.genova54.it/index.php?option=com_content&view=article&id=355%3Anascita-e-sviluppo-dello-scoutismo-in-italia&catid=42&Itemid=146",
+            "label_en": "The birth and development of scouting in Italy — Genova54.it"
+          },
+          {
+            "label": "Scautismo e guidismo in Italia — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Scautismo_e_guidismo_in_Italia",
+            "label_en": "Scouting and guiding in Italy — Wikipedia"
+          },
+          {
+            "label": "50 anni fa moriva Mario Mazza, ideatore delle Gioiose, precursore degli Scouts — FSE Genova",
+            "href": "https://fsegenova.wordpress.com/2009/11/20/50-anni-fa-moriva-mario-mazza-ideatore-delle-gioiose-precursore-degli-scouts/",
+            "label_en": "50 years ago Mario Mazza died, creator of the Gioiose, forerunner of the Scouts — FSE Genova"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "lun-sab 8:00-19:00, dom 9:00-19:00",
+          "ingresso": "Gratuito",
+          "indirizzo": "Vico del Campanile delle Vigne 5, 16123 Genova",
+          "accessibilita": "All'interno del complesso della Basilica di Santa Maria delle Vigne",
+          "orari_en": "Mon–Sat 8am–7pm, Sun 9am–7pm",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Inside the complex of the Basilica of Santa Maria delle Vigne"
+        },
+        "consiglio": "Cercate le arcate più basse e consumate del chiostro: sono la parte medievale originaria.",
+        "titolo_en": "The origins of scouting in Genoa",
+        "storia_en": "Scouting is an educational movement for young people born in England in the early 1900s: outdoor activities, camping, group life, all to learn how to fend for yourself and look after others. Within a few years it spreads across Europe.\n\nIt arrives in Genoa in 1905, still in a rough form: schoolteacher Mario Mazza was already gathering a group of boys called \"le Gioiose,\" with a religious inspiration. In 1910 Mazza meets James Spensley — the English doctor who had already turned a cricket club into a football team in Genoa — and discovers he's trying to do the same thing: bring scouting to the city. They join forces and found the first true Genoese scout section, open to everyone, not just Catholics. It isn't born here, but in the nearby deconsecrated church of Sant'Agostino.\n\nThe partnership lasts only a year. In 1911 Mazza falls out with the association's leadership and leaves. With permission from the archdiocesan Curia, he re-founds his own scout group, this time explicitly Catholic. The ceremony is held right here in this cloister.\n\nSpensley is no longer involved: their collaboration, begun in 1910, had already broken down. But the symbol chosen for the new group remains the same lily used from the very start — a sign that, even after the split, that shared history isn't disowned.",
+        "lo_sapevi_en": [
+          "The symbol originally chosen at Bagni di Lucca in 1910 for the first Italian scout group was a Bourbon lily; in Genoa it was replaced with a different lily, tied to the tradition of the church of Sant'Agostino.",
+          "The first spiritual advisor of the new Catholic association founded here was Don Vittorio Bruzzo, a canon of the basilica: in 1928, when the fascist regime dissolved scouting, he publicly defended the movement and was reported as an anti-fascist.",
+          "From the Genoese section of the REI, the CNGEI (National Corps of Young Italian Explorers) was born in 1913: a patrol of seven Ligurian scouts, led by Spensley himself, took part that same year in the first great international scout gathering, in Birmingham."
+        ],
+        "consiglio_en": "Look for the cloister's lowest, most worn arches: they're the original medieval part."
+      },
+      "label_en": "The origins of scouting",
+      "chicca_en": "Italian scouting was born Catholic in 1905, became secular in 1910 with Spensley, and here, in 1913, turned Catholic again.",
+      "storia_en": [
+        "James Spensley didn't stop at football. The English doctor who'd made the Genoa capable of winning six titles out of seven saw sport as an educational tool, not just a competitive one — and in 1910, with that same spirit, he brought scouting to Genoa, together with schoolteacher Mario Mazza.",
+        "In 1911 Mazza split from him, and two years later re-founded his own scout group right here, in this cloister. Today the medieval cloister, beside the Basilica delle Vigne, is one of the quietest corners of the old town."
+      ],
+      "highlight_en": "Look at the cloister's medieval arches: here, in 1913, the founding ceremony of Italy's first Catholic scout association was held."
+    },
+    {
+      "n": 8,
+      "nome": "Piazza Banchi",
+      "label": "Genoa Store nel palazzo dei rolli",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.409336,
+        8.929896
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769263/la-piazza-vista-dalla_mhofmz.jpg",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786545855/Piazza_Banchi_-_genoa_CFC_jlxy2e.mp3",
+      "chicca": "Il nuovo Genoa Store è nato da una società al 50% con Velier, l'azienda genovese dell'Amaro Camatti e del Gin Portofino.",
+      "storia": [
+        "Per otto secoli questa piazza fu il cuore finanziario di Genova: qui nacquero i banchi dei cambiavalute medievali, da cui deriva la parola \"bancarotta\". Secondo alcuni racconti, negli anni Dieci del Novecento vi ebbero uffici anche pionieri del Genoa come Norman Leaver e Howard Passadoro.",
+        "L'11 dicembre 2025 la piazza è tornata centro di scambi, stavolta calcistici: dentro Palazzo Serra ha aperto il nuovo Genoa Store, biglietteria e merchandising in uno dei palazzi dei Rolli della città."
+      ],
+      "highlight": "Cercate l'ingresso di Palazzo Serra, all'angolo tra Via Banchi e la piazza: colonne in marmo e soffitti stuccati fanno da cornice al nuovo negozio ufficiale del Genoa.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Dai banchi dei cambiavalute al merchandising",
+        "storia": "Per otto secoli Piazza Banchi fu il centro finanziario di Genova: qui, dal Duecento, i cambiavalute tenevano i loro banchi di legno sotto i portici, e qui nacque anche la parola \"bancarotta\" — dal gesto di rompere a colpi d'ascia il banco di chi non pagava i debiti. Nel Cinquecento la piazza si arricchì della Loggia della Mercanzia, sede dei mercanti, e restò il principale centro commerciale della città fino all'Ottocento.\n\nSecondo alcuni racconti tramandati tra i tifosi, negli anni Dieci del Novecento in questa piazza ebbero anche i loro uffici alcuni dei pionieri del Genoa dei primi scudetti — tra i nomi che circolano, quello di Spensley stesso. Nessuna fonte primaria lo conferma: va trattato come tradizione orale, non come fatto accertato.\n\nQuello che è certo, invece, è più recente: l'11 dicembre 2025 Piazza Banchi è tornata a essere un luogo di scambio, questa volta legato al calcio. Dentro Palazzo Serra, uno dei palazzi dei Rolli della città, ha aperto il nuovo Genoa Store — non solo merchandising, ma anche punto vendita biglietti e, da marzo, un bar gestito da Velier. \"Non abbiamo badato a spese\" ha detto il presidente Dan Sucu all'apertura: colonne di marmo e soffitti stuccati fanno da cornice a un negozio pensato per dialogare con la storia del quartiere, non solo per vendere sciarpe.\n\nOtto secoli di cambiavalute, mercanti e banchieri; oggi, lo stesso spazio accoglie tifosi in cerca di un ricordo. Il commercio, in questa piazza, non si è mai davvero fermato — è solo cambiato oggetto.",
+        "lo_sapevi": [
+          "Il Genoa Store di Piazza Banchi si aggiunge a quelli già attivi in Via XX Settembre, Sestri Ponente e Chiavari.",
+          "Il Ticket Office ufficiale resta alla Palazzina San Giobatta del Porto Antico: qui a Banchi si possono comunque acquistare i biglietti delle partite.",
+          "Piazza Banchi ospita anche banchetti stabili di vinili e libri usati, un punto di riferimento per i collezionisti genovesi indipendentemente dal calcio."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769263/la-piazza-vista-dalla_mhofmz.jpg",
+            "didascalia": "Piazza Banchi"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541815/130555084-fe262735-8e42-42c0-a75d-94bc51fb688b_n9odwj.jpg",
+            "didascalia": "Genoa Store"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786541812/OIP_11_vn9r3d.webp",
+            "didascalia": "Genoa Store"
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "Genoa Club Grifoni in Banchi",
+            "tipo": "Bottega",
+            "img": "",
+            "descrizione": "Uno dei club di tifosi più giovani del Genoa (fondato nel novembre 2023 da un gruppo di habitué della piazza), con oltre 300 soci: il segno che questa piazza è già, informalmente, un punto di ritrovo rossoblù ancora prima dell'apertura dello store.",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": "Piazza Banchi, 16123 Genova",
+            "descrizione_en": "One of the Genoa's youngest fan clubs (founded in November 2023 by a group of regulars in the square), with over 300 members: a sign that this square was already, informally, a red-and-blue gathering spot even before the store opened."
+          }
+        ],
+        "url": [
+          {
+            "label": "Genoa, apre il nuovo Store di piazza Banchi. Sucu: «Il più bel negozio di un club italiano» — Mentelocale",
+            "href": "https://www.mentelocale.it/genova/103549-genoa-apre-il-nuovo-store-di-piazza-banchi-sucu-il-pi-bel-negozio-di-un-club-italiano.htm",
+            "label_en": "Genoa opens the new Piazza Banchi Store. Sucu: \"The finest shop of any Italian club\" — Mentelocale"
+          },
+          {
+            "label": "",
+            "href": ""
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Genoa Store aperto tutti i giorni 9:30-19:30 con orario continuato",
+          "ingresso": "Libero",
+          "indirizzo": "Piazza Banchi, Palazzo Serra, 16123 Genova",
+          "accessibilita": "Piazza pedonale, pavimentata in pietra di luserna (scivolosa se bagnata)",
+          "orari_en": "Genoa Store open daily 9:30am–7:30pm, no midday closure",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Pedestrian square, paved in Luserna stone (slippery when wet)"
+        },
+        "consiglio": "Da marzo, all'interno dello store, Velier apre anche un bar: se volete unire una sosta caffè al ricordo da comprare, questo è il posto giusto per farlo tutto in una volta.",
+        "titolo_en": "From money-changers' benches to merchandise",
+        "storia_en": "For eight centuries Piazza Banchi was Genoa's financial centre: from the 1200s, this is where money-changers kept their wooden benches under the arcades, and where the word \"bancarotta\" was born too — from the act of breaking, with an axe, the bench of anyone who didn't pay their debts. In the 1500s the square gained the Loggia della Mercanzia, home to the merchants, and remained the city's main commercial hub until the 1800s.\n\nAccording to some accounts passed down among fans, in the 1910s some of the Genoa's early-title-winning pioneers also had offices in this square — among the names that circulate, Spensley's own. No primary source confirms this: it should be treated as oral tradition, not established fact.\n\nWhat is certain, on the other hand, is more recent: on 11 December 2025, Piazza Banchi became a place of exchange once more, this time tied to football. Inside Palazzo Serra, one of the city's Rolli palaces, the new Genoa Store opened — not just merchandise, but also a ticket outlet and, from March, a bar run by Velier. \"We didn't hold back on costs,\" said president Dan Sucu at the opening: marble columns and stuccoed ceilings frame a shop designed to engage with the neighbourhood's history, not just to sell scarves.\n\nEight centuries of money-changers, merchants and bankers; today, the same space welcomes fans looking for a souvenir. Trade, in this square, has never really stopped — it has just changed what's being traded.",
+        "lo_sapevi_en": [
+          "The Genoa Store in Piazza Banchi joins others already open on Via XX Settembre, in Sestri Ponente and in Chiavari.",
+          "The official Ticket Office remains at the Palazzina San Giobatta at the Porto Antico: match tickets can still be bought here at Banchi too.",
+          "Piazza Banchi is also home to permanent vinyl and secondhand book stalls, a landmark for Genoese collectors regardless of football."
+        ],
+        "consiglio_en": "From March, Velier also opens a bar inside the store: if you want to combine a coffee break with buying a souvenir, this is the place to do both at once."
+      },
+      "label_en": "The Genoa Store in a Rolli palace",
+      "chicca_en": "The new Genoa Store was launched as a 50/50 partnership with Velier, the Genoese company behind Amaro Camatti and Gin Portofino.",
+      "storia_en": [
+        "For eight centuries this square was the financial heart of Genoa: this is where the medieval money-changers' benches stood, giving us the word \"bancarotta\" (bankruptcy). According to some accounts, in the 1910s Genoa pioneers like Norman Leaver and Howard Passadoro also had offices here.",
+        "On 11 December 2025 the square became a place of exchange once again, this time football-related: the new Genoa Store opened inside Palazzo Serra, ticket office and merchandise inside one of the city's Rolli palaces."
+      ],
+      "highlight_en": "Look for the entrance to Palazzo Serra, on the corner between Via Banchi and the square: marble columns and stuccoed ceilings frame the Genoa's new official store."
+    },
+    {
+      "n": 9,
+      "nome": "Via San Luca",
+      "label": "Il campione che finì tra i rivali",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.409587403172154,
+        8.929961999861089
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542033/OIP_12_ozldxm.webp",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786545951/Via_San_Luca_-_genoa_CFC_spp9gw.mp3",
+      "chicca": "",
+      "storia": [
+        "Al civico 5 di questa via, interno 6, abitava, secondo i dati della Sezione Arbitri di Genova del 1913-14, Wallys Ghiglione, genovese di padre commerciante d'olio e madre inglese: giocò nella squadra che vinse il primo scudetto del calcio italiano, nel 1898.",
+        "Oggi Via San Luca è una delle arterie multietniche del centro storico, tra botteghe di ogni genere. "
+      ],
+      "highlight": "Cercate il civico 5, interno 6: lì, secondo i registri della Sezione Arbitri di Genova del 1913-14, abitava Wallys Ghiglione, protagonista del primo scudetto italiano.",
+      "approfondimento": {
+        "tag": "Storia sportiva",
+        "titolo": "Il campione che finì tra i rivali",
+        "storia": "Wallys Ghiglione nasce a Genova nel 1875, figlio di un commerciante d'olio e di un'inglese, Sarah Davy. È nei viaggi di lavoro del padre, tra Germania e Inghilterra, che il ragazzo scopre il calcio — non grazie alla comunità inglese in città, come capita a molti pionieri di questo sport a Genova, ma per un'esperienza personale fuori dai confini.\n\nTornato in città, entra nel Genoa e l'8 maggio 1898 fa parte della squadra che vince il primo campionato italiano di calcio della storia: la finale contro l'Internazionale di Torino, decisa ai supplementari da un gol di Leaver.\n\nPoi la sua storia prende una piega che oggi sarebbe impensabile. Ghiglione diventa socio dell'Andrea Doria — la squadra rivale storica della città. Non un tradimento, ma normalità: nei primi anni del calcio italiano le appartenenze sportive erano più fluide di quanto siano oggi, e passare da una sponda all'altra della rivalità cittadina non era uno scandalo.\n\nDiventa anche arbitro: i registri della Sezione Arbitri di Genova della stagione 1913-1914 lo danno residente proprio qui, al civico 5 interno 6. Muore nel 1924, a quarantanove anni — lo stesso anno in cui il Genoa vince quello che, a oggi, resta il suo ultimo scudetto.",
+        "lo_sapevi": [
+          "All'anagrafe il suo nome completo era Wallis Angelo Antonio Amedeo Augusto Ghiglione — cinque nomi propri per un uomo conosciuto da tutti solo come \"Wallys\".",
+          "Dopo gli studi, Ghiglione non lasciò mai il commercio di famiglia: fu allo stesso tempo calciatore, arbitro e imprenditore nel settore degli oli.",
+          "L'Andrea Doria, il club di cui divenne socio dopo il Genoa, era nata nel 1895 in una sala della Scuola Svizzera di Genova, da un gruppo di atleti usciti dalla Società Ginnastica Cristoforo Colombo."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542033/OIP_12_ozldxm.webp",
+            "didascalia": "Via San Luca"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542025/OIP_13_v9m7l4.webp",
+            "didascalia": "Wallys Ghiglione"
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "Settore Ospiti Supporters 1893",
+            "tipo": "Bottega",
+            "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542151/OIP_14_aqdbkz.webp",
+            "descrizione": "Negozio indipendente di merchandising e articoli da tifoso, con tanto di parete di adesivi da collezione: un angolo di tifo genoano lontano dai negozi ufficiali del club.",
+            "distanza": "4m",
+            "orari": "Lun-Ven 10:30-13:30, 14:30-19:00; Sab 10:30-13:30, 14:00-19:00; Dom 10:30-13:30, 14:00-18:00",
+            "ingresso": "",
+            "indirizzo": "Piazza San Lorenzo",
+            "descrizione_en": "An independent shop selling merchandise and fan gear, complete with a wall of collectible stickers: a corner of Genoa fandom away from the club's official stores.",
+            "orari_en": "Mon–Fri 10:30am–1:30pm, 2:30–7pm; Sat 10:30am–1:30pm, 2–7pm; Sun 10:30am–1:30pm, 2–6pm"
+          }
+        ],
+        "url": [
+          {
+            "label": "Wallys Ghiglione — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Wallys_Ghiglione",
+            "label_en": "Wallys Ghiglione — Wikipedia"
+          },
+          {
+            "label": "Correva l'anno 1898: il Genoa vince il primo scudetto — PianetaGenoa1893",
+            "href": "https://www.pianetagenoa1893.net/primo-piano/correva-lanno-1898-il-genoa-vince-il-primo-scudetto/",
+            "label_en": "The year was 1898: the Genoa wins its first title — PianetaGenoa1893"
+          },
+          {
+            "label": "Genoa Cricket and Football Club 1900 — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Genoa_Cricket_and_Football_Club_1900",
+            "label_en": "Genoa Cricket and Football Club 1900 — Wikipedia"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Via pubblica, accessibile H24",
+          "ingresso": "Free",
+          "indirizzo": "Via San luca",
+          "accessibilita": "Sempre",
+          "orari_en": "Public street, always accessible",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Always"
+        },
+        "consiglio": "Se volete vedere con i vostri occhi la fonte di questa storia, l'Annuario Italiano del Football 1913-14 con l'elenco degli arbitri, Ghiglione compreso, è digitalizzato e consultabile online.",
+        "titolo_en": "The champion who ended up with the rivals",
+        "storia_en": "Wallys Ghiglione was born in Genoa in 1875, son of an olive merchant and an Englishwoman, Sarah Davy. It's on his father's business trips, between Germany and England, that the boy discovers football — not through the English community in the city, as happened with many pioneers of the sport in Genoa, but through a personal experience abroad.\n\nBack in the city, he joins the Genoa and on 8 May 1898 is part of the team that wins Italian football's first-ever championship: the final against Internazionale Torino, decided in extra time by a goal from Leaver.\n\nThen his story takes a turn that would be unthinkable today. Ghiglione becomes a member of Andrea Doria — the city's historic rival club. Not a betrayal, but normal at the time: in the early years of Italian football, sporting allegiances were more fluid than they are today, and crossing from one side of the city rivalry to the other wasn't a scandal.\n\nHe also becomes a referee: the records of the Genoa Referees' Section for the 1913–1914 season list him as living right here, at number 5, flat 6. He dies in 1924, at forty-nine — the same year the Genoa wins what, to this day, remains its last league title.",
+        "lo_sapevi_en": [
+          "On the register, his full name was Wallis Angelo Antonio Amedeo Augusto Ghiglione — five given names for a man everyone knew simply as \"Wallys.\"",
+          "After his studies, Ghiglione never left the family business: he was, at the same time, a footballer, a referee and an olive-trade entrepreneur.",
+          "Andrea Doria, the club he joined after the Genoa, was born in 1895 in a hall of Genoa's Swiss School, founded by a group of athletes who'd left the Cristoforo Colombo Gymnastics Society."
+        ],
+        "consiglio_en": "If you want to see the source of this story with your own eyes, the 1913–14 Italian Football Yearbook, with the list of referees including Ghiglione, has been digitised and is available online."
+      },
+      "label_en": "The champion who ended up with the rivals",
+      "chicca_en": "",
+      "storia_en": [
+        "At number 5 on this street, flat 6, lived Wallys Ghiglione, according to the records of the Genoa Referees' Section for 1913–14 — a Genoese man with an olive-merchant father and an English mother, who played in the team that won Italian football's first title, in 1898.",
+        "Today Via San Luca is one of the old town's multi-ethnic thoroughfares, lined with shops of every kind."
+      ],
+      "highlight_en": "Look for number 5, flat 6: according to the records of the Genoa Referees' Section for 1913–14, this is where Wallys Ghiglione lived, a protagonist of Italy's first football title."
+    },
+    {
+      "n": 10,
+      "nome": "Museo del Genoa",
+      "label": "Da un ufficio di redazione a un museo vero",
+      "emoji": "🏛️",
+      "dur": "",
+      "coords": [
+        44.40860825098264,
+        8.927869055235863
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542306/Museo-del-Genoa-2-scaled_bepmtl.jpg",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786546103/Museo_del_Genoa_-_Genoa_CFC_rruyqk.mp3",
+      "chicca": "Nel 2012, per i 120 anni del Genoa, il museo fu visitato dal presidente dello Sheffield FC, la squadra di calcio più antica del mondo.",
+      "storia": [
+        "Il Museo della Storia del Genoa nacque nel 2009 in un piccolo ufficio di redazione a Salita Dinegro. Nel 2013 si trasferì qui, nella cinquecentesca Palazzina San Giobatta: tre piani, oltre cinquecento metri quadri, dieci sale espositive.",
+        "Oggi il museo conserva trofei, maglie storiche e cimeli di oltre un secolo di calcio, in dialogo diretto con il Genoa Store e la biglietteria al piano terra."
+      ],
+      "highlight": "Cercate, nelle prime sale, la pagina del libro mastro firmata dal console Payton: la stessa notte del 1893 raccontata all'inizio di questo percorso, qui diventa un documento reale.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Da un ufficio di redazione a un museo vero",
+        "storia": "Il museo che state per visitare non è nato qui. La sua prima casa, dal 2009, fu un piccolo ufficio negli spazi che erano stati della redazione del giornale \"Il Lavoro\", in Salita Dinegro — poco più che un archivio aperto al pubblico.\n\nNel 2013, per il 120° anniversario del club, tutto cambia: il museo si trasferisce nella Palazzina San Giobatta, edificio cinquecentesco nel cuore del Porto Antico. Tre piani, oltre cinquecento metri quadri, dieci sale — non più un archivio, ma un vero percorso museale, cronologico e tematico, con installazioni multimediali e centinaia di cimeli.\n\nLa trasformazione non riguarda solo gli spazi. Nel marzo 2018 la Fondazione riesce a riacquisire la Challenge Cup, il trofeo vinto nei primi tre campionati italiani e andato perduto dopo la morte del vicepresidente Henri Dapples: un pezzo di storia che, per oltre un secolo, non aveva nemmeno una teca in cui stare. Oggi ce l'ha.\n\nQuello che era un ufficio di redazione con qualche cimelio è diventato, in meno di un decennio, un museo che si prende sul serio quanto la storia che racconta.",
+        "lo_sapevi": [
+          "Tra i cimeli custoditi nel museo c'è anche il pallone usato nella finale del primo campionato italiano di calcio, quello dell'8 maggio 1898.",
+          "Il percorso museale ricostruisce anche i campi dove il Genoa giocò nei suoi primi decenni, da Ponte Carrega fino allo stadio Ferraris.",
+          "Il museo è gestito dalla Fondazione Genoa 1893, nata nel marzo 2006 con l'obiettivo di preservare la memoria storica e sociale del club."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542306/Museo-del-Genoa-2-scaled_bepmtl.jpg",
+            "didascalia": "Museo del Genoa"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542300/5542_xrxvb4.jpg",
+            "didascalia": "Museo del Genoa"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542285/OIP_15_ht4wlw.webp",
+            "didascalia": "Museo del Genoa"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786542280/OIP_16_tehazx.webp",
+            "didascalia": "Museo del Genoa"
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [
+          {
+            "label": "Museo della Storia del Genoa — Musei di Genova",
+            "href": "https://www.museidigenova.it/it/museo-della-storia-del-genoa",
+            "label_en": "Genoa History Museum — Museums of Genoa"
+          },
+          {
+            "label": "Museo di Storia del Genoa, la tradizione che vince — L'altro calcio, Storie di football e politica",
+            "href": "http://laltrocalcio.blogspot.com/2013/07/museo-di-storia-del-genoa-la-tradizione.html",
+            "label_en": "Genoa History Museum, tradition that wins — L'altro calcio, Stories of Football and Politics"
+          },
+          {
+            "label": "biglietteria online",
+            "href": "museidigenova.it",
+            "label_en": "online ticket office"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Tutti i giorni 10-19",
+          "ingresso": ": Intero €6; ridotto €4",
+          "indirizzo": "Via al Porto Antico 4, Palazzina San Giobatta, 16128 Genova",
+          "accessibilita": "Accessibile a tutti",
+          "orari_en": "Daily 10am–7pm",
+          "ingresso_en": "Full price €6; reduced €4",
+          "accessibilita_en": "Accessible to all"
+        },
+        "consiglio": "Se avete già visitato altri musei civici genovesi durante il soggiorno, portate il biglietto: qui l'ingresso ridotto a 4 euro è riservato anche a chi possiede una tariffa combinata con la Card Artsupp o i Musei Civici.",
+        "titolo_en": "From newsroom office to a real museum",
+        "storia_en": "The museum you're about to visit wasn't born here. Its first home, from 2009, was a small office in the space once occupied by the newsroom of the paper \"Il Lavoro,\" on Salita Dinegro — little more than an archive open to the public.\n\nIn 2013, for the club's 120th anniversary, everything changes: the museum moves into the Palazzina San Giobatta, a sixteenth-century building in the heart of the Porto Antico. Three floors, over five hundred square metres, ten rooms — no longer an archive, but a proper museum route, chronological and thematic, with multimedia installations and hundreds of items.\n\nThe transformation isn't just about space. In March 2018 the Foundation manages to reacquire the Challenge Cup, the trophy won in Italy's first three championships and lost after the death of vice-president Henri Dapples: a piece of history that, for over a century, didn't even have a case to sit in. Now it does.\n\nWhat was once a newsroom office with a few mementoes has become, in under a decade, a museum that takes itself as seriously as the history it tells.",
+        "lo_sapevi_en": [
+          "Among the items held in the museum is also the ball used in the final of Italy's first football championship, on 8 May 1898.",
+          "The museum route also recreates the grounds where the Genoa played in its early decades, from Ponte Carrega all the way to the Ferraris stadium.",
+          "The museum is run by the Fondazione Genoa 1893, established in March 2006 with the goal of preserving the club's historical and social memory."
+        ],
+        "consiglio_en": "If you've already visited other Genoese civic museums during your stay, bring the ticket: the reduced €4 entry here is also available to anyone with a combined Card Artsupp or Musei Civici rate."
+      },
+      "label_en": "From newsroom office to a real museum",
+      "chicca_en": "In 2012, for the Genoa's 120th anniversary, the museum was visited by the president of Sheffield FC, the world's oldest football club.",
+      "storia_en": [
+        "The Genoa History Museum was born in 2009 in a small newsroom office on Salita Dinegro. In 2013 it moved here, to the sixteenth-century Palazzina San Giobatta: three floors, over five hundred square metres, ten exhibition rooms.",
+        "Today the museum holds trophies, historic shirts and memorabilia from over a century of football, in direct dialogue with the Genoa Store and ticket office on the ground floor."
+      ],
+      "highlight_en": "Look, in the first rooms, for the ledger page signed by Consul Payton: the same 1893 night told at the start of this route becomes, here, a real document."
+    },
+    {
+      "n": 11,
+      "nome": "San Lorenzo",
+      "label": "La partita che nessuno pensò di rinviare",
+      "emoji": "⚽",
+      "dur": "",
+      "coords": [
+        44.407854,
+        8.930893
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769681/R_2_ythx9s.jpg",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786546230/San_Lorenzo_-_Genoa_CFC_otpqho.mp3",
+      "chicca": "Il Genoa vinse quella partita 2-0, con reti di Lazzaretti nel primo tempo e di Bertoni nella ripresa.",
+      "storia": [
+        "Il 9 febbraio 1941 una granata navale britannica da 381mm sfondò il tetto di questa cattedrale senza esplodere, durante un bombardamento che quel giorno uccise 144 civili a Genova. La replica dell'ordigno è oggi esposta all'interno, nella navata destra.",
+        "Poche ore dopo, allo stadio Ferraris, si giocò comunque Genoa-Juventus: vinsero i rossoblù 2-0. Oggi la cattedrale è tornata al suo ruolo di sempre, tra fedeli e turisti in cerca della facciata bianca e nera."
+      ],
+      "highlight": "Cercate, nella navata destra, la replica della granata da 381mm rimasta inesplosa quel mattino: accanto, la targa che la definisce una grazia.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "La partita che nessuno pensò di rinviare",
+        "storia": "La mattina del 9 febbraio 1941 la Marina britannica bombarda Genova dal mare — Operazione Grog, al comando dell'ammiraglio Somerville. Sono 144 i civili che non sopravvivono a quel giorno. Una granata da 381mm sfonda il tetto di questa cattedrale e si ferma senza esplodere: i genovesi, in seguito, la trasformeranno in un monumento alla fortuna scampata.\n\nPoche ore dopo, allo stadio Luigi Ferraris, si gioca comunque Genoa-Juventus. Non è un errore né un'imprudenza: è la scelta di continuare, nello stesso giorno in cui la città contava i suoi morti. Circa diecimila spettatori assistono alla partita. Il Genoa vince 2-0, gol di Lazzaretti nel primo tempo e di Bertoni nella ripresa.\n\nNon ci sono cronache che spieghino la decisione di non rinviare la partita, né dichiarazioni dei giocatori su cosa provarono a scendere in campo poche ore dopo un bombardamento. Resta il fatto nudo: la vita quotidiana, quel giorno, non si fermò — nemmeno per novanta minuti di calcio.\n\nLa cattedrale e lo stadio raccontano la stessa data da due prospettive diverse: la pietra che non si spezzò, e la partita che si giocò comunque.",
+        "lo_sapevi": [
+          "Accanto alla replica della bomba, una targa in pietra ringrazia per lo scampato pericolo, definendo l'accaduto una grazia concessa alla città.",
+          "Sergio Bertoni, autore del secondo gol, era stato campione del mondo con l'Italia nel 1938 e medaglia d'oro alle Olimpiadi di Berlino nel 1936 — uno dei soli quattro calciatori italiani ad aver vinto entrambi i titoli.",
+          "Anche nella Juventus di quel giorno giocavano due compagni di nazionale di Bertoni nella spedizione mondiale del 1938, Alfredo Foni e Pietro Rava: avversari in campo, campioni insieme in maglia azzurra."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782769681/R_2_ythx9s.jpg",
+            "didascalia": "Piazza San Lorenzo"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786543414/generico-febbraio-2022-20934_jaoo2w.jpg",
+            "didascalia": "Bombardamento 1941"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786543395/OIP_17_aq8aat.webp",
+            "didascalia": "Bombardamento 1941"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786543388/8E1D734B-0BF8-431B-90FE-30373A6913B6_m95fzq.jpg",
+            "didascalia": "Testimonianza partita giocata"
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "Settore Ospiti Supporters 1893",
+            "tipo": "Bottega",
+            "img": "",
+            "descrizione": "Negozio indipendente di merchandising e articoli da tifoso, con parete di adesivi da collezione: un angolo di tifo genoano lontano dai negozi ufficiali del club.",
+            "distanza": "",
+            "orari": "Lun-Ven 10:30-13:30/14:30-19:00; Sab 10:30-13:30/14:00-19:00; Dom 10:30-13:30/14:00-18:00",
+            "ingresso": "",
+            "indirizzo": "Piazza San Lorenzo, 26r, 16123 Genova",
+            "descrizione_en": "An independent shop selling merchandise and fan gear, with a wall of collectible stickers: a corner of Genoa fandom away from the club's official stores.",
+            "orari_en": "Mon–Fri 10:30am–1:30pm/2:30–7pm; Sat 10:30am–1:30pm/2–7pm; Sun 10:30am–1:30pm/2–6pm"
+          }
+        ],
+        "url": [
+          {
+            "label": "Bombardamento navale di Genova (1941) — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Bombardamento_navale_di_Genova_(1941)",
+            "label_en": "Naval bombardment of Genoa (1941) — Wikipedia"
+          },
+          {
+            "label": "9 febbraio 1941 - Genova è sotto le bombe, ma il Genoa batte la Juventus — Gli Eroi del Calcio",
+            "href": "https://www.glieroidelcalcio.com/2021/02/09/9-febbraio-1941-genova-bombe-batte-juventus-diecimila-tifosi/",
+            "label_en": "9 February 1941 – Genoa is under the bombs, but the Genoa beats Juventus — Gli Eroi del Calcio"
+          },
+          {
+            "label": "Sergio Bertoni — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Sergio_Bertoni",
+            "label_en": "Sergio Bertoni — Wikipedia"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Sempre aperto",
+          "ingresso": "Free",
+          "indirizzo": "Piazza San lorenzo",
+          "accessibilita": "Accessibile",
+          "orari_en": "Always open",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Accessible"
+        },
+        "consiglio": "Se cercate la fonte primaria di questa storia, La Stampa del 10 febbraio 1941 pubblicò, nella stessa edizione, sia la notizia del bombardamento sia il resoconto della partita: cronaca di guerra e cronaca sportiva, fianco a fianco sulla stessa pagina.",
+        "titolo_en": "The match no one thought to postpone",
+        "storia_en": "On the morning of 9 February 1941, the British Navy shells Genoa from the sea — Operation Grog, under the command of Admiral Somerville. 144 civilians don't survive that day. A 381mm shell crashes through the roof of this cathedral and stops without exploding: Genoese people would later turn it into a monument to a narrow escape.\n\nA few hours later, at the Luigi Ferraris stadium, Genoa–Juventus is played anyway. It isn't a mistake or recklessness: it's the choice to carry on, on the very day the city was counting its dead. About ten thousand spectators watch the match. The Genoa wins 2–0, with a goal from Lazzaretti in the first half and one from Bertoni in the second.\n\nThere are no accounts explaining the decision not to postpone the match, nor statements from the players about what it felt like to take the pitch a few hours after a bombing. What remains is the bare fact: everyday life, that day, didn't stop — not even for ninety minutes of football.\n\nThe cathedral and the stadium tell the same date from two different angles: the stone that didn't break, and the match that was played anyway.",
+        "lo_sapevi_en": [
+          "Next to the replica bomb, a stone plaque gives thanks for the danger averted, describing what happened as a grace granted to the city.",
+          "Sergio Bertoni, who scored the second goal, had been a world champion with Italy in 1938 and won gold at the 1936 Berlin Olympics — one of only four Italian footballers to have won both titles.",
+          "That day's Juventus lineup also included two of Bertoni's national-team teammates from the 1938 World Cup campaign, Alfredo Foni and Pietro Rava: opponents on the pitch, champions together in the Azzurri shirt."
+        ],
+        "consiglio_en": "If you're looking for the primary source for this story, La Stampa's 10 February 1941 edition published, in the same issue, both the news of the bombing and the match report: war reporting and sports reporting, side by side on the same page."
+      },
+      "label_en": "The match no one thought to postpone",
+      "chicca_en": "The Genoa won that match 2–0, with goals from Lazzaretti in the first half and Bertoni in the second.",
+      "storia_en": [
+        "On 9 February 1941, a 381mm British naval shell crashed through the roof of this cathedral without exploding, during a bombardment that killed 144 civilians in Genoa that day. A replica of the shell is now on display inside, in the right-hand nave.",
+        "A few hours later, at the Ferraris stadium, Genoa–Juventus was played anyway: the reds and blues won 2–0. Today the cathedral is back to its usual role, among worshippers and tourists looking for the black-and-white façade."
+      ],
+      "highlight_en": "Look, in the right-hand nave, for the replica of the 381mm shell that stayed unexploded that morning: beside it, the plaque describing it as an act of grace."
+    },
+    {
+      "n": 12,
+      "nome": "Polleria Catto",
+      "label": "Il record che nessuno ha mai battuto",
+      "emoji": "⚽",
+      "dur": "",
+      "coords": [
+        44.4073327837504,
+        8.931531744253377
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786543883/Immagine_2026-08-12_160934_gi8nyb.png",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786546342/Polleria_Catto_-_Genoa_CFC_sby5r3.mp3",
+      "chicca": "Fu il Genoa stesso, a fine anni '20, a comprare questa polleria per garantire una rendita al suo capocannoniere.",
+      "storia": [
+        "Edoardo Catto giocò nel Genoa dal 1921 al 1929, vincendo due scudetti consecutivi (1923, 1924) e diventando il miglior marcatore della storia del club. A fine carriera, fu lo stesso Genoa a comprargli questa polleria, per garantirgli un reddito dopo il ritiro.",
+        "Oggi la bottega è ancora aperta, gestita dai discendenti della famiglia Catto: l'unica tappa di questo percorso dove la storia non è un ricordo, ma un'attività a cui si può ancora bussare."
+      ],
+      "highlight": "Guardate l'insegna sopra la vetrina, \"Catto dal 1924\": la stessa data in cui il club aprì questo negozio per il suo campione.",
+      "approfondimento": {
+        "tag": "Storia sportiva",
+        "titolo": "Il record che nessuno ha mai battuto",
+        "storia": "Edoardo Catto arriva al Genoa nella stagione 1921-22, segnando diciotto reti al primo anno. Diventa presto un punto fermo dell'attacco rossoblù: nel 1922-23 vince lo scudetto con una squadra che chiude il campionato imbattuta, ventidue vittorie e sei pareggi; l'anno dopo lo vince di nuovo.\n\nGioca solo otto stagioni, dal 1921 al 1929, con una sola presenza in Nazionale — un'apparizione, contro la Spagna, nel 1924. Eppure quando lascia il campo è già il miglior marcatore nella storia del club: il numero esatto di gol varia a seconda della fonte, tra i 92 e i 98, ma la posizione, prima assoluta, non cambia mai.\n\nQuasi un secolo dopo, quel record resiste ancora: nessun giocatore del Genoa, nemmeno i grandi centravanti dei decenni successivi, ha mai segnato di più in maglia rossoblù. La bottega che il club gli regalò a fine carriera è tuttora gestita dalla sua famiglia — l'uomo che detiene il record è scomparso da tempo, il suo nome resta scritto sopra una vetrina.",
+        "lo_sapevi": [
+          "In una partita un infortunio alla caviglia lo costrinse quasi a lasciare il campo: nonostante il dolore, tornò in gioco spostandosi all'ala sinistra pur di non lasciare la squadra in dieci uomini.",
+          "Era soprannominato \"Catto I\" per distinguerlo dal fratello minore Mario, anche lui calciatore, compagno di squadra ai suoi esordi.",
+          "Prima di arrivare al Genoa, Catto giocava nel dilettantistico Serenitas, in quella che allora era la seconda serie del calcio italiano."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786543883/Immagine_2026-08-12_160934_gi8nyb.png",
+            "didascalia": "Polleria Catto"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786543902/catto-collage.jpg_ncj9cm.webp",
+            "didascalia": "Edoardo Catto"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786543859/Genoa_Cricket_and_Football_Club_1923-1924_y37xdo.jpg",
+            "didascalia": "genoa 1923-1924"
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [
+          {
+            "label": "Edoardo Catto — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Edoardo_Catto",
+            "label_en": "Edoardo Catto — Wikipedia"
+          },
+          {
+            "label": "Genoa: da Catto a Milito, la classifica dei migliori bomber rossoblù di tutti i tempi — GenovaToday",
+            "href": "https://www.genovatoday.it/sport/genoa/marcatori-storia-classifica.html",
+            "label_en": "Genoa: from Catto to Milito, the ranking of the best red-and-blue strikers of all time — GenovaToday"
+          },
+          {
+            "label": "Edoardo Catto, re dei bomber del Genoa, in un calcio che non c'è più — YouTube",
+            "href": "https://www.youtube.com/watch?v=AXtTnirGmPw",
+            "label_en": "Edoardo Catto, king of the Genoa's strikers, in a football that no longer exists — YouTube"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "lun-sab 8:00-20:30 continuato",
+          "ingresso": "Free",
+          "indirizzo": "Via di Canneto il Lungo 86r, 16123 Genova",
+          "accessibilita": "Accessibile",
+          "orari_en": "Mon–Sat 8am–8:30pm, no midday closure",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Accessible"
+        },
+        "consiglio": "Se non riuscite a passare negli orari di apertura, la polleria è anche su Just Eat: l'unico luogo storico di questo itinerario da cui potete letteralmente farvi consegnare qualcosa a casa.",
+        "titolo_en": "The record no one has ever broken",
+        "storia_en": "Edoardo Catto arrives at the Genoa for the 1921–22 season, scoring eighteen goals in his first year. He soon becomes a fixture of the red-and-blue attack: in 1922–23 he wins the title with a team that finishes the season unbeaten, twenty-two wins and six draws; the following year he wins it again.\n\nHe plays only eight seasons, from 1921 to 1929, with a single national-team cap — one appearance, against Spain, in 1924. And yet by the time he leaves the pitch he's already the club's all-time top scorer: the exact goal tally varies by source, somewhere between 92 and 98, but the ranking — first place — never changes.\n\nAlmost a century later, that record still stands: no Genoa player, not even the great strikers of later decades, has ever scored more in the red-and-blue shirt. The shop the club gave him at the end of his career is still run by his family — the man who holds the record passed away long ago, his name still written above a shop window.",
+        "lo_sapevi_en": [
+          "In one match, an ankle injury nearly forced him off the pitch: despite the pain, he went back on, moving to left wing rather than leave the team down to ten men.",
+          "He was nicknamed \"Catto I\" to distinguish him from his younger brother Mario, also a footballer and a teammate in his early days.",
+          "Before joining the Genoa, Catto played for amateur club Serenitas, in what was then Italian football's second division."
+        ],
+        "consiglio_en": "If you can't make it during opening hours, the shop is also on Just Eat: the only historic site on this itinerary where you can literally get something delivered to your door."
+      },
+      "label_en": "The record no one has ever broken",
+      "chicca_en": "It was the Genoa itself, in the late 1920s, that bought this poultry shop to guarantee an income for its top scorer.",
+      "storia_en": [
+        "Edoardo Catto played for the Genoa from 1921 to 1929, winning two consecutive titles (1923, 1924) and becoming the club's all-time top scorer. At the end of his career, the Genoa itself bought him this poultry shop, to guarantee him an income after retiring.",
+        "Today the shop is still open, run by the descendants of the Catto family: the only stop on this route where the history isn't just a memory, but a business you can still walk into."
+      ],
+      "highlight_en": "Look at the sign above the shop window, \"Catto since 1924\": the same year the club opened this shop for its champion."
+    },
+    {
+      "n": 13,
+      "nome": "Piazza De Ferrari ",
+      "label": "La piazza più giovane, il rito più antico",
+      "emoji": "⚽",
+      "dur": "",
+      "coords": [
+        44.4071699,
+        8.9340399
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997631/individualnyy-tur-s-mestnym_pzljrx.jpg",
+      "audioUrl": "https://res.cloudinary.com/dunzmrf6y/video/upload/v1786546713/Piazza_De_Ferrari_-_Genoa_CFC_a0rt40.mp3",
+      "chicca": "La fontana al centro della piazza nacque dal testamento di un banchiere morente, che volle lasciare qualcosa di duraturo alla sua città.",
+      "storia": [
+        "Piazza De Ferrari è la più giovane del centro storico. Secondo alcune fonti, per trent'anni ospitò la sede del Genoa, nel Palazzo Doria De Fornari. Ogni 7 settembre, a mezzanotte, i tifosi si ritrovano qui per il compleanno del club.",
+        "Oggi la piazza è dominata dalla fontana in bronzo e dal Teatro Carlo Felice, cuore civico di Genova. Dopo il raduno, i tifosi risalgono in corteo fino a Via Palestro, ricordando idealmente la nascita del Genoa."
+      ],
+      "highlight": "Guardate la fontana centrale: è qui, ogni 7 settembre a mezzanotte, che i tifosi si radunano prima di risalire in corteo verso Via Palestro.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "La piazza più giovane diventa il rito più antico",
+        "storia": "Piazza De Ferrari non esisteva ancora, nella forma che conoscete oggi, quando nel 1893 trenta soci si riunirono in una sala del Consolato Britannico di Via Palestro. La piazza raggiunge il suo aspetto attuale solo nel 1936, con la fontana in bronzo donata da un banchiere morente che volle lasciare qualcosa alla città — è la più giovane di tutto il centro storico, più giovane della stessa squadra di calcio di cui questo itinerario racconta la storia.\n\nSecondo alcune fonti, non ancora confermate da un documento primario, per trent'anni proprio qui, nel Palazzo Doria De Fornari, ebbe sede il Genoa. Se è vero, la squadra ha visto nascere questa piazza mentre ne diventava già parte.\n\nMa il legame più solido, quello su cui non c'è dubbio, è un altro. Ogni 7 settembre, a mezzanotte, i tifosi si radunano qui per festeggiare l'anniversario di fondazione del club — poi risalgono in corteo fino a Via Palestro, allo stesso portone anonimo da cui è partito questo itinerario.\n\nNon è un trofeo in una teca a chiudere la storia di una squadra. È una piazza che si riempie ogni anno, alla stessa data, di gente che non c'era ancora quando tutto è cominciato — e che continua comunque a tornare lì dove è cominciato.",
+        "lo_sapevi": [
+          "Il ritrovo dei tifosi comincia già alle 23:00, un'ora prima della mezzanotte simbolica della fondazione del 1893.",
+          "La fontana al centro della piazza pesa 36 tonnellate ed è stata donata nel 1936 da un armatore che volle onorare il testamento del padre morente.",
+          "Il Palazzo Doria De Fornari, dove secondo alcune fonti ebbe sede il Genoa, è uno dei Palazzi dei Rolli di Genova, patrimonio UNESCO dal 2006."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997631/individualnyy-tur-s-mestnym_pzljrx.jpg",
+            "didascalia": "Piazza De Ferrari"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1782997683/istockphoto-1446906090-612x612_c3gdr9.jpg",
+            "didascalia": "Piazza De Ferrari"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786546821/195254698-49dd8f0e-fac7-418c-ad6e-4d20c925813c_zunfdg.jpg",
+            "didascalia": "Festa del Genoa"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786546882/genoa-in-serie-a-esplode-la-gioia-dei-tifosi-corteo-fino-in-piazza-de-ferrari-804701.large_vyvzci.jpg",
+            "didascalia": "Festa del Genoa"
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "Genoa Store Centro",
+            "tipo": "Bottega",
+            "img": "",
+            "descrizione": "Punto vendita ufficiale del club su Via XX Settembre, il più centrale dopo quello di Piazza Banchi.",
+            "distanza": "6m",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": "Via XX Settembre, 114 rosso, 16121 Genova",
+            "descrizione_en": "The club's official store on Via XX Settembre, the most central after the one in Piazza Banchi."
+          }
+        ],
+        "url": [
+          {
+            "label": "Palazzo Doria De Fornari — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Palazzo_Doria_De_Fornari",
+            "label_en": "Palazzo Doria De Fornari — Wikipedia"
+          },
+          {
+            "label": "Piazza De Ferrari — Wikipedia",
+            "href": "https://it.wikipedia.org/wiki/Piazza_De_Ferrari",
+            "label_en": "Piazza De Ferrari — Wikipedia"
+          },
+          {
+            "label": "Il Genoa spegne 133 candeline: tifosi in festa a mezzanotte in Piazza De Ferrari — Primocanale",
+            "href": "https://www.primocanale.it/notizie/sport/il-genoa-spegne-133-candeline-tifosi-in-festa-a-mezzanotte-in-piazza-de-ferrari-501133.html",
+            "label_en": "The Genoa turns 133: fans celebrate at midnight in Piazza De Ferrari — Primocanale"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Piazza accessibile H24, pedonalizzata",
+          "ingresso": "Libero",
+          "indirizzo": "Piazza De Ferrari, 16121 Genova",
+          "accessibilita": "Piazza ampia e pianeggiante, fermata metro De Ferrari con accesso diretto",
+          "orari_en": "Square always accessible, pedestrianised",
+          "ingresso_en": "Free",
+          "accessibilita_en": "Wide, flat square, De Ferrari metro stop with direct access"
+        },
+        "consiglio": "Se potete, tornate qui la sera del 7 settembre: è l'unico modo per vivere davvero l'ultima tappa di questo itinerario, non solo leggerla.",
+        "titolo_en": "The youngest square becomes the oldest ritual",
+        "storia_en": "Piazza De Ferrari didn't yet exist, in the form you know today, when in 1893 thirty members met in a room at the British Consulate on Via Palestro. The square only reaches its current appearance in 1936, with the bronze fountain donated by a dying banker who wanted to leave something to the city — it's the youngest square in the whole old town, younger even than the football team whose story this itinerary tells.\n\nAccording to some sources, not yet confirmed by a primary document, the Genoa had its headquarters right here, in Palazzo Doria De Fornari, for thirty years. If true, the team watched this square come into being while already becoming part of it.\n\nBut the strongest link, the one beyond doubt, is a different one. Every 7 September, at midnight, fans gather here to celebrate the club's founding anniversary — then march in procession up to Via Palestro, to the same anonymous doorway where this itinerary began.\n\nIt isn't a trophy in a case that closes the story of a team. It's a square that fills up every year, on the same date, with people who weren't even there when it all began — and who keep coming back anyway to where it started.",
+        "lo_sapevi_en": [
+          "The fans' gathering already starts at 11pm, an hour before the symbolic midnight of the 1893 founding.",
+          "The fountain at the centre of the square weighs 36 tonnes and was donated in 1936 by a shipowner who wanted to honour his dying father's wishes.",
+          "Palazzo Doria De Fornari, where the Genoa is said by some sources to have had its headquarters, is one of Genoa's Rolli palaces, a UNESCO World Heritage Site since 2006."
+        ],
+        "consiglio_en": "If you can, come back here on the evening of 7 September: it's the only way to truly experience this itinerary's last stop, not just read about it."
+      },
+      "label_en": "The youngest square, the oldest ritual",
+      "chicca_en": "The fountain at the centre of the square was born from the will of a dying banker, who wanted to leave something lasting to his city.",
+      "storia_en": [
+        "Piazza De Ferrari is the youngest square in the old town. According to some sources, for thirty years it housed the Genoa's headquarters, in Palazzo Doria De Fornari. Every 7 September, at midnight, fans gather here for the club's birthday.",
+        "Today the square is dominated by the bronze fountain and the Teatro Carlo Felice, the civic heart of Genoa. After the gathering, fans march in procession up to Via Palestro, symbolically retracing the Genoa's birth."
+      ],
+      "highlight_en": "Look at the central fountain: it's here, every 7 September at midnight, that fans gather before marching in procession up to Via Palestro."
+    }
+  ],
+  "directions": [
+    {
+      "text": "Scendete verso Piazza Corvetto, poi proseguite su Viale IV Novembre costeggiando il parco dell'Acquasola.",
+      "dist": "~320m, 4 min",
+      "text_en": "Head down toward Piazza Corvetto, then continue along Viale IV Novembre, skirting the Acquasola park.",
+      "dist_en": "~320m, 4 min"
+    },
+    {
+      "text": "Scendete lungo Viale IV Novembre verso il centro, poi proseguite fino all'imbocco di Salita Santa Caterina, davanti al Cinema Sivori.",
+      "dist": "~260m, 3-4 min",
+      "text_en": "Head down Viale IV Novembre toward the centre, then continue to the entrance of Salita Santa Caterina, in front of the Cinema Sivori.",
+      "dist_en": "~260m, 3-4 min"
+    },
+    {
+      "text": "Scendete lungo Salita Santa Caterina, girandovi verso l'imbocco di Salita Dinegro.",
+      "dist": "~50m, 1 min",
+      "text_en": "Head down Salita Santa Caterina, turning toward the entrance of Salita Dinegro.",
+      "dist_en": "~50m, 1 min"
+    },
+    {
+      "text": "Da Salita Santa Caterina proseguite verso Via Luccoli",
+      "dist": "~200m, 3 min",
+      "text_en": "From Salita Santa Caterina continue toward Via Luccoli.",
+      "dist_en": "~200m, 3 min"
+    },
+    {
+      "text": "Da Via Luccoli proseguite verso Piazza Campetto.",
+      "dist": "~200m, 3 min",
+      "text_en": "From Via Luccoli continue toward Piazza Campetto.",
+      "dist_en": "~200m, 3 min"
+    },
+    {
+      "text": "Da Piazza Campetto proseguite verso il Chiostro delle Vigne.",
+      "dist": "~90m, 1 min",
+      "text_en": "From Piazza Campetto continue toward the Chiostro delle Vigne.",
+      "dist_en": "~90m, 1 min"
+    },
+    {
+      "text": "Dal Chiostro delle Vigne proseguite verso Piazza Banchi.",
+      "dist": "~160m, 2 min",
+      "text_en": "From the Chiostro delle Vigne continue toward Piazza Banchi.",
+      "dist_en": "~160m, 2 min"
+    },
+    {
+      "text": "Da Piazza Banchi proseguite verso Via San Luca.",
+      "dist": "~120m, 2 min",
+      "text_en": "From Piazza Banchi continue toward Via San Luca.",
+      "dist_en": "~120m, 2 min"
+    },
+    {
+      "text": "Da Via San Luca scendete verso il Porto Antico, in direzione della Palazzina San Giobatta.",
+      "dist": "~270m, 4 min",
+      "text_en": "From Via San Luca head down toward the Porto Antico, in the direction of the Palazzina San Giobatta.",
+      "dist_en": "~270m, 4 min"
+    },
+    {
+      "text": "Dal Museo del Genoa risalite verso l'interno, in direzione della Cattedrale di San Lorenzo.",
+      "dist": "~250m, 3 min",
+      "text_en": "From the Genoa Museum head back inland, toward the Cathedral of San Lorenzo.",
+      "dist_en": "~250m, 3 min"
+    },
+    {
+      "text": "Da San Lorenzo proseguite verso Via di Canneto il Lungo.",
+      "dist": "~110m, 2 min",
+      "text_en": "From San Lorenzo continue toward Via di Canneto il Lungo.",
+      "dist_en": "~110m, 2 min"
+    },
+    {
+      "text": "Da Via di Canneto il Lungo proseguite verso Piazza De Ferrari.",
+      "dist": "~190m, 2-3 min",
+      "text_en": "From Via di Canneto il Lungo continue toward Piazza De Ferrari.",
+      "dist_en": "~190m, 2-3 min"
+    },
+    null
+  ],
+  "teaser_include": "Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\nTour guidato nei luoghi storici delle origini del Genoa e del calcio italiano\nAudioguida completa in italiano, sempre disponibile sul tuo telefono\nAccesso illimitato, puoi fermarti e ripartire quando vuoi\nMappa interattiva con navigazione passo-passo\nPunti chiave legati alla fondazione del club nel 1893 e ai primi scudetti\nConsigli sugli angoli più suggestivi legati alla memoria rossoblù",
+  "teaser_aspettarsi": "Un percorso emozionante che unisce la storia della Superba a quella del pallone, portandoti a scoprire i luoghi in cui i marinai e i mercanti britannici fondarono il Genoa Cricket and Athletic Club. Attraverserai scorci storici del centro e zone panoramiche, rievocando le atmosfere dei primi campionati, le leggendarie sfide d'inizio Novecento e la passione incrollabile di una tifoseria unica.",
+  "teaser_accessibilita": "Percorso urbano tra le strade e i vicoli del centro storico. Alcuni tratti prevedono salite o scale per raggiungere i punti panoramici.",
+  "teaser_info": "Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe comode.",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "teaser_cta": "",
+  "teaser_gallery": [],
+  "titolo_en": "Genoa CFC",
+  "tema_en": "Italy's Oldest Football Club",
+  "descrizione_en": "Want to discover the story of Italy's oldest football club? This is the itinerary for you: over 130 years of red-and-blue history told stop by stop, through private homes, historic shops and iconic landmarks, on a route built for anyone who wants to go beyond the stadium and the trophies. You'll be guided by Cristoforo's storytelling, turning a simple walk into a journey through the memory of the city and its team. Make the most of your time — check the map, hit play.",
+  "teaser_include_en": "Self-guided digital tour with an audio guide (no physical guide on-site)\nGuided tour of the historic sites of the origins of Genoa and Italian football",
+  "teaser_aspettarsi_en": "An exciting journey blending the history of la Superba with the world of football, taking you to discover the places where British sailors and merchants founded the Genoa Cricket and Athletic Club. You'll stroll through historic downtown alleyways and scenic viewpoints, reliving the atmosphere of the early championships, legendary early-20th-century clashes, and the unwavering passion of a unique fan base.",
+  "teaser_accessibilita_en": "Urban route through the streets and alleys of the historic center. Some sections include inclines or stairs to reach the viewpoints.",
+  "teaser_info_en": "Headphones recommended for the best listening experience.\nComfortable shoes recommended.",
+  "teaser_assistenza_en": "For any questions, please email us at assistenza@zenawalk.com; we respond within 24 hours.",
+  "durata_en": "60-75 min",
+  "distanza_en": "2,4 km"
+}
