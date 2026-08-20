@@ -1,0 +1,101 @@
+{
+  "id": "genova-misteriosa",
+  "titolo": "Genova misteriosa",
+  "tema": "Ombre nei caruggi, leggende dimenticate e segreti",
+  "descrizione": "Vuoi scoprire il lato oscuro, magico e leggendario della Superba lontano dai percorsi turistici tradizionali? Questo è l'itinerario perfetto per esplorare i misteri di Genova: un viaggio affascinante tra vicoli bui, storie di fantasmi, antichi delitti e simboli nascosti scolpiti nella pietra dei palazzi storici. Lasciati guidare dai racconti misteriosi direttamente sul tuo smartphone attraverso i caruggi più suggestivi, svelando aneddoti che la storia ufficiale ha dimenticato. Acquista l'itinerario per vivere Genova come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "1:30 Ore",
+  "distanza": "3 KM",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533304/20210513-171932-largejpg_xdeaz9.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533304/20210513-171932-largejpg_xdeaz9.jpg",
+  "partenza": {
+    "nome": "Piazza San Lorenzo (davanti alla Cattedrale)",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Piazza Sarzano",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Introduzione",
+      "label": "",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4056,
+        8.9463
+      ],
+      "img": "",
+      "audioUrl": "",
+      "chicca": "",
+      "storia": [
+        ""
+      ],
+      "highlight": "",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    null
+  ],
+  "teaser_include": "Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\nTour guidato tra i luoghi dei misteri, delle leggende e dei fantasmi di Genova\nAudioguida completa in italiano, sempre disponibile sul tuo telefono\nAccesso illimitato, puoi fermarti e ripartire quando vuoi\nMappa interattiva con navigazione passo-passo\nPunti chiave legati a storie insolite, enigmi e tradizioni esoteriche della città\nConsigli sugli angoli più suggestivi e nascosti del centro storico",
+  "teaser_aspettarsi": "Un percorso suggestivo nel cuore dei vicoli genovesi, dove l'atmosfera cambia al calare della luce e ogni pietra sembra custodire un segreto. Attraverserai piazzette nascoste e passaggi antichi, ascoltando storie di presenze misteriose, antiche congiure e credenze popolari che resistono nel tempo, regalandoti un'esperienza intensa e completamente fuori dagli schemi.",
+  "teaser_accessibilita": "Percorso all'interno del centro storico con lastricato tradizionale e tipici vicoli in pendenza. Non adatto a persone con difficoltà motorie.",
+  "teaser_info": "Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe comode.\nConsigliato in orario serale per la giusta atmosfera. ",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "teaser_cta": "Acquista Ora",
+  "teaser_gallery": [
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533304/20210513-171932-largejpg_xdeaz9.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998690/OIP_20_w00wwx.webp",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998690/R_5_jf4rqv.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998689/nick-fewings-rYlYfw8XAoQ-unsplash_wpivuj.jpg"
+  ],
+  "titolo_en": "Mysterious Genoa",
+  "tema_en": "Shadows in the Caruggi, Forgotten Legends and Secrets",
+  "teaser_include_en": "Self-guided digital tour with an audio guide (no physical guide on-site)\nGuided tour through the places of Genoa's mysteries, legends, and ghosts\nComplete audio guide in Italian, always available on your phone\nUnlimited access, pause and resume whenever you want\nInteractive map with step-by-step navigation\nKey points tied to unusual stories, enigmas, and esoteric traditions of the city\nTips on the most evocative and hidden corners of the historic center",
+  "teaser_aspettarsi_en": "An evocative journey through the heart of the Genoese alleys, where the atmosphere changes as the light fades and every stone seems to guard a secret. You will cross hidden squares and ancient passages, listening to stories of mysterious presences, ancient plots, and popular beliefs that endure through time, treating you to an intense and completely unconventional experience.",
+  "teaser_accessibilita_en": "Route through the historic center featuring traditional paving and typical sloping alleyways. Not suitable for people with mobility issues.",
+  "teaser_info_en": "Headphones recommended for the best listening experience.\nComfortable shoes are recommended.\nRecommended in the evening for the right atmosphere.",
+  "teaser_assistenza_en": "Questions? Email assistenza@zenawalk.com — we reply within 24 hours.",
+  "descrizione_en": "Want to discover the dark, magical and legendary side of the Superba, far from the traditional tourist routes? This is the itinerary for exploring Genoa's mysteries: a fascinating journey through dark lanes, ghost stories, old crimes and hidden symbols carved into the stone of historic palazzi. Let mysterious tales guide you, straight from your phone, through the most atmospheric caruggi, revealing anecdotes that official history has forgotten. Buy the itinerary to experience Genoa like never before.",
+  "teaser_cta_en": "Buy Now",
+  "durata_en": "1h 30min",
+  "distanza_en": "3 km"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "i-forti-di-genova",
+  "titolo": "I forti di Genova",
+  "tema": "Sui crinali della Superba tra fortificazioni militari, storia e panorami infiniti",
+  "descrizione": "Vuoi scoprire il sistema fortificato più grande d'Europa sospeso tra cielo e mare? Questo è l'itinerario perfetto per esplorare le imponenti architetture militari che dominano la città dall'alto: un viaggio spettacolare lungo i crinali verdi dei monti genovesi, tra bastioni di pietra, antiche polveriere e sentieri panoramici mozzafiato. Lasciati guidare attraverso le storie di battaglie, assedi e strategie di difesa che hanno protetto la Repubblica di Genova nel corso dei secoli. Acquista l'itinerario per vivere Genova come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "4:00 - 4:30 Ore",
+  "distanza": "12 KM",
+  "difficolta": "impegnativa",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533110/escursioni-guidate-liguria-forti-di-genova-1678546256_xcr7uj.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533110/escursioni-guidate-liguria-forti-di-genova-1678546256_xcr7uj.jpg",
+  "partenza": {
+    "nome": "Funicolare Zecca-Righi",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Funicolare Zecca-Righi",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Introduzione",
+      "label": "",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4056,
+        8.9463
+      ],
+      "img": "",
+      "audioUrl": "",
+      "chicca": "",
+      "storia": [
+        ""
+      ],
+      "highlight": "",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    null
+  ],
+  "teaser_include": "Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\nTour guidato lungo i sentieri e le fortificazioni storiche dei monti di Genova\nAudioguida completa in italiano, sempre disponibile sul tuo telefono\nAccesso illimitato, puoi fermarti e ripartire quando vuoi\nMappa interattiva con navigazione passo-passo\nPunti chiave legati alla storia militare, architettonica e paesaggistica dei forti\nConsigli sui migliori punti di osservazione e sui panorami a picco sul golfo",
+  "teaser_aspettarsi": "Un percorso immersivo e naturalistico che si sviluppa sulle alture della città, lontano dal caos urbano, offrendo una vista spettacolare che spazia dai tetti di Genova fino all'arco dell'orizzonte marino. Camminerai lungo mulattiere storiche e antichi camminamenti di ronda, scoprendo la maestosità di fortezze dimenticate e la bellezza selvaggia della natura che le circonda.",
+  "teaser_accessibilita": "Percorso escursionistico su sentieri sterrati, mulattiere e tratti in pendenza. Richiede calzature adatte al trekking e un minimo di allenamento.",
+  "teaser_info": "Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe da trekking, acqua e protezione solare. ",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "teaser_cta": "Acquista Ora",
+  "teaser_gallery": [
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781533110/escursioni-guidate-liguria-forti-di-genova-1678546256_xcr7uj.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998689/OIP_21_obks8h.webp",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998689/Escursione-guidata-ai-Forti-di-Genova_mmlrn7.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998689/maxresdefault_1_r23pcu.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998690/forte-ratti_dronegenova_016_q0y84r.jpg"
+  ],
+  "titolo_en": "The Forts of Genoa",
+  "tema_en": "Along the Ridges of the Superba, Among Military Fortifications, History and Endless Views",
+  "teaser_include_en": "Self-guided digital tour with an audio guide (no physical guide on-site)\nGuided tour along the trails and historic fortifications of the mountains of Genoa\nComplete audio guide in Italian, always available on your phone\nUnlimited access, pause and resume whenever you want\nInteractive map with step-by-step navigation\nKey points tied to the military, architectural, and landscape history of the forts\nTips on the best vantage points and panoramic views overlooking the gulf",
+  "teaser_aspettarsi_en": "An immersive and nature-filled route that unfolds on the city's heights, far from urban chaos, offering a spectacular view that ranges from the rooftops of Genoa to the arc of the sea horizon. You will walk along historic mule tracks and ancient patrol walkways, discovering the majesty of forgotten fortresses and the wild beauty of the surrounding nature.",
+  "teaser_accessibilita_en": "Hiking route on dirt paths, mule tracks, and sloping sections. Requires footwear suitable for trekking and a basic level of fitness.",
+  "teaser_info_en": "Headphones recommended for the best listening experience.\nTrekking shoes, water, and sunscreen are recommended.",
+  "teaser_assistenza_en": "Questions? Email assistenza@zenawalk.com — we reply within 24 hours.",
+  "descrizione_en": "Want to discover Europe's largest fortification system, suspended between sky and sea? This is the itinerary for exploring the imposing military architecture that dominates the city from above: a spectacular journey along the green ridges of Genoa's hills, among stone bastions, old powder magazines and breathtaking panoramic trails. Let yourself be guided through the stories of battles, sieges and defence strategies that protected the Republic of Genoa over the centuries. Buy the itinerary to experience Genoa like never before.",
+  "teaser_cta_en": "Buy Now",
+  "durata_en": "4h - 4h 30min",
+  "distanza_en": "12 km"
+}

@@ -1,0 +1,101 @@
+{
+  "id": "mangia-come-un-genovese",
+  "titolo": "Mangia come un genovese",
+  "tema": "Un viaggio goloso tra focaccia, friggitorie storiche e antiche botteghe",
+  "descrizione": "Vuoi scoprire i sapori autentici della tradizione gastronomica genovese lontano dalle trappole per turisti? Questo è l'itinerario perfetto per esplorare Genova attraverso il palato: un viaggio goloso tra i caruggi alla scoperta della vera focaccia calda, della farinata croccante, delle friggitorie storiche e delle botteghe artigiane dove il tempo sembra essersi fermato. Lasciati guidare dai racconti sui segreti della cucina ligure, dalle ricette della nonna ai profumi inconfondibili del basilico e dell'olio buono. Acquista l'itinerario per vivere Genova come non l'hai mai vista.",
+  "accesso": "premium",
+  "prezzo": 4.99,
+  "stato": "coming_soon",
+  "durata": "120 Min",
+  "distanza": "2.5 Km",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg",
+  "partenza": {
+    "nome": "Piazza Banchi",
+    "coords": [
+      44.4056,
+      8.9463
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Mercato Orientale di Genova (MOG)",
+    "coords": [
+      44.4056,
+      8.9463
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Introduzione",
+      "label": "",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.4056,
+        8.9463
+      ],
+      "img": "",
+      "audioUrl": "",
+      "chicca": "",
+      "storia": [
+        ""
+      ],
+      "highlight": "",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    null
+  ],
+  "teaser_include": "Tour digitale in autonomia con audioguida  (nessuna guida fisica presente sul posto)\nTour guidato tra i sapori e le botteghe storiche della tradizione genovese\nAudioguida completa in italiano, sempre disponibile sul tuo telefono\nAccesso illimitato, puoi fermarti e ripartire quando vuoi\nMappa interattiva con navigazione passo-passo\nPunti chiave legati ai piatti tipici, ai prodotti locali e alla cultura enogastronomica\nConsigli sulle migliori tappe golose e indirizzi imperdibili nel centro storico",
+  "teaser_aspettarsi": "Un percorso sensoriale nel cuore di Genova, guidati dai profumi irresistibili della focaccia appena sfornata e della frittura di pesce nei vicoli. Attraverserai mercati storici, antiche sciamadde e botteghe centenarie, scoprendo le storie e i segreti dei piatti simbolo della cucina marinara e contadina ligure, per un'esperienza da veri local.",
+  "teaser_accessibilita": "Percorso all'interno del centro storico con lastricato tradizionale e tipici vicoli in pendenza. Adatto a tutti, con possibilità di pause gastronomiche lungo il tragitto.",
+  "teaser_info": "Consigliato l'uso di cuffie per la migliore esperienza d'ascolto.\nConsigliate scarpe comode e... appetito!",
+  "teaser_assistenza": "Per qualsiasi domanda scrivi a assistenza@zenawalk.com, rispondiamo entro 24 ore.",
+  "teaser_cta": "Acquista Ora",
+  "teaser_gallery": [
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1781532898/AdobeStock_235021478-1200x900_yydeae.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998691/cibo-36-1536x1024_vqfca4.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998691/hd650x433_wm_jrdo7t.jpg",
+    "https://res.cloudinary.com/dunzmrf6y/image/upload/v1786998552/trofie-al-pesto-li-per-li_z7oek2.jpg"
+  ],
+  "titolo_en": "Eat Like a Genoese",
+  "tema_en": "A Tasty Journey Through Focaccia, Historic Fry Shops and Age-Old Delis",
+  "teaser_include_en": "Self-guided digital tour with an audio guide (no physical guide on-site)\nGuided tour among the flavors and historic shops of the Genoese tradition\nComplete audio guide in Italian, always available on your phone\nUnlimited access, pause and resume whenever you want\nInteractive map with step-by-step navigation\nKey points tied to traditional dishes, local products, and food and wine culture\nTips on the best gourmet stops and must-visit addresses in the historic center",
+  "teaser_aspettarsi_en": "A sensory journey through the heart of Genoa, guided by the irresistible scents of freshly baked focaccia and fried fish winding through the alleys. You will cross historic markets, ancient sciamadde, and centenarian shops, discovering the stories and secrets of the iconic dishes of Ligurian maritime and peasant cuisine, for a true local experience.",
+  "teaser_accessibilita_en": "Route through the historic center featuring traditional paving and typical sloping alleyways. Suitable for everyone, with opportunities for food stops along the way.",
+  "teaser_info_en": "Headphones recommended for the best listening experience.\nComfortable shoes and... an appetite!",
+  "teaser_assistenza_en": "Questions? Email assistenza@zenawalk.com — we reply within 24 hours.",
+  "descrizione_en": "Want to discover the authentic flavours of Genoese food tradition, far from the tourist traps? This is the itinerary for exploring Genoa through your taste buds: a delicious journey through the caruggi in search of real warm focaccia, crispy farinata, historic fry shops and artisan delis where time seems to have stopped. Let yourself be guided by stories of Ligurian cooking's secrets, from grandmother's recipes to the unmistakable scent of basil and good olive oil. Buy the itinerary to experience Genoa like never before.",
+  "teaser_cta_en": "Buy Now",
+  "durata_en": "120 min",
+  "distanza_en": "2.5 km"
+}
