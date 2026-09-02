@@ -1,0 +1,452 @@
+{
+  "id": "forchette-curiose",
+  "titolo": "Forchette Curiose",
+  "tema": "Sette piatti per fare il giro del mondo nei carruggi",
+  "descrizione": "Sette locali del centro storico, sette paesi in un solo pomeriggio: dalla tostada messicana di via San Bernardo al polpo alla galiziana di vico della Scienza, dal byrek albanese al cioccolato ecuadoriano di Romeo Viganotti. Ogni fermata ha un piatto, una bevanda abbinata e un pezzo di mondo che è arrivato a vivere qui. Guarda la mappa, segui le sette tappe nell'ordine che preferisci, e lascia che sia la fame a guidarti.",
+  "accesso": "evento",
+  "prezzo": null,
+  "stato": "available",
+  "durata": "libera, ~2-3 ore",
+  "distanza": "5km",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357116/Forchette-Foreste-1_rp2h0q.webp",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357116/Forchette-Foreste-1_rp2h0q.webp",
+  "teaser_cta": "",
+  "teaser_gallery": [],
+  "teaser_include": "La tessera degli assaggi, la tasca per portarla, la forchetta e la mappa del percorso. Sette assaggi con bevanda abbinata, uno per ogni paese in programma.",
+  "teaser_aspettarsi": "Un percorso libero, non a orario fisso: scegli tu l'ordine delle tappe e il ritmo, dentro la fascia di partenza che hai scelto. Ogni locale serve una porzione pensata per l'assaggio, non un pasto completo — il viaggio è nella varietà, non nella quantità.",
+  "teaser_accessibilita": "Il percorso attraversa i carruggi del centro storico, con pavimentazione in pietra e alcuni tratti stretti",
+  "teaser_info": "Cinque fasce di partenza tra le 11.30 e le 16.30. Tessera classica ed eventuale versione vegetariana a 28 euro, itinerario ridotto per bambini a 15 euro. Dettagli e acquisto su contattogenova.cloud.",
+  "teaser_assistenza": "Per problemi durante l'acquisto: support@contattogenova.it. Per informazioni sull'evento: contatto@contattogenova.it o WhatsApp +39 349 709 9417.",
+  "partenza": {
+    "nome": "Ristorante Veracruz",
+    "coords": [
+      44.406483163490506,
+      8.931066668726773
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Romeo Viganotti",
+    "coords": [
+      44.40609999385854,
+      8.932978626399413
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Ristorante Veracruz",
+      "label": "Messico",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.406483163490506,
+        8.93032836872673
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357550/R_z4odoz.jpg",
+      "audioUrl": "",
+      "chicca": "Tostada de tinga de Papantla",
+      "storia": [
+        "piatto:\n\nnome: Tostada de tinga de Papantla\ndescrizione: Una tortilla di mais croccante, farcita con pollo sfilacciato, cavolo, verza e cipolla, completata da una salsa agrodolce."
+      ],
+      "highlight": "Il piatto nasce per riciclare gli avanzi del pollo — nulla si butta nella cucina di strada messicana",
+      "approfondimento": {
+        "tag": "TEST",
+        "titolo": "TEST",
+        "storia": "TEST",
+        "lo_sapevi": [
+          "test",
+          "test",
+          "test"
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357401/veracruz_hpgvbt.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357550/R_z4odoz.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "test",
+            "tipo": "",
+            "img": "",
+            "descrizione": "",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          },
+          {
+            "nome": "testt",
+            "tipo": "",
+            "img": "",
+            "descrizione": "",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          },
+          {
+            "nome": "test",
+            "tipo": "",
+            "img": "",
+            "descrizione": "",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          }
+        ],
+        "url": [
+          {
+            "label": "test",
+            "href": ""
+          }
+        ],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Via San Bernardo 59 rosso",
+          "accessibilita": ""
+        },
+        "consiglio": "test"
+      }
+    },
+    {
+      "n": 2,
+      "nome": "Kowalski",
+      "label": "Polonia",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.40744123197736,
+        8.929534434836249
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357633/R_1_rqj5jz.jpg",
+      "audioUrl": "",
+      "chicca": "Krelka di Casciubba",
+      "storia": [
+        "piatto: nome: Krelka di Casciubba\ndescrizione: Una patata farcita con orata, funghi e aromi, avvolta nella pasta sfoglia prima della cottura.\n\nbevanda_abbinata: Woda chabrowa — acqua aromatizzata con petali di fiordaliso"
+      ],
+      "highlight": "Nella ricetta originale della Casciubia la farcia è di aringa, non di pesce bianco — qui diventa orata.",
+      "approfondimento": {
+        "tag": "test",
+        "titolo": "",
+        "storia": "test",
+        "lo_sapevi": [
+          "test",
+          "test",
+          "test"
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358286/DSC_5857_v3u0c1.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357633/R_1_rqj5jz.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "ts",
+            "tipo": "",
+            "img": "",
+            "descrizione": "",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          },
+          {
+            "nome": "test",
+            "tipo": "",
+            "img": "",
+            "descrizione": "",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          },
+          {
+            "nome": "test",
+            "tipo": "",
+            "img": "",
+            "descrizione": "",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          }
+        ],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Via dei Giustiniani 3 rosso",
+          "accessibilita": ""
+        },
+        "consiglio": "test"
+      }
+    },
+    {
+      "n": 3,
+      "nome": "Cantine Camilla",
+      "label": "Il triangolo che profuma di ricotta",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.40871852895874,
+        8.93132545338139
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357832/273690-flag-Albania-748x421_fkfshr.jpg",
+      "audioUrl": "",
+      "chicca": "Byrek di ricotta e spinaci",
+      "storia": [
+        "piatto:\n\nnome: Byrek di ricotta e spinaci\ndescrizione: Un triangolo di sfoglia dorata, ripieno di ricotta e spinaci.\n\nbevanda_abbinata: Acqua aromatizzata al cetriolo"
+      ],
+      "highlight": "Il byrek non è solo albanese: la stessa pasta ripiena, sotto altri nomi, attraversa tutti i Balcani ex ottomani",
+      "approfondimento": {
+        "tag": "test",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358335/foto_iyszwr.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357832/273690-flag-Albania-748x421_fkfshr.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "test",
+            "tipo": "",
+            "img": "",
+            "descrizione": "",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          }
+        ],
+        "url": [
+          {
+            "label": "test",
+            "href": ""
+          }
+        ],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Vico degli Indoratori 20 rosso",
+          "accessibilita": ""
+        },
+        "consiglio": "test"
+      }
+    },
+    {
+      "n": 4,
+      "nome": "Big Belly",
+      "label": "Vietnam",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.409720898187494,
+        8.932661897563193
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358244/waved-vietnam-flag-vietnam-flag-emblem-of-vietnam-vector_qzlqif.jpg",
+      "audioUrl": "",
+      "chicca": "Tofu marinato vietnamita",
+      "storia": [
+        "piatto:\n\nnome: Tofu marinato vietnamita\ndescrizione: Tofu rosolato e glassato con salsa di soia, aceto di riso e peperoncino dolce.\n\nbevanda_abbinata: Bicchiere con citronella, lime e menta"
+      ],
+      "highlight": "test",
+      "approfondimento": {
+        "tag": "test",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358404/ingredienti-stagionali_jornwq.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358244/waved-vietnam-flag-vietnam-flag-emblem-of-vietnam-vector_qzlqif.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Via dei Macelli di Soziglia 15 rosso",
+          "accessibilita": ""
+        },
+        "consiglio": "test"
+      }
+    },
+    {
+      "n": 5,
+      "nome": "Locanda Spinola",
+      "label": "Spagna",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.41111717939501,
+        8.930631539890546
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358516/1099381_qqx10k.jpg",
+      "audioUrl": "",
+      "chicca": "Polpo alla galiziana",
+      "storia": [
+        "piatto:\n\nnome: Polpo alla galiziana\ndescrizione: Polpo scottato, servito con maionese al lime e paprica affumicata.\n\nbevanda_abbinata: Acqua aromatizzata alla menta"
+      ],
+      "highlight": "test",
+      "approfondimento": {
+        "tag": "test",
+        "titolo": "",
+        "storia": "test",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358490/unnamed_ymxeok.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358516/1099381_qqx10k.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": "test"
+      }
+    },
+    {
+      "n": 6,
+      "nome": "O Boteco",
+      "label": "Portogallo",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.41183528826928,
+        8.931598535190261
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358661/Bandiera-del-Portogallo-1536x864_fwtx7b.jpg",
+      "audioUrl": "",
+      "chicca": "Bacalhau à Brás",
+      "storia": [
+        "piatto:\n\nnome: Bacalhau à Brás\ndescrizione: Baccalà sfilacciato con cipolle, patate croccanti e uova, completato da olive e prezzemolo.\n\nbevanda_abbinata: Acqua con limone, zenzero e semi di chia"
+      ],
+      "highlight": "Il piatto porta il nome di un oste di Lisbona, Brás, che lo inventò per riciclare gli scarti del baccalà.",
+      "approfondimento": {
+        "tag": "tet",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358664/unnamed_1_oh0ze3.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358661/Bandiera-del-Portogallo-1536x864_fwtx7b.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Salita di San Francesco 2",
+          "accessibilita": ""
+        },
+        "consiglio": "Il piatto porta il nome di un oste di Lisbona, Brás, che lo inventò per riciclare gli scarti del baccalà."
+      }
+    },
+    {
+      "n": 7,
+      "nome": "Romeo Viganotti",
+      "label": "Ecuador",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.40611532317827,
+        8.933042999417559
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358809/R_weukbu.png",
+      "audioUrl": "",
+      "chicca": "Quimbolitos con cioccolata calda",
+      "storia": [
+        "piatto:\n\nnome: Quimbolitos con cioccolata calda\ndescrizione: Tortine cotte al vapore, profumate con vaniglia, limone e uvetta, servite con cioccolata calda a base di cacao ecuadoriano al 70%, amido di mais, zucchero e cannella.\n\nbevanda_abbinata: (coincide con il dolce — cioccolata calda)"
+      ],
+      "highlight": "La cioccolata di questa tappa viene ancora macinata con un melanger di pietra di fine Ottocento, nella stessa bottega dal 1866.",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358813/OIP_1_rwtbwo.webp",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358809/R_weukbu.png",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Salita del Prione 12 rosso",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    {
+      "text": "da via San Bernardo verso via dei Giustiniani, pochi minuti a piedi nei carruggi verso nord-est."
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "codice_accesso": "test"
+}
