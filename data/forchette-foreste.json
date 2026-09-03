@@ -1,0 +1,482 @@
+{
+  "id": "forchette-foreste",
+  "titolo": "Forchette Foreste",
+  "tema": "Una domenica di sapori dal mondo dei caruggi",
+  "descrizione": "Genova è da sempre un crocevia di culture, porto di partenze e di arrivi,\ndi lingue, spezie e ricette portate da lontano.\nForchette Foreste trasforma il centro storico in una mappa gastronomica, da percorrere a piedi.\n\nUn percorso libero tra vicoli e sette cucine internazionali: dal Messico all'Ecuador, passando per Polonia, Albania, Vietnam, Spagna e Portogallo.\nSi parte da Piazza San Lorenzo, si gira il mondo in un pomeriggio, tappa dopo tappa, assaggio dopo assaggio.",
+  "accesso": "evento",
+  "prezzo": null,
+  "stato": "available",
+  "durata": "libera, ~2-3 ore",
+  "distanza": "2km",
+  "difficolta": "facile",
+  "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357116/Forchette-Foreste-1_rp2h0q.webp",
+  "img_card": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357116/Forchette-Foreste-1_rp2h0q.webp",
+  "teaser_cta": "",
+  "teaser_gallery": [],
+  "teaser_include": "La tessera degli assaggi, la tasca per portarla, la forchetta e la mappa del percorso. Sette assaggi con bevanda abbinata, uno per ogni paese in programma.",
+  "teaser_aspettarsi": "Un percorso libero, non a orario fisso: scegli tu l'ordine delle tappe e il ritmo, dentro la fascia di partenza che hai scelto. Ogni locale serve una porzione pensata per l'assaggio, non un pasto completo — il viaggio è nella varietà, non nella quantità.",
+  "teaser_accessibilita": "Il percorso attraversa i caruggi del centro storico, con pavimentazione in pietra e alcuni tratti stretti",
+  "teaser_info": "Cinque fasce di partenza tra le 11.30 e le 16.30. Tessera classica ed eventuale versione vegetariana a 28 euro, itinerario ridotto per bambini a 15 euro. Dettagli e acquisto su contattogenova.cloud.",
+  "teaser_assistenza": "Per problemi durante l'acquisto: support@contattogenova.it. Per informazioni sull'evento: contatto@contattogenova.it o WhatsApp +39 349 709 9417.",
+  "partenza": {
+    "nome": "Piazza San Lorenzo",
+    "coords": [
+      44.40802398980223,
+      8.931063557038469
+    ],
+    "come_arrivare": ""
+  },
+  "arrivo": {
+    "nome": "Romeo Viganotti",
+    "coords": [
+      44.40609999385854,
+      8.932978626399413
+    ]
+  },
+  "intro": {
+    "avText": [
+      ""
+    ]
+  },
+  "completion": {
+    "titolo": "",
+    "titolo_highlight": "",
+    "sottotitolo": ""
+  },
+  "tappe": [
+    {
+      "n": 1,
+      "nome": "Piazza San Lorenzo",
+      "label": "La partenza",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.40798303558903,
+        8.931079192149395
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357116/Forchette-Foreste-1_rp2h0q.webp",
+      "audioUrl": "",
+      "chicca": "Assicurati di avere con te la card dell'evento",
+      "storia": [
+        "Si Parte! Preparati per vivere quest'avventura dei vicoli di Genova, assaggiando cibi provenienti da 7 paesi diversi!",
+        "Assicurati di avere con te la card, la utilizzerai per avere accesso nei luoghi convenzionati. Senza la card non potrai accedervi "
+      ],
+      "highlight": "Approfittatene per osservare la facciata della cattedrale San Lorenzo: ha una sola torre campanaria, quella destra. Il progetto medievale ne prevedeva due gemelle ma l'incendio del 1296 e una crisi economica hanno fermato il progetto a metà.",
+      "approfondimento": {
+        "tag": "Origini dell'evento",
+        "titolo": "Come nasce Forchette Foreste",
+        "storia": "Forchette Foreste nasce nel 2017 a Genova da un'idea dell'associazione culturale Contatto, con il supporto della blogazine enogastronomica Papille Clandestine.\n\nL'obiettivo fondante dell'evento non era semplicemente proporre un \"food tour\", ma raccontare l'evoluzione multiculturale dei vicoli genovesi attraverso la cucina:\n\nL'etimologia del nome: In genovese, la parola \"foresto\" indica ciò che è straniero o viene da fuori. L'evento gioca su questo termine per celebrare l'incontro tra le tradizioni di chi è arrivato da lontano e la struttura storica dei caruggi.\n\nIntegrazione e gastronomia: Il percorso nasce per dare valore e visibilità alle comunità e ai ristoratori internazionali presenti nel centro storico (cucine sudamericane, mediorientali, africane, asiatiche), trasformando il cibo in uno strumento di dialogo e riscoperta del territorio.",
+        "lo_sapevi": [
+          "Un ponte tra culture: Racconta ai partecipanti che Genova è da sempre una città di porto e di approdo; l'evento porta avanti questa vocazione secolare trasformando i vicoli in una mappa gastronomica globale.",
+          "Cibo come mappa urbana: Non si tratta solo di degustare piatti tipici di Paesi lontani, ma di scoprire come queste realtà si siano radicate nel tessuto sociale ed economico della città antica.",
+          "Un'esperienza itinerante: Spiega che l'evento è pensato come un viaggio a tappe in cui ogni boccone racconta una storia di migrazione, accoglienza e fusione culinaria."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788421186/Forchette-foreste_hebqr3.jpg",
+            "didascalia": "Foto anni passati"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788421184/6522_yttuaq.jpg",
+            "didascalia": "Foto anni passati"
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788421182/Forchette-Foreste-a-Genova-29-settembre-2019_adsy3w.webp",
+            "didascalia": "Foto anni passati"
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [
+          {
+            "label": "https://contattogenova.cloud/evento/forchette-foreste-2026/",
+            "href": "Indirizzo web dell'evento"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "5 fasce orarie dalle 11:30 alle 16:30",
+          "ingresso": "28 euro per adulti / 15 euro per bambino",
+          "indirizzo": "Piazza San Lorenzo",
+          "accessibilita": ""
+        },
+        "consiglio": "Scegli tra la card classica e la card vegetariana in base ai tuoi gusti"
+      },
+      "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788420621/Catedral-de-San-Lorenzo-de-Genova_aig4sj.jpg"
+    },
+    {
+      "n": 2,
+      "nome": "Ristorante Veracruz",
+      "label": "Messico",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.406483163490506,
+        8.93032836872673
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357550/R_z4odoz.jpg",
+      "audioUrl": "",
+      "chicca": "Piatto da assaggiare: Tostada de tinga de Papantla",
+      "storia": [
+        "Iniziamo subito forte con la nostra prima tappa: il Messico!\n\nSiamo davanti al Ristorante Veracruz e per aprire lo stomaco ci attende un antipasto tipico del sud-est messicano:\n\nIl piatto: Una Tostada De Tinga De Papantla; una tortilla di mais croccante con pollo sfilacciato stufato con cavolo, verza e cipolla in una salsa agrodolce, arricchita da chipotle, avocado e spezie. (Nota per i vegetariani: c'è la versione VEG senza pollo, condita con verdure, frutta e spezie).\n\nIn abbinamento: Un'estiva agua de tamarindo, la tipica acqua aromatizzata al tamarindo.\n\nPrendete la vostra tostada, aprite le papille gustative e... buon inizio di viaggio!"
+      ],
+      "highlight": "Il piatto nasce per riciclare gli avanzi del pollo — nulla si butta nella cucina di strada messicana",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Storia della Tinga",
+        "storia": "La Tinga nasce nello stato di Puebla, nel centro-sud del Messico. È uno stufato tradizionale a base di carne sfilacciata (solitamente pollo o maiale) cotta lentamente con pomodoro, cipolla e l'immancabile chile chipotle (un peperoncino jalapeño essiccato e affumicato). Il nome \"Tinga\" nel lessico popolare messicano è associato a qualcosa di \"incasinato\" o \"scompigliato\", un riferimento simpatico proprio all'aspetto sfilacciato della carne. La variante di Papantla (città dello stato di Veracruz) integra ingredienti locali e note agrodolci.",
+        "lo_sapevi": [
+          "La Tostada nasce per non sprecare nulla: La tostada (la tortilla di mais fritta o tostata fino a diventare croccante) è nata nelle cucine popolari messicane per riutilizzare le tortillas del giorno prima che avevano perso morbidezza. Invece di buttarle, venivano tostate sul comal (la piastra tradizionale) o fritte, diventando la base perfetta per reggere stufati ricchi come la Tinga.",
+          "Papantla e il mito della Vaniglia: Papantla non è famosa solo per la sua versione della Tinga, ma è conosciuta in tutto il mondo come la \"Città che profuma di vaniglia\". È la patria storica della coltivazione della vaniglia e del celebre rituale dei Voladores de Papantla (patrimonio UNESCO), dove i danzatori si lanciano da un palo alto 30 metri legati solo per le caviglie.",
+          "L'Agua de Tamarindo: Il tamarindo, elemento chiave dell'acqua aromatizzata in abbinamento, non è originario del Messico! Fu portato dagli spagnoli dall'Africa e dall'India durante il periodo coloniale, ma i messicani lo hanno adottato a tal punto da farlo diventare una delle tre classiche aguas frescas nazionali (insieme a horchata e jamaica)."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788421967/OIP_2_j5lnhk.webp",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357550/R_z4odoz.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357401/veracruz_hpgvbt.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "Torre degli embriaci",
+            "tipo": "Monumento",
+            "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788422064/unnamed_2_z6uugi.jpg",
+            "descrizione": "Posizionata a pochi metri di distanza, sulla salita che porta al colle di Castello. È una delle pochissime torri medievali conservatesi intatte nel centro storico, legata alla figura del condottiero Guglielmo Embriaco \"Testadimaglio\"",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          }
+        ],
+        "url": [
+          {
+            "label": "Sito web ristorante veracruz",
+            "href": "http://www.ristoranteveracruz.it/"
+          }
+        ],
+        "info_pratiche": {
+          "orari": "Sempre Aperto",
+          "ingresso": "Free",
+          "indirizzo": "Via San Bernardo 59 rosso",
+          "accessibilita": "Accessibile"
+        },
+        "consiglio": "Il consiglio d'oro per la tostada è uno solo: dimentica le posate e usate le mani, ma con la giusta tecnica!"
+      },
+      "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357401/veracruz_hpgvbt.jpg"
+    },
+    {
+      "n": 3,
+      "nome": "Kowalski",
+      "label": "Polonia",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.40744123197736,
+        8.929534434836249
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357633/R_1_rqj5jz.jpg",
+      "audioUrl": "",
+      "chicca": "Il piatto: Krelka di Casciubba",
+      "storia": [
+        "Lasciamo il Messico e ci spostiamo a est! Benvenuti alla nostra seconda tappa da Kowalski, in Via dei Giustiniani.\n\nOggi voliamo nel nord della Polonia, in una regione affascinante affacciata sul Mar Baltico: la Casciubia. Questa terra è famosa per i suoi laghi, le sue immense foreste e per una cucina di mare e di terra unica nel suo genere.\n",
+        "Ecco cosa ci attende:\n\nIl piatto: Una Krelka di Casciubia — una patata cotta con la buccia, farcita con orata, funghi porcini e aromi, poi avvolta e cotta al forno dentro una fragrante pasta sfoglia. (Per la versione VEG/Vegan: farcia senza pesce, condita con funghi, cipolla e radice di prezzemolo).\n\nIn abbinamento: La woda chabrowa, una delicata acqua aromatizzata con petali di fiordaliso"
+      ],
+      "highlight": "Nella ricetta originale della Casciubia la farcia è di aringa, non di pesce bianco — qui diventa orata.",
+      "approfondimento": {
+        "tag": "Storia",
+        "titolo": "Storia della Casciuba",
+        "storia": "La presenza della cucina casciuba nel cuore di Genova crea un cortocircuito culturale inaspettato ma incredibilmente coerente. La Casciubia è una terra di frontiera, una nicchia etno-linguistica del nord della Polonia che ha fatto della contaminazione tra risorse della terra e del mare la propria identità culinaria. Unire il pesce (come l'orata) all'intensità umami dei funghi porcini non è un semplice azzardo contemporaneo, ma il riflesso di un'economia contadina e marinara che viveva di ciò che la natura offriva stagionalmente lungo le coste del Baltico. Proporre questo piatto tra le mura di Via dei Giustiniani dimostra come la cucina di porto di Genova possa dialogare alla pari con le tradizioni di altre comunità costiere europee: territori geograficamente distanti, ma accomunati dallo stesso spirito di adattamento, di conservazione e di rispetto per le materie prime semplici.",
+        "lo_sapevi": [
+          "La Casciubia e le patate (Krelka): Nel dialetto casciubo (una lingua slava riconosciuta e ancora parlata nella regione), la patata viene chiamata proprio \"krelka\". In questa terra fredda e boscosa, la patata è l'ingrediente regina della tavola, capace di sposarsi sia con i funghi delle foreste locali sia con il pesce dei laghi e del Baltico.\n",
+          "L'unione di mare e terra: Abbinare pesce (orata) e funghi porcini è una firma della gastronomia casciuba. La tradizione nasce dai pescatori della zona che, vivendo tra litorali e boschi, univano le catture del giorno con quello che raccoglievano nel sottobosco.\n",
+          "Il fiordaliso (Chaber): Il fiordaliso blu è il simbolo per eccellenza della Casciubia. Lo ritrovi ricamato sui loro abiti tradizionali e sui tessuti tipici; usarlo per aromatizzare l'acqua è un omaggio visivo e poetico a questa terra."
+        ],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788422456/OIP_3_znwwje.webp",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357633/R_1_rqj5jz.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358286/DSC_5857_v3u0c1.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "Piazza dei Giustiniani e Palazzo Giustiniani",
+            "tipo": "Piazza e Palazzo",
+            "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788422507/OIP_4_mdzcif.webp",
+            "descrizione": "La via prende il nome dall'influente famiglia nobiliare genovese. La piazzetta adiacente è un perfetto esempio di architettura residenziale d'epoca con i tipici portali in pietra promontorio.",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          }
+        ],
+        "url": [],
+        "info_pratiche": {
+          "orari": "Sempre Aperto",
+          "ingresso": "Libero",
+          "indirizzo": "Via dei Giustiniani 3 rosso",
+          "accessibilita": "Accessibile"
+        },
+        "consiglio": "Consistenza al morso: Cerca di affondare i denti per prendere contemporaneamente la croccantezza della sfoglia esterna, la morbidezza della patata e il ripieno saporito per goderti il contrasto di consistenze."
+      },
+      "img_hero": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358286/DSC_5857_v3u0c1.jpg"
+    },
+    {
+      "n": 4,
+      "nome": "Cantine Camilla",
+      "label": "Albania",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.40871852895874,
+        8.93132545338139
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357832/273690-flag-Albania-748x421_fkfshr.jpg",
+      "audioUrl": "",
+      "chicca": "Byrek di ricotta e spinaci",
+      "storia": [
+        "Byrek di ricotta e spinaci\nPiatto: triangolo di pasta sfoglia dorata, farcito con un delicato ripieno di ricotta e spinaci\nAcqua aromatizzata: acqua aromatizzata al cetriolo\nUna tradizionale, ricca e croccante torta salata fatta con strati sottilissimi di pasta sfoglia, ripiena di ricotta e spinaci\n\nProposta vegetariana: byrek di ricotta e spinaci"
+      ],
+      "highlight": "Il byrek non è solo albanese: la stessa pasta ripiena, sotto altri nomi, attraversa tutti i Balcani ex ottomani",
+      "approfondimento": {
+        "tag": "test",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358335/foto_iyszwr.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788357832/273690-flag-Albania-748x421_fkfshr.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [
+          {
+            "nome": "test",
+            "tipo": "",
+            "img": "",
+            "descrizione": "",
+            "distanza": "",
+            "orari": "",
+            "ingresso": "",
+            "indirizzo": ""
+          }
+        ],
+        "url": [
+          {
+            "label": "test",
+            "href": ""
+          }
+        ],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Vico degli Indoratori 20 rosso",
+          "accessibilita": ""
+        },
+        "consiglio": "test"
+      }
+    },
+    {
+      "n": 5,
+      "nome": "Big Belly",
+      "label": "Vietnam",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.409720898187494,
+        8.932661897563193
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358244/waved-vietnam-flag-vietnam-flag-emblem-of-vietnam-vector_qzlqif.jpg",
+      "audioUrl": "",
+      "chicca": "Tofu marinato vietnamita",
+      "storia": [
+        "piatto:\n\nnome: Tofu marinato vietnamita\ndescrizione: Tofu rosolato e glassato con salsa di soia, aceto di riso e peperoncino dolce.\n\nbevanda_abbinata: Bicchiere con citronella, lime e menta"
+      ],
+      "highlight": "test",
+      "approfondimento": {
+        "tag": "test",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358404/ingredienti-stagionali_jornwq.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358244/waved-vietnam-flag-vietnam-flag-emblem-of-vietnam-vector_qzlqif.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Via dei Macelli di Soziglia 15 rosso",
+          "accessibilita": ""
+        },
+        "consiglio": "test"
+      }
+    },
+    {
+      "n": 6,
+      "nome": "Locanda Spinola",
+      "label": "Spagna",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.41111717939501,
+        8.930631539890546
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358516/1099381_qqx10k.jpg",
+      "audioUrl": "",
+      "chicca": "Polpo alla galiziana",
+      "storia": [
+        "piatto:\n\nnome: Polpo alla galiziana\ndescrizione: Polpo scottato, servito con maionese al lime e paprica affumicata.\n\nbevanda_abbinata: Acqua aromatizzata alla menta"
+      ],
+      "highlight": "test",
+      "approfondimento": {
+        "tag": "test",
+        "titolo": "",
+        "storia": "test",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358490/unnamed_ymxeok.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358516/1099381_qqx10k.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "",
+          "accessibilita": ""
+        },
+        "consiglio": "test"
+      }
+    },
+    {
+      "n": 7,
+      "nome": "O Boteco",
+      "label": "Portogallo",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.41183528826928,
+        8.931598535190261
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358661/Bandiera-del-Portogallo-1536x864_fwtx7b.jpg",
+      "audioUrl": "",
+      "chicca": "Bacalhau à Brás",
+      "storia": [
+        "piatto:\n\nnome: Bacalhau à Brás\ndescrizione: Baccalà sfilacciato con cipolle, patate croccanti e uova, completato da olive e prezzemolo.\n\nbevanda_abbinata: Acqua con limone, zenzero e semi di chia"
+      ],
+      "highlight": "Il piatto porta il nome di un oste di Lisbona, Brás, che lo inventò per riciclare gli scarti del baccalà.",
+      "approfondimento": {
+        "tag": "tet",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358664/unnamed_1_oh0ze3.jpg",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358661/Bandiera-del-Portogallo-1536x864_fwtx7b.jpg",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Salita di San Francesco 2",
+          "accessibilita": ""
+        },
+        "consiglio": "Il piatto porta il nome di un oste di Lisbona, Brás, che lo inventò per riciclare gli scarti del baccalà."
+      }
+    },
+    {
+      "n": 8,
+      "nome": "Romeo Viganotti",
+      "label": "Ecuador",
+      "emoji": "📍",
+      "dur": "",
+      "coords": [
+        44.40611532317827,
+        8.933042999417559
+      ],
+      "img": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358809/R_weukbu.png",
+      "audioUrl": "",
+      "chicca": "Quimbolitos con cioccolata calda",
+      "storia": [
+        "piatto:\n\nnome: Quimbolitos con cioccolata calda\ndescrizione: Tortine cotte al vapore, profumate con vaniglia, limone e uvetta, servite con cioccolata calda a base di cacao ecuadoriano al 70%, amido di mais, zucchero e cannella.\n\nbevanda_abbinata: (coincide con il dolce — cioccolata calda)"
+      ],
+      "highlight": "La cioccolata di questa tappa viene ancora macinata con un melanger di pietra di fine Ottocento, nella stessa bottega dal 1866.",
+      "approfondimento": {
+        "tag": "",
+        "titolo": "",
+        "storia": "",
+        "lo_sapevi": [],
+        "foto": [
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358813/OIP_1_rwtbwo.webp",
+            "didascalia": ""
+          },
+          {
+            "url": "https://res.cloudinary.com/dunzmrf6y/image/upload/v1788358809/R_weukbu.png",
+            "didascalia": ""
+          }
+        ],
+        "luoghi_vicini": [],
+        "url": [],
+        "info_pratiche": {
+          "orari": "",
+          "ingresso": "",
+          "indirizzo": "Salita del Prione 12 rosso",
+          "accessibilita": ""
+        },
+        "consiglio": ""
+      }
+    }
+  ],
+  "directions": [
+    {
+      "text": "da via San Bernardo verso via dei Giustiniani, pochi minuti a piedi nei carruggi verso nord-est."
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "codice_accesso": "test"
+}
